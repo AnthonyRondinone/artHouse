@@ -38,7 +38,8 @@
 
 |Path                                       | Component              |
 |-------------------------------------------|------------------------|
-| "/sign-up"                                | "AuthFormContainer"    |
-| "/log-in"                                 | "AuthFormContainer"    |
-| "/"                                       | "FeedContainer"       |
-| "/users/:userId"                          | "ProfileContainer"     |
+| "/sign-up"                                | "Sign Up "             |
+| "/log-in"                                 | "Log In"               |
+| "/"                                       | "Feed"                 |
+| "/users/:userId"                          | "User Profile"         |
+| "/users/:userId/edit"                     | "User Edit"            |
