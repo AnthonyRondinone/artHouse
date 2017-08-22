@@ -27,17 +27,32 @@ class SessionForm extends React.Component {
   }
 
   render () {
-
+    let question = this.props.formType === '/signup' ? 'Have an account? ' : "Don't have an account? ";
+    let SignUpPitch = this.props.formType === '/signup' ? 'Sign up to find new artists' : '';
     let buttonName = this.props.formType === '/signin' ? 'Log in' : 'Sign up';
+    let errors;
+    if (this.props.errors.responseJSON) {
+      errors = this.props.errors.responseJSON.join(", ");
+    } else {
+      errors = '';
+    }
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" onChange={this.handleUsernameChange} value={this.state.username} placeholder="Username"/>
-        <br></br>
-        <input type="text" onChange={this.handlePasswordChange} value={this.state.password} placeholder="Password" />
-        <br></br>
-        <button>{ buttonName }</button>
-
-      </form>
+      <div>
+        <h1>artHouse</h1>
+        <form onSubmit={this.handleSubmit}>
+          <h4>{SignUpPitch}</h4>
+          <input type="text" onChange={this.handleUsernameChange} value={this.state.username} placeholder="Username"/>
+          <br></br>
+          <input type="text" onChange={this.handlePasswordChange} value={this.state.password} placeholder="Password" />
+          <br></br>
+          <button>{ buttonName }</button>
+          <p>{ errors }</p>
+          <button>Demo Log in</button>
+        </form>
+        <section>
+          <p>{question}</p>
+        </section>
+      </div>
     );
   }
 
