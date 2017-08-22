@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-import Root from './components/root'
+import Root from './components/root';
 
 // test
 import { login, logout, signup } from './actions/session_actions';
@@ -23,5 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   // test
 
-  ReactDOM.render(<h1>I'm a web app</h1>, root);
+  ReactDOM.render(<Root store={store}/>, root);
 });
