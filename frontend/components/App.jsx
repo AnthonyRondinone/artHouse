@@ -1,12 +1,13 @@
 import React from 'react';
 import SessionContainer from './welcome/session_container';
+import FeedContainer from './feed/feed_container';
 import {Route, Redirect, Switch} from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
 const App = () => (
   <div>
-      <ProtectedRoute path="/" exact component={SessionContainer} />
+      <ProtectedRoute path="/" exact component={FeedContainer} />
 
     <Switch>
       <AuthRoute path="/signin" component={SessionContainer} />
