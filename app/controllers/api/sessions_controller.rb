@@ -4,7 +4,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
     if @user
       log_in(@user)
-      render :show
+      render 'api/users/show'
     else
       render json: ["Sorry, please double-check your username or password."], status: 422
 

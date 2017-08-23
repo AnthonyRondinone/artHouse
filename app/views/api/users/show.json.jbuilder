@@ -1,10 +1,12 @@
+# json.extract! @user, :id, :username
+
 
 json.user do
   json.extract! @user, :id, :username, :name, :website, :bio, :email
-  json.avatar_url asset_path(@user.avatar.url)
-  json.postIds @user.posts.map
+  # json.avatar_url asset_path(@user.avatar.url)
+  # json.postIds @user.posts.map(&:id)
 end
 
-json.posts do
-  []
-end
+# json.posts(@user.posts) do |post|
+#   json.image_url asset_path(post.image.url)
+# end
