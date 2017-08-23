@@ -13,8 +13,10 @@ class SessionForm extends React.Component {
     this.handleDemoClick = this.handleDemoClick.bind(this);
   }
 
-  componentDidMount(newProps) {
-    this.props.clearErrors();
+  componentWillReceiveProps(newProps) {
+    if(this.props.match.path !== newProps.match.path) {
+      this.props.clearErrors();
+    }
   }
 
   handleDemoClick(e) {

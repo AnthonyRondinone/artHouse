@@ -10,11 +10,15 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many :posts, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :posts,
+  primary_key: :id,
+  foreign_key: :artist_id,
+  dependent: :destroy
 
-  has_many :post_comments,
-    through: :posts
+  # has_many :comments, dependent: :destroy
+
+  # has_many :post_comments,
+  #   through: :posts
 
   has_many :followed,
   foreign_key: :follower_id,
