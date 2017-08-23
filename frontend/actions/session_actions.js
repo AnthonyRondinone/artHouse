@@ -27,7 +27,7 @@ export const clearErrors = (errors) => {
 export const login = (user) => (dispatch) => {
   return requestLogin(user)
   .then(
-    (user) => dispatch(receiveCurrentUser(user)),
+    (payload) => dispatch(receiveCurrentUser(payload.user)),
     (errors) => dispatch(receiveErrors(errors))
   );
 };

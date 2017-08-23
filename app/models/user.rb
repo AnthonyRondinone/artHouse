@@ -5,6 +5,9 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :bio, length: { maximum: 150 }
 
+  has_attached_file :avatar, default_url: "defaultAvatar.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
   attr_reader :password
 
   has_many :posts, dependent: :destroy
