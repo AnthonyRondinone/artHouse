@@ -1,0 +1,123 @@
+body div form input button section Link img form h4 {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+
+html {
+  background: #fafafa;
+}
+
+h1 {
+  font-family: "Lobster";
+  font-size: 40px;
+  margin: 0px;
+}
+
+.welcome {
+  display: flex;
+  background: #fafafa;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+}
+
+
+.form {
+  height: 400px;
+  position: relative;
+  right: 70px;
+}
+
+.logSignLink {
+  text-decoration: none;
+  margin: 16px;
+}
+
+
+.question {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  text-align: center;
+  width: 350px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+}
+
+
+.phones {
+  position: relative;
+  right: 50px;
+}
+
+.pitch {
+  font-size: 17px;
+  line-height: 20px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color: gray;
+}
+
+.inputSection {
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  margin: 0 0 10px 0;
+  text-align: center;
+  width: 350px;
+}
+
+.authInput {
+  border-radius: 3px;
+  font-size: 14px;
+  width: 250px;
+  height: 26px;
+  font-size: 12px;
+  border: 1px solid #efefef;
+  margin: 10px;
+  text-indent:8px;
+}
+
+.authButton {
+  background: #3897f0;
+  border-color: #3897f0;
+  color: #fff;
+  border-radius: 3px;
+  border-style: solid;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 250px;
+  height: 26px;
+  margin: 10px;
+}
+
+.agreement {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color: grey;
+  margin-left: 45px;
+  margin-right: 45px;
+  font-size: 15px;
+}
+
+.errors {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color: red;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+input:focus {
+    outline-color: black;
+    outline-style: none;
+    border-color: lightgrey;
+}

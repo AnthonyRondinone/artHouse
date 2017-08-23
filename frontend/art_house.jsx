@@ -10,7 +10,14 @@ import { requestSignUp, requestLogin, requestLogout } from './util/session_api_u
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  const store = configureStore();
+  let store = configureStore();
+  if (window.currentUser) {
+    const preloadedState = { session: { currentUser: window.currentUser } };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
 
   // test
   window.signup = signup;

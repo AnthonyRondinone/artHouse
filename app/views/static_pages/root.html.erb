@@ -1,3 +1,15 @@
+<script type="text/javascript">
+  <% if logged_in? %>
+    window.currentUser = <%= render(
+      "api/users/user.json.jbuilder",
+      user: current_user
+    ).html_safe %>
+  <% end %>
 
+  window.images = {
+    signIn: "<%= image_path('signIn.png') %>",
+  }
+
+</script>
 
 <main id="root"></main>
