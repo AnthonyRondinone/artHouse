@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import { login } from '../../actions/session_actions';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -9,13 +10,18 @@ class SessionForm extends React.Component {
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.handleDemoClick = this.handleDemoClick.bind(this);
   }
 
   componentDidMount(newProps) {
     this.props.clearErrors();
   }
 
+  handleDemoClick(e) {
+    e.preventDefault();
+    let user = { username: "demo", password: "password"};
+    dispatch(login(user)).then(() => this.props.history.push('/'));
+  }
 
   handleUsernameChange(e) {
     this.setState({username: e.target.value});
@@ -62,7 +68,7 @@ class SessionForm extends React.Component {
             <br></br>
             <button className="authButton" >{ buttonName }</button>
             <p className="errors" >{ errors }</p>
-            <button className="authButton" >Demo Log in</button>
+            <button onClick={this.handleDemoClick} className="authButton" >Demo Log in</button>
             <p className="agreement" >{ agreement }</p>
           </form>
           <div className="questionSec" >
