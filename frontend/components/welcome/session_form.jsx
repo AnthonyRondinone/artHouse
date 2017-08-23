@@ -12,9 +12,8 @@ class SessionForm extends React.Component {
 
   }
 
-  componentWillReceiveProps(newProps) {
-    // debugger
-    this.props.errors = [];
+  componentDidMount(newProps) {
+    this.props.clearErrors();
   }
 
 
