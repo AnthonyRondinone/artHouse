@@ -11,6 +11,11 @@ json.user do
 end
 
 
-json.posts(@user.posts) do |post|
-  json.image_url asset_path(post.image.url)
+json.posts do
+  @user.posts.each do |post|
+    json.set! post.id do
+      json.image_url asset_path(post.image.url)
+      json.id post.id
+    end
+  end
 end

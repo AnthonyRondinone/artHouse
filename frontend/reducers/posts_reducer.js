@@ -1,12 +1,13 @@
 import { RECEIVE_SINGLE_USER, requestSingleUser } from '../actions/user_actions';
 import { merge } from 'lodash';
 
-export const usersReducer = ( state = {}, action ) => {
+export const postsReducer = ( state = {}, action ) => {
   Object.freeze(state);
   let newState;
+  debugger
   switch(action.type) {
     case RECEIVE_SINGLE_USER:
-      newState = merge({}, state, {[action.user.id]: action.user});
+      newState = merge({}, state, action.posts);
       return newState;
     default:
     return state;

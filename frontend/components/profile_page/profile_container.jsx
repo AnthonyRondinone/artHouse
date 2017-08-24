@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 // import ProfileItem from './profile_item';
 import { requestSingleUser } from '../../actions/user_actions';
 
@@ -7,6 +8,9 @@ const mapStateToProps = ( state, ownProps ) => {
     user: state.entities.users[ownProps.match.params.userId]
   };
 };
+
+
+
 
 
 export default withRouter (connect(mapStateToProps, mapDispatchToProps)(FeedItem));

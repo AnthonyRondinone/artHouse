@@ -8,7 +8,6 @@ import ProfileContainer from './profile_page/profile_container';
 const App = () => (
   <div>
       <ProtectedRoute path="/" exact component={SessionContainer} />
-      <Route path="/users/:userId" exact component={ ProfileContainer } />
 
     <Switch>
       <AuthRoute path="/signin" component={SessionContainer} />
