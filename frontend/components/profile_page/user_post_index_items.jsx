@@ -7,10 +7,9 @@ class UserPostIndexItem extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="upPostContain">
-        <img src={this.props.image} />
+        <img className="upPostImg" src={this.props.image} />
       </div>
     );
   }

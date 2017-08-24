@@ -8,7 +8,7 @@ import { requestSingleUser } from './actions/user_actions';
 import { login, logout, signup } from './actions/session_actions';
 import { fetchSingleUser } from './util/user_api_util';
 import { requestSignUp, requestLogin, requestLogout } from './util/session_api_util';
-import {selectUsersPosts} from './reducers/selectors'
+import {selectUsersPosts} from './reducers/selectors';
 // test
 
 document.addEventListener('DOMContentLoaded', () => {
