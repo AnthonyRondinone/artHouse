@@ -1,18 +1,23 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-// import ProfileItem from './profile_item';
+import ProfileItem from './profile_item';
 import { requestSingleUser } from '../../actions/user_actions';
+import { selectUsersPosts } from '../../reducers/selectors';
 
 const mapStateToProps = ( state, ownProps ) => {
   return {
-    user: state.entities.users[ownProps.match.params.userId]
+    user: state.entities.users[ownProps.match.params.userId],
+    posts: state.entities.posts
+  };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+
+  return {
+    requestSingleUser: (user) => dispatch(requestSingleUser(user))
   };
 };
 
 
 
-
-
-export default withRouter (connect(mapStateToProps, mapDispatchToProps)(FeedItem));
-// LOOK AT THIS, setting this up to get userID and pass it to FeedItem that still needs to be created_at
-// added route but it's not working yet, will break
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProfileItem));

@@ -4,7 +4,6 @@ import { merge } from 'lodash';
 export const postsReducer = ( state = {}, action ) => {
   Object.freeze(state);
   let newState;
-  debugger
   switch(action.type) {
     case RECEIVE_SINGLE_USER:
       newState = merge({}, state, action.posts);

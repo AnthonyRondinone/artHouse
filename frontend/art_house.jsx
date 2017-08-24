@@ -8,6 +8,7 @@ import { requestSingleUser } from './actions/user_actions';
 import { login, logout, signup } from './actions/session_actions';
 import { fetchSingleUser } from './util/user_api_util';
 import { requestSignUp, requestLogin, requestLogout } from './util/session_api_util';
+import {selectUsersPosts} from './reducers/selectors'
 // test
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchSingleUser = fetchSingleUser;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.selectUsersPosts = selectUsersPosts;
   // test
 
   ReactDOM.render(<Root store={store}/>, root);
