@@ -20,7 +20,7 @@ module ArtHouse
         :access_key_id => ENV["s3_access_key_id"],
         :secret_access_key => ENV["s3_secret_access_key"],
         :s3_region => ENV["s3_region"],
-        :s3_host_name => "s3-#{ENV["s3_region"]}.amazonaws.com",
+        :s3_host_name => "s3.amazonaws.com",
         :url => ":s3_host_name"
       }
     }
