@@ -5,10 +5,15 @@ import { requestSingleUser } from '../../actions/user_actions';
 import { selectUsersPosts } from '../../reducers/selectors';
 
 const mapStateToProps = ( state, ownProps ) => {
-  return {
-    user: state.entities.users[ownProps.match.params.userId],
-    posts: state.entities.posts
-  };
+  if (state.entities.users[ownProps.match.params.userId]) {
+    return {
+      user: state.entities.users[ownProps.match.params.userId],
+      posts: selectUsersPosts(state)
+    };
+  } else {
+    // debugger
+    return {};
+  }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
