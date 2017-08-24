@@ -42,7 +42,6 @@ class SessionForm extends React.Component {
   }
 
   render () {
-    // debugger
     let sendLink = this.props.formType === '/signin' ? '/signup' : '/signin';
     let showLink = this.props.formType === '/signin' ? 'Sign up' : 'Log in';
     let question = this.props.formType === '/signup' ? 'Have an account?' : "Don't have an account?";

@@ -10,6 +10,7 @@ json.user do
 
 end
 
+
 json.posts(@user.posts) do |post|
   json.image_url asset_path(post.image.url)
 end
