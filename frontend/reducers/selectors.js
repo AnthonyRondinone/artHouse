@@ -9,5 +9,5 @@ export const selectUsersPosts = (state) => {
   for (let i = 0; i < postIds.length; i++) {
       usersPostsArray.push(state.entities.posts[postIds[i]]);
   }
-  return usersPostsArray;
+  return usersPostsArray.sort().reverse();
 };

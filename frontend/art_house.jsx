@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 // test
+import { sendNewPost, createNewPost } from './util/post_api_util';
 import { requestSingleUser } from './actions/user_actions';
 import { login, logout, signup } from './actions/session_actions';
 import { fetchSingleUser } from './util/user_api_util';
@@ -23,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // test
+  window.createNewPost = createNewPost;
+  window.sendNewPost = sendNewPost;
   window.requestSingleUser = requestSingleUser;
   window.signup = signup;
   window.login = login;
