@@ -19,8 +19,10 @@ class NavBarItem extends React.Component {
 
 
     return (
-      <div>
-        <button onClick={this.handleClick}>Log out</button>
+      <div className="nav-main" >
+
+          <button className="profile-icon" ><img src={window.images.logout} alt="logoutIcon" onClick={this.handleClick} /></button>
+
       </div>
     );
   }
