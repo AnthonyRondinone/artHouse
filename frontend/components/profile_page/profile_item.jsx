@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import UserPostIndexItem from './user_post_index_items';
+import EditFollowButton from './edit_follow_button';
 
 class ProfileItem extends React.Component {
 
@@ -21,8 +21,7 @@ class ProfileItem extends React.Component {
 
 
   render() {
-    // debugger
-    const {user, posts} = this.props;
+    const {user, posts, currentUser} = this.props;
 
     if (this.props.user) {
       let postText = posts.length === 1 ? " post": " posts";
@@ -32,6 +31,7 @@ class ProfileItem extends React.Component {
       key={post.id}
       image={post.image_url}
       />);
+
 
 
       return (
@@ -49,7 +49,8 @@ class ProfileItem extends React.Component {
 
                 <section className="upInfoTop">
                   <p className="userName" >{user.username}</p>
-                  <button className="editFollow">Edit Profile</button>
+
+                  <EditFollowButton currentUser={currentUser} className="editFollow" user={user} />
                 </section>
 
                 <section className="upInfoMid" >
