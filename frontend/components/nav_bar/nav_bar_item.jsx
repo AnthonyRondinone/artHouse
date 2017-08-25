@@ -17,14 +17,22 @@ class NavBarItem extends React.Component {
 
   render() {
 
+    if (this.props.currentUser) {
+      return (
+        <div className="nav-main" >
+          <Link className="profile-icon" to={`/users/${this.props.currentUser.id}`}><img src={window.images.profileIcon} alt="profile-icon" /></Link>
+          <button className="profile-icon" ><img src={window.images.addPhoto} alt="add-icon" /></button>
+          <button className="profile-icon" ><img src={window.images.logout} alt="logout-icon" onClick={this.handleClick} /></button>
 
-    return (
-      <div className="nav-main" >
+        </div>
+      );
+    } else {
+      return (
+      <div></div>
+      );
+    }
 
-          <button className="profile-icon" ><img src={window.images.logout} alt="logoutIcon" onClick={this.handleClick} /></button>
 
-      </div>
-    );
   }
 
 }
