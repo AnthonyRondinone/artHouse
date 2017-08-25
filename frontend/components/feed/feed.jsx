@@ -9,6 +9,7 @@ class Feed extends React.Component {
   }
 
   handleClick(e) {
+    // debugger
     e.preventDefault();
     this.props.logout();
 
@@ -21,6 +22,10 @@ class Feed extends React.Component {
         <div>
           <button onClick={this.handleClick}>Log out</button>
         </div>
+      );
+    } else {
+      return (
+        <div></div>
       );
     }
 

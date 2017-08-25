@@ -4,12 +4,14 @@ import FeedContainer from './feed/feed_container';
 import {Route, Redirect, Switch} from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProfileContainer from './profile_page/profile_container';
+import NavBarContainer from './nav_bar/nav_bar_container';
 
 
 const App = () => (
   <div>
+      <NavBarContainer component={NavBarContainer}/>
 
-      <Route path="/" exact component={SessionContainer} />
+      <Route path="/" exact component={FeedContainer} />
       <Route path="/users/:userId" component={ProfileContainer} />
 
     <Switch>
