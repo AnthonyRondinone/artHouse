@@ -127,6 +127,14 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.upPostIndex:after {
+  content: "";
+  flex: 1 1 100%;
+  max-width: 33.3%;
 }
 
 .upPostContain {
@@ -135,12 +143,19 @@
   overflow: hidden;
   margin: auto;
   margin-bottom: 25px;
+  display: inline-block;
+  text-align: center;
+  text-align: center;
 
 }
 
 .upPostImg {
-  position: relative;
   overflow: hidden;
-  width: 100%;
-
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  min-height: 290px;
+  vertical-align: middle;
+  height: auto;
+  padding-bottom:100%;
 }

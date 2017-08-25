@@ -9,6 +9,12 @@ class ProfileItem extends React.Component {
     super(props);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.userId !== nextProps.match.params.userId) {
+      this.props.requestSingleUser(nextProps.match.params.userId);
+    }
+  }
+
   componentDidMount() {
     this.props.requestSingleUser(this.props.match.params.userId);
   }
