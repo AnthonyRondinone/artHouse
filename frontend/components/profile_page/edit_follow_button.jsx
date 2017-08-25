@@ -7,7 +7,6 @@ class EditFollowButton extends React.Component {
   }
 
   render() {
-    debugger
     if (this.props.currentUser) {
       if (this.props.match.params.userId === String(this.props.currentUser.id)) {
         return (
