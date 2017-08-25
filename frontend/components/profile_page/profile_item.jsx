@@ -68,8 +68,10 @@ class ProfileItem extends React.Component {
                 </section>
 
                 <section className="upInfoBottom" >
-                  <p className="upName" >{user.name}</p>
-                  <span className="upBio" >{user.bio}</span>
+                    <p className="upName" >{user.name}</p>
+
+                    <span className="upBio" >{user.bio}</span>
+
                 </section>
 
               </section>

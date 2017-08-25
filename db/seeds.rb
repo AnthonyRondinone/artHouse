@@ -9,7 +9,7 @@
 User.destroy_all
 
 demo = User.create({name: "Demo", website: "www.art.com", email: "Rondinone.design@gamil.com", bio: "I'm a cool artist", username: "demo", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.56+PM.png"})
-user1 = User.create({name: "Anthony Rondinone Artwork", website: "www.art.com", email: "Rondinone.design@gamil.com", bio: "I'm a cool artist and I really like art. Someone please bye by art.", username: "anthony_rondinone", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.56+PM.png"})
+user1 = User.create({name: "Anthony Rondinone Artwork", website: "www.art.com", email: "Rondinone.design@gamil.com", bio: "I'm a cool artist and please buy some art!", username: "anthony_rondinone", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.56+PM.png"})
 user2 = User.create({name: "Chris Graphics", website: "www.art.com", email: "Chris@gamil.com", bio: "Email or DM me with questions!", username: "chris Graphic", password: "password"})
 user3 = User.create({name: "E.d Photography", website: "www.photo.com", email: "EdPhoto@gamil.com", bio: "Travel and Food photographer", username: "e.d_photography", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-24+at+7.32.30+PM.png"})
 

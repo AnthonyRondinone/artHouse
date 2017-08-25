@@ -110,16 +110,21 @@
 .upInfoBottom {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
 }
+
+
 
 .upName {
   font-weight: 700;
   margin: 0;
+  float: left;
 }
 
 .upBio {
   font-weight: 400;
   margin-left: 10px;
+  float: left;
 }
 
 
