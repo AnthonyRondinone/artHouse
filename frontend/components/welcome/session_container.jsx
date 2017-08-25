@@ -24,6 +24,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       processForm: (user) => dispatch(signup(user)),
       clearErrors: () => dispatch(clearErrors())
     });
+  } else {
+    return ({});
   }
 
 };

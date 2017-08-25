@@ -1,0 +1,166 @@
+.UserProfile {
+  background: #fafafa;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 100;
+}
+
+.userName {
+  font-weight: 200;
+  font-size: 30px;
+}
+
+.editFollow {
+  height: 26px;
+  width: 125px;
+  background: #fafafa;
+  border-radius: 3px;
+  border-style: solid;
+  border: 1px solid #dbdbdb;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  margin-left: 25px;
+}
+
+.upMain {
+  width: 935px;
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+.upMainInfo {
+  width: 935px;
+  height: 152;
+  display: flex;
+  margin-bottom: 44px;
+}
+
+.upAvatarCush {
+  width: 33%;
+  height: 152px;
+  margin-right: 30px;
+}
+
+.upAvatarContain {
+  width: 152px;
+  height: 152px;
+  overflow: hidden;
+  -moz-border-radius:75px;
+    -webkit-border-radius: 75px;
+    margin: auto;
+}
+
+.upAvatar {
+  overflow: hidden;
+  max-width: 102%;
+  max-height: 102%;
+}
+
+.upInfo {
+  display: flex;
+  flex-direction: column;
+  width: 66%;
+}
+
+.userName {
+  margin: 0px;
+}
+
+.upInfoTop {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.upInfoMid {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.upInfoBottom {
+  display: flex;
+  width: 100%;
+}
+
+.upCountNum {
+  font-weight: 600;
+}
+
+.upCountText {
+  font-weight: 400;
+}
+
+.upCount {
+  margin-right: 60px;
+}
+
+.upInfoBottom {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+
+
+.upName {
+  font-weight: 700;
+  margin: 0;
+  float: left;
+}
+
+.upBio {
+  font-weight: 400;
+  margin-left: 10px;
+  float: left;
+}
+
+
+.upPostIndex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.upPostIndex:after {
+  content: "";
+  flex: 1 1 100%;
+  max-width: 33.3%;
+}
+
+.upPostContain {
+  width: 290px;
+  height: 290px;
+  overflow: hidden;
+  margin: auto;
+  margin-bottom: 25px;
+  display: inline-block;
+  text-align: center;
+  text-align: center;
+
+}
+
+.upPostImg {
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  min-height: 290px;
+  vertical-align: middle;
+  height: auto;
+  padding-bottom:100%;
+}
