@@ -7,6 +7,7 @@ export const requestSignUp = (user) => {
   });
 };
 
+
 export const requestLogin = (user) => {
   return $.ajax({
     method: "POST",
