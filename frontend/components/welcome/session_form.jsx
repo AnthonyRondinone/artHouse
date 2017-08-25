@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
 
   handleDemoClick(e) {
     e.preventDefault();
-    let user = { username: "demo", password: "password"};
+    let user = { username: "anthony_rondinone", password: "password"};
     dispatch(login(user)).then(() => this.props.history.push('/'));
   }
 
