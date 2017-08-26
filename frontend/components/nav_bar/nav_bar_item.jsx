@@ -6,7 +6,6 @@ class NavBarItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.handleProfileClick = this.handleProfileClick.bind(this);
   }
 
   handleClick(e) {
@@ -14,12 +13,6 @@ class NavBarItem extends React.Component {
     this.props.logout();
   }
 
-  handleProfileClick(e) {
-    e.preventDefault();
-    debugger
-    this.props.requestSingleUser(this.props.currentUser.id)
-    .then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
-  }
 
   render() {
 
@@ -36,7 +29,7 @@ class NavBarItem extends React.Component {
           </div>
 
           <div className="nav-right">
-          <button className="right-nav-icon" onClick={this.handleProfileClick}><img src={window.images.profileIcon} alt="profile-icon" /></button>
+          <Link to={`/users/${this.props.currentUser.id}`}><img src={window.images.profileIcon} alt="profile-icon" /></Link>
             <Link className="right-nav-icon"
               to={`/create`}>
               <img src={window.images.addPhoto} alt="profile-icon" />

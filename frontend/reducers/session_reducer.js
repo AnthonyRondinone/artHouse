@@ -13,7 +13,6 @@ export const SessionReducer = (state = defaultState, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-    debugger
       return {currentUser: action.currentUser, errors: []};
     case RECEIVE_ERRORS:
       return {currentUser: null, errors: action.errors};

@@ -22,7 +22,6 @@ class ProfileItem extends React.Component {
 
 
   render() {
-    debugger
     const {user, posts, currentUser} = this.props;
 
     if (this.props.user) {
