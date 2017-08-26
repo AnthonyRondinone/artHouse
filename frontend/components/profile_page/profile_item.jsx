@@ -92,7 +92,7 @@ class ProfileItem extends React.Component {
       );
     } else {
       return (
-        <div>broken</div>
+        <div></div>
       );
     }
   }
