@@ -1,5 +1,5 @@
 import { RECEIVE_SINGLE_USER, requestSingleUser } from '../actions/user_actions';
-import { NEW_POST, createNewPost, addNewPost } from '../actions/post_actions';
+import { RECEIVE_NEW_POST, createNewPost, receiveNewPost } from '../actions/post_actions';
 import { merge } from 'lodash';
 
 export const postsReducer = ( state = {}, action ) => {
@@ -9,7 +9,7 @@ export const postsReducer = ( state = {}, action ) => {
     case RECEIVE_SINGLE_USER:
       newState = merge({}, state, action.posts);
       return newState;
-    case NEW_POST:
+    case RECEIVE_NEW_POST:
     debugger
       newState = merge({}, state, {[action.post.id]: action.post});
       return newState;

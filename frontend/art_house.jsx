@@ -5,7 +5,7 @@ import Root from './components/root';
 
 // test
 import { sendNewPost} from './util/post_api_util';
-import {createNewPost, addNewPost} from './actions/post_actions';
+import {createNewPost, receiveNewPost} from './actions/post_actions';
 import { requestSingleUser } from './actions/user_actions';
 import { login, logout, signup } from './actions/session_actions';
 import { fetchSingleUser } from './util/user_api_util';
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // test
   window.sendNewPost = sendNewPost;
   window.createNewPost = createNewPost;
-  window.addNewPost = addNewPost;
+  window.receiveNewPost = receiveNewPost;
   window.requestSingleUser = requestSingleUser;
   window.signup = signup;
   window.login = login;

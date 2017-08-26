@@ -12,7 +12,6 @@ const mapStateToProps = ( state, ownProps ) => {
       currentUser: state.session.currentUser
     };
   } else {
-    // debugger
     return {};
   }
 };

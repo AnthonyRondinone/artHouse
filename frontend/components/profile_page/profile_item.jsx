@@ -16,6 +16,7 @@ class ProfileItem extends React.Component {
   }
 
   componentDidMount() {
+
     this.props.requestSingleUser(this.props.match.params.userId);
   }
 

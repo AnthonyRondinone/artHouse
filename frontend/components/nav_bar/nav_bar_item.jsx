@@ -9,20 +9,35 @@ class NavBarItem extends React.Component {
   }
 
   handleClick(e) {
-    // debugger
     e.preventDefault();
     this.props.logout();
-
   }
+
 
   render() {
 
     if (this.props.currentUser) {
       return (
         <div className="nav-main" >
-          <Link className="profile-icon" to={`/users/${this.props.currentUser.id}`}><img src={window.images.profileIcon} alt="profile-icon" /></Link>
-          <button className="profile-icon" ><img src={window.images.addPhoto} alt="add-icon" /></button>
-          <button className="profile-icon" ><img src={window.images.logout} alt="logout-icon" onClick={this.handleClick} /></button>
+
+          <div className="logo-container">
+            <Link to="/"><img src={window.images.navLogo} /></Link>
+          </div>
+
+          <div className="search-container">
+            <input type="text" placeholder="Search" />
+          </div>
+
+          <div className="nav-right">
+          <Link to={`/users/${this.props.currentUser.id}`}><img src={window.images.profileIcon} alt="profile-icon" /></Link>
+            <Link className="right-nav-icon"
+              to={`/create`}>
+              <img src={window.images.addPhoto} alt="profile-icon" />
+            </Link>
+            <button className="logout-icon" >
+              <img src={window.images.logout} alt="logout-icon" onClick={this.handleClick} />
+            </button>
+          </div>
 
         </div>
       );
