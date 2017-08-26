@@ -61,7 +61,7 @@ class SessionForm extends React.Component {
         </div>
         <section className="form">
           <form className="inputSection" onSubmit={this.handleSubmit}>
-            <h1>artHouse</h1>
+            <img src={window.images.signInLogo} />
             <h4 className="pitch">{SignUpPitch}</h4>
             <input className="authInput" type="text" onChange={this.handleUsernameChange} value={this.state.username} placeholder="Username"/>
             <br></br>

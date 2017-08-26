@@ -17,8 +17,8 @@ class NavBarItem extends React.Component {
   handleProfileClick(e) {
     e.preventDefault();
     debugger
-    this.props.requestSingleUser(this.props.currentUser.user.id)
-    .then(() => this.props.history.push(`/users/${this.props.currentUser.user.id}`));
+    this.props.requestSingleUser(this.props.currentUser.id)
+    .then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
   }
 
   render() {
@@ -28,7 +28,11 @@ class NavBarItem extends React.Component {
         <div className="nav-main" >
 
           <div className="logo-container">
+            <Link to="/"><img src={window.images.navLogo} /></Link>
+          </div>
 
+          <div className="search-container">
+            <input type="text" placeholder="Search" />
           </div>
 
           <div className="nav-right">

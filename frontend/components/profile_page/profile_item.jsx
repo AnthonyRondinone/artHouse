@@ -16,11 +16,13 @@ class ProfileItem extends React.Component {
   }
 
   componentDidMount() {
+
     this.props.requestSingleUser(this.props.match.params.userId);
   }
 
 
   render() {
+    debugger
     const {user, posts, currentUser} = this.props;
 
     if (this.props.user) {
