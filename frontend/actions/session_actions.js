@@ -42,7 +42,7 @@ export const logout = () => (dispatch) => {
 export const signup = (user) => (dispatch) => {
   return requestSignUp(user)
   .then(
-    (user) => dispatch(receiveCurrentUser(user)),
+    (payload) => dispatch(receiveCurrentUser(payload.user)),
     (errors) => dispatch(receiveErrors(errors))
   );
 };
