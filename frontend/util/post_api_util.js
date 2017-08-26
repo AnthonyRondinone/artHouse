@@ -4,6 +4,8 @@ export const sendNewPost = (post) => {
     return $.ajax({
       method: 'POST',
       url: `/api/posts`,
-      data: { post }
+      contentType: false,
+      processData: false,
+      data: post
     });
 };

@@ -1,8 +1,8 @@
-export const NEW_POST = 'NEW_POST';
+export const RECEIVE_NEW_POST = 'RECEIVE_NEW_POST';
 
-export const addNewPost = (post) => {
+export const receiveNewPost = (post) => {
   return {
-    type: 'NEW_POST',
+    type: 'RECEIVE_NEW_POST',
     post
   };
 };
@@ -17,6 +17,6 @@ export const receivePostErrors = (errors) => {
 export const createNewPost = ( post ) => (dispatch) => {
   return sendNewPost(post)
   .then(
-    (post) => dispatch(addNewPost(post))
+    (post) => dispatch(receiveNewPost(post))
   );
 };

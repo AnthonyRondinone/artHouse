@@ -5,12 +5,13 @@ import {Route, Redirect, Switch} from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProfileContainer from './profile_page/profile_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
+import NewPostContainer from './create_new_post/new_post_container';
 
 
 const App = () => (
   <div>
       <NavBarContainer component={NavBarContainer}/>
-
+      <Route path="/create" component={NewPostContainer}/>
       <ProtectedRoute path="/" exact component={FeedContainer} />
       <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
 
