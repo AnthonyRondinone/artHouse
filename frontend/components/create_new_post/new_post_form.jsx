@@ -1,4 +1,5 @@
 import React from 'react';
+import Dropzone from 'react-dropzone';
 
 
 class NewPostForm extends React.Component {
@@ -12,6 +13,7 @@ class NewPostForm extends React.Component {
     this.updateCaption = this.updateCaption.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateDraggedFile = this.updateDraggedFile.bind(this);
   }
 
   handleSubmit(e) {
@@ -35,21 +37,41 @@ class NewPostForm extends React.Component {
     fileReader.onloadend = function () {
       this.setState({ imageFile: file, imageURL: fileReader.result });
     }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+      $('.drag-zone').remove();
+    }
+  }
+
+  updateDraggedFile (e) {
+  let file = e[0];
+  let fileReader = new FileReader();
+  fileReader.onloadend = function() {
+    this.setState({imageFile: file, imageURL: fileReader.result });
+  }.bind(this);
+
     if (file) {
       fileReader.readAsDataURL(file);
     }
-
   }
 
 
+
+
   render() {
+    let dropClass = "drop-zone";
+    if (this.state.imageURL) {
+      dropClass = 'remove';
+    }
     return (
       <div>
         <p>Share</p>
         <form onSubmit={this.handleSubmit}>
           <img src={ this.state.imageURL } />
-          <input type='text' onChange={this.updateCaption} value={this.state.caption}/>
+          <Dropzone className={dropClass} onDrop={this.updateDraggedFile}>Drag Image Here</Dropzone>
           <input type='file' onChange={this.updateFile} />
+          <input type='text' onChange={this.updateCaption} value={this.state.caption}/>
           <button>Share post</button>
         </form>
       </div>
