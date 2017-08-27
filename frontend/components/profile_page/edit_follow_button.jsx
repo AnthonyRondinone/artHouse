@@ -6,7 +6,8 @@ class EditFollowButton extends React.Component {
     super(props);
   }
 
-  
+
+
 
 
   render() {
@@ -15,7 +16,9 @@ class EditFollowButton extends React.Component {
     if (currentUser) {
       if (this.props.match.params.userId === String(currentUser.id)) {
         return (
-          <Link to={`/users/${currentUser.id}/edit`} ><button className="editFollow" >Edit Profile</button></Link>
+          <Link to={`/users/${currentUser.id}/edit`} >
+            <button className="editFollow" >Edit Profile</button>
+          </Link>
         );
       } else if ((this.props.match.params.userId !== String(currentUser.id)) || currentUser === null) {
         return (

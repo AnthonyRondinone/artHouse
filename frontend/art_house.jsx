@@ -12,7 +12,7 @@ import { fetchSingleUser } from './util/user_api_util';
 import { requestSignUp, requestLogin, requestLogout } from './util/session_api_util';
 import {selectUsersPosts} from './reducers/selectors';
 import { addFollow, removeFollow } from './util/follow_api_util';
-import { addNewFollow } from './actions/follow_actions';
+import { addNewFollow, unFollow } from './actions/follow_actions';
 // test
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // test
+  window.unFollow = unFollow;
   window.addNewFollow = addNewFollow;
   window.removeFollow = removeFollow;
   window.addFollow = addFollow;

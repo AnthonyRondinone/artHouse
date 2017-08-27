@@ -10,6 +10,7 @@ export const postsReducer = ( state = {}, action ) => {
       newState = merge({}, state, action.posts);
       return newState;
     case RECEIVE_NEW_POST:
+    debugger
       newState = merge({}, state, {[action.post.id]: action.post});
       return newState;
     default:

@@ -1,8 +1,8 @@
 import * as APIUtil from '../util/follow_api_util';
 export const RECEIVE_FOLLOW = "RECEIVE_FOLLOW";
+export const DELETE_FOLLOW = 'DELETE_FOLLOW';
 
 export const receiveFollow = (follow) => {
-  debugger
   return {
     type: "RECEIVE_FOLLOW",
     follow
@@ -11,12 +11,23 @@ export const receiveFollow = (follow) => {
 
 
 export const addNewFollow = (follow) => (dispatch) => {
-  debugger
   return APIUtil.addFollow(follow)
   .then(
-    (newfollow) => {
-      debugger
-      dispatch(receiveFollow(newfollow));
-    }
+    (newFollow) => dispatch(receiveFollow(newFollow))
+  );
+};
+
+
+export const deleteFollow = (follow) => {
+  return {
+    type: "DELETE_FOLLOW",
+    follow
+  };
+};
+
+export const unFollow = (followId) => (dispatch) => {
+  return APIUtil.removeFollow(followId)
+  .then(
+    (oldFollow) => dispatch(deleteFollow(oldFollow))
   );
 };
