@@ -158,6 +158,12 @@
   content: "";
   flex: 1 1 0;
   max-width: 33.3%;
+  padding-right: 25px;
+  flex-wrap: wrap;
+}
+
+.upPostImg:after {
+  margin-right: 25px;
 }
 
 .upPostContain {
@@ -168,7 +174,6 @@
   margin-bottom: 25px;
   display: inline-block;
   text-align: center;
-
 }
 
 .upPostImg {

@@ -65,15 +65,37 @@ class NewPostForm extends React.Component {
       dropClass = 'remove';
     }
     return (
-      <div>
-        <p>Share</p>
-        <form onSubmit={this.handleSubmit}>
-          <img src={ this.state.imageURL } />
-          <Dropzone className={dropClass} onDrop={this.updateDraggedFile}>Drag Image Here</Dropzone>
-          <input type='file' onChange={this.updateFile} />
-          <input type='text' onChange={this.updateCaption} value={this.state.caption}/>
-          <button>Share post</button>
-        </form>
+      <div className="main-create" >
+        <div className="inside-create" >
+
+          <p className="create" >Create</p>
+
+          <form onSubmit={this.handleSubmit}>
+
+            <div className="preview-contain" >
+              <img className="preview" src={ this.state.imageURL } />
+            </div>
+
+            <Dropzone className={dropClass} onDrop={this.updateDraggedFile}>
+              <p>Click to upload</p>
+              <p>OR</p>
+              <p>Drag and Drop Image</p>
+            </Dropzone>
+
+            <div className="caption">
+              <input className="caption-input"
+                type='text'
+                placeholder="Add caption . . ."
+                onChange={this.updateCaption}
+                value={this.state.caption}/>
+            </div>
+            <div className="button-contain">
+              <button className="share-button">Share post</button>
+            </div>
+
+          </form>
+
+        </div>
       </div>
     );
   }
