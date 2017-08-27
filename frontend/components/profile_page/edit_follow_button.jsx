@@ -31,7 +31,7 @@ class EditFollowButton extends React.Component {
       if (this.props.match.params.userId === String(currentUser.id)) {
         return (
           <Link to={`/users/${currentUser.id}/edit`} >
-            <button className="editFollow" >Edit Profile</button>
+            <button className="editFollowing" >Edit Profile</button>
           </Link>
         );
       } else if ((this.props.match.params.userId !== String(currentUser.id)) || currentUser === null) {
@@ -41,7 +41,7 @@ class EditFollowButton extends React.Component {
           switch(followState) {
             case "Following":
             return (
-              <button className="editFollow" onClick={this.handleUnfollow} >{followState}</button>
+              <button className="editFollowing" onClick={this.handleUnfollow} >{followState}</button>
             );
             case "Follow":
             return (
