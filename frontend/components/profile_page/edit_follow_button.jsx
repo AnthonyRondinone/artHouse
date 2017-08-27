@@ -6,13 +6,18 @@ class EditFollowButton extends React.Component {
     super(props);
   }
 
+  
+
+
   render() {
-    if (this.props.currentUser) {
-      if (this.props.match.params.userId === String(this.props.currentUser.id)) {
+    const {user, currentUser} = this.props;
+
+    if (currentUser) {
+      if (this.props.match.params.userId === String(currentUser.id)) {
         return (
-          <button className="editFollow" >Edit Profile</button>
+          <Link to={`/users/${currentUser.id}/edit`} ><button className="editFollow" >Edit Profile</button></Link>
         );
-      } else if ((this.props.match.params.userId !== String(this.props.currentUser.id)) || this.props.currentUser === null) {
+      } else if ((this.props.match.params.userId !== String(currentUser.id)) || currentUser === null) {
         return (
           <button className="editFollow" >Follow</button>
         );
