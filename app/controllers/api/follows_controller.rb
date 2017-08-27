@@ -13,7 +13,11 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
-    @follow = current_user.followed.find_by_followee_id(params[:id])
+    @user = User.find(params[:id])
+    @follow = current_user.followed.find_by(followee_id: params[:id])
+    if @follow.destroy
+      render :show
+    end
   end
 
 
@@ -22,6 +26,8 @@ class Api::FollowsController < ApplicationController
 
   def follow_params
     params.require(:follow).permit(:followee_id)
+
+
   end
 
 end
