@@ -49,7 +49,6 @@ class ProfileItem extends React.Component {
 
                 <section className="upInfoTop">
                   <p className="userName" >{user.username}</p>
-
                   <EditFollowButton className="editFollow"
                     currentUser={currentUser}
                     user={user}
