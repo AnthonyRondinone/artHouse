@@ -13,6 +13,7 @@ class NewPostForm extends React.Component {
     this.updateCaption = this.updateCaption.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateDraggedFile = this.updateDraggedFile.bind(this);
   }
 
   handleSubmit(e) {
@@ -39,6 +40,7 @@ class NewPostForm extends React.Component {
 
     if (file) {
       fileReader.readAsDataURL(file);
+      $('.drag-zone').remove();
     }
   }
 
@@ -46,7 +48,7 @@ class NewPostForm extends React.Component {
   let file = e[0];
   let fileReader = new FileReader();
   fileReader.onloadend = function() {
-    this.setState({imageFile: file, imageUrl: fileReader.result });
+    this.setState({imageFile: file, imageURL: fileReader.result });
   }.bind(this);
 
     if (file) {
@@ -58,12 +60,16 @@ class NewPostForm extends React.Component {
 
 
   render() {
+    let dropClass = "drop-zone";
+    if (this.state.imageURL) {
+      dropClass = 'remove';
+    }
     return (
       <div>
         <p>Share</p>
         <form onSubmit={this.handleSubmit}>
           <img src={ this.state.imageURL } />
-          <Dropzone className="drop-zone" onDrop={this.updateDraggedFile}>Drag Image Here</Dropzone>
+          <Dropzone className={dropClass} onDrop={this.updateDraggedFile}>Drag Image Here</Dropzone>
           <input type='file' onChange={this.updateFile} />
           <input type='text' onChange={this.updateCaption} value={this.state.caption}/>
           <button>Share post</button>

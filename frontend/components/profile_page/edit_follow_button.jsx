@@ -4,18 +4,50 @@ import { Link, withRouter } from 'react-router-dom';
 class EditFollowButton extends React.Component {
   constructor(props) {
     super(props);
+    this.handleUnfollow = this.handleUnfollow.bind(this);
+    this.handleFollow = this.handleFollow.bind(this);
   }
 
+  handleUnfollow(e) {
+    e.preventDefault();
+    dispatch(this.props.unFollow(this.props.user.id));
+  }
+
+  handleFollow(e) {
+    e.preventDefault();
+
+    dispatch(this.props.addNewFollow({follow: {
+      follower_id: this.props.currentUser.id,
+      followee_id: this.props.user.id
+    }}));
+
+  }
+
+
+
   render() {
-    if (this.props.currentUser) {
-      if (this.props.match.params.userId === String(this.props.currentUser.id)) {
+    const {user, currentUser} = this.props;
+    if (currentUser) {
+      if (this.props.match.params.userId === String(currentUser.id)) {
         return (
-          <button className="editFollow" >Edit Profile</button>
+          <Link to={`/users/${currentUser.id}/edit`} >
+            <button className="editFollowing" >Edit Profile</button>
+          </Link>
         );
-      } else if ((this.props.match.params.userId !== String(this.props.currentUser.id)) || this.props.currentUser === null) {
-        return (
-          <button className="editFollow" >Follow</button>
-        );
+      } else if ((this.props.match.params.userId !== String(currentUser.id)) || currentUser === null) {
+
+          let followState = user.followerIds.includes(currentUser.id) ? "Following" : "Follow";
+
+          switch(followState) {
+            case "Following":
+            return (
+              <button className="editFollowing" onClick={this.handleUnfollow} >{followState}</button>
+            );
+            case "Follow":
+            return (
+              <button className="editFollow" onClick={this.handleFollow} >{followState}</button>
+            );
+          }
       }
     } else {
       return (

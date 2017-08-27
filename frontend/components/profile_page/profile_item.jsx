@@ -34,7 +34,6 @@ class ProfileItem extends React.Component {
       />);
 
 
-
       return (
         <div className="UserProfile" >
           <div className="upMain" >
@@ -50,8 +49,12 @@ class ProfileItem extends React.Component {
 
                 <section className="upInfoTop">
                   <p className="userName" >{user.username}</p>
-
-                  <EditFollowButton currentUser={currentUser} className="editFollow" user={user} />
+                  <EditFollowButton className="editFollow"
+                    currentUser={currentUser}
+                    user={user}
+                    addNewFollow={addNewFollow}
+                    unFollow={unFollow}
+                  />
                 </section>
 
                 <section className="upInfoMid" >
