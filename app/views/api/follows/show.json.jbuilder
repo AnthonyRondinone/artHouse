@@ -1,2 +1,2 @@
 
-json.followerIds @user.followers.map(&:id)
+json.extract! @follow, :follower_id, :followee_id
