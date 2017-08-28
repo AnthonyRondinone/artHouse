@@ -13,11 +13,10 @@ class FeedIndexItem extends React.Component {
     const { id, artistId, avatar, username, image, createdAt, likeIds, liked, commentIds, caption} = this.props;
 
     let like = likeIds.length === 1 ? " like" : " likes";
-    debugger
     return (
       <div >
 
-        <div key={id}>
+        <div>
 
           <div>
             <Link to={`/users/${artistId}`}><img src={avatar} /></Link>

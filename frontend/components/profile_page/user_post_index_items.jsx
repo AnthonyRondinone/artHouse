@@ -19,4 +19,5 @@ class UserPostIndexItem extends React.Component {
 }
 
 
+
 export default UserPostIndexItem;

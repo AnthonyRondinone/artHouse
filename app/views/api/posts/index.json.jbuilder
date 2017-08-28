@@ -49,6 +49,8 @@ json.comments do
   @current_user_posts.each do |post|
     post.comments.each do |comment|
       json.set! comment.id do
+        json.id comment.id
+        json.author comment.author.username
         json.authorId comment.author_id
         json.postId comment.post_id
         json.body comment.body

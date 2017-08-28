@@ -19,7 +19,7 @@ class Feed extends React.Component {
     const { posts, currentUser } = this.props;
 
     const feedIndexItems = posts.map((post) => <FeedIndexItem
-    id={post.id}
+    key={post.id}
     artistId={post.artistId}
     avatar={post.avatar}
     username={post.username}

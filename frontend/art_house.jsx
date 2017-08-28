@@ -10,7 +10,7 @@ import { requestSingleUser } from './actions/user_actions';
 import { login, logout, signup } from './actions/session_actions';
 import { fetchSingleUser } from './util/user_api_util';
 import { requestSignUp, requestLogin, requestLogout } from './util/session_api_util';
-import {selectUsersPosts, selectFeedPosts} from './reducers/selectors';
+import {selectUsersPosts, selectFeedPosts, selectPostComments} from './reducers/selectors';
 import { addFollow, removeFollow } from './util/follow_api_util';
 import { addNewFollow, unFollow } from './actions/follow_actions';
 // test
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // test
+  window.selectPostComments = selectPostComments;
   window.selectFeedPosts = selectFeedPosts;
   window.importFeedPosts = importFeedPosts;
   window.receiveFeedPosts = receiveFeedPosts;
