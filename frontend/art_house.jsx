@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 // test
-import { sendNewPost} from './util/post_api_util';
+import { sendNewPost, fetchAllFolloweePosts } from './util/post_api_util';
 import {createNewPost, receiveNewPost} from './actions/post_actions';
 import { requestSingleUser } from './actions/user_actions';
 import { login, logout, signup } from './actions/session_actions';
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // test
+  window.fetchAllFolloweePosts = fetchAllFolloweePosts;
   window.unFollow = unFollow;
   window.addNewFollow = addNewFollow;
   window.removeFollow = removeFollow;

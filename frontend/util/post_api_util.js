@@ -9,3 +9,10 @@ export const sendNewPost = (post) => {
       data: post
     });
 };
+
+export const fetchAllFolloweePosts = () => {
+  return $.ajax({
+      method: 'GET',
+      url: '/api/posts'
+  });
+};
