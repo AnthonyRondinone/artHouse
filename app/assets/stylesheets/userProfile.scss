@@ -150,13 +150,12 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
-
+  justify-content: center;
 }
 
 .upPostIndex:after {
   content: "";
-  flex: 1 1 0;
+  flex: 1 1 100;
   max-width: 33.3%;
   padding-right: 25px;
   flex-wrap: wrap;
@@ -167,12 +166,12 @@
 }
 
 .upPostContain {
+  padding: 0px;
   width: 290px;
   height: 290px;
   overflow: hidden;
   margin: auto;
   margin-bottom: 25px;
-  display: inline-block;
   text-align: center;
 }
 

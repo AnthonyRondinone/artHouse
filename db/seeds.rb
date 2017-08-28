@@ -9,7 +9,7 @@
 User.destroy_all
 
 demo = User.create({name: "Demo", website: "www.art.com", email: "Rondinone.design@gamil.com", bio: "I'm a cool artist", username: "demo", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.56+PM.png"})
-user1 = User.create({name: "Anthony Rondinone Artwork", website: "www.art.com", email: "Rondinone.design@gamil.com", bio: "I'm a cool artist and please buy some art!", username: "anthony_rondinone", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.56+PM.png"})
+user1 = User.create({name: "Anthony Rondinone Artwork", website: "www.art.com", email: "Rondinone.design@gamil.com", bio: "I'm a cool artist, please buy some art!", username: "anthony_rondinone", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.56+PM.png"})
 user2 = User.create({name: "Chris Graphics", website: "www.art.com", email: "Chris@gamil.com", bio: "Email or DM me with questions!", username: "chris Graphic", password: "password"})
 user3 = User.create({name: "E.d Photography", website: "www.photo.com", email: "EdPhoto@gamil.com", bio: "Travel and Food photographer", username: "e.d_photography", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-24+at+7.32.30+PM.png"})
 
@@ -44,3 +44,11 @@ post19 = Post.create({caption: "This is cool!", artist_id: user3.id, image: "htt
 post19 = Post.create({caption: "This is cool!", artist_id: user3.id, image: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-24+at+7.33.11+PM.png"})
 post19 = Post.create({caption: "This is cool!", artist_id: user3.id, image: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-24+at+7.33.02+PM.png"})
 post19 = Post.create({caption: "This is cool!", artist_id: user3.id, image: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-24+at+7.32.51+PM.png"})
+
+
+Comment.destroy_all
+
+comment1 = Comment.create({body: "Cool piccc", author_id: user2.id, post_id: post2.id})
+comment1 = Comment.create({body: "comment2", author_id: user3.id, post_id: post2.id})
+comment1 = Comment.create({body: "comment3", author_id: demo.id, post_id: post2.id})
+comment1 = Comment.create({body: "comment4", author_id: user2.id, post_id: post3.id})

@@ -11,3 +11,17 @@ export const selectUsersPosts = (state) => {
   }
   return usersPostsArray.sort().reverse();
 };
+
+export const selectFeedPosts = state => {
+  let feedArray = values(state.entities.posts);
+  feedArray.sort(function(a, b){
+      var keyA = new Date(a.createdAt),
+          keyB = new Date(b.createdAt);
+      if(keyA < keyB) return -1;
+      if(keyA > keyB) return 1;
+      return 0;
+  });
+
+  return feedArray;
+
+};

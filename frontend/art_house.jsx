@@ -5,12 +5,12 @@ import Root from './components/root';
 
 // test
 import { sendNewPost, fetchAllFolloweePosts } from './util/post_api_util';
-import {createNewPost, receiveNewPost} from './actions/post_actions';
+import {createNewPost, receiveNewPost, receiveFeedPosts, importFeedPosts} from './actions/post_actions';
 import { requestSingleUser } from './actions/user_actions';
 import { login, logout, signup } from './actions/session_actions';
 import { fetchSingleUser } from './util/user_api_util';
 import { requestSignUp, requestLogin, requestLogout } from './util/session_api_util';
-import {selectUsersPosts} from './reducers/selectors';
+import {selectUsersPosts, selectFeedPosts} from './reducers/selectors';
 import { addFollow, removeFollow } from './util/follow_api_util';
 import { addNewFollow, unFollow } from './actions/follow_actions';
 // test
@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // test
+  window.selectFeedPosts = selectFeedPosts;
+  window.importFeedPosts = importFeedPosts;
+  window.receiveFeedPosts = receiveFeedPosts;
   window.fetchAllFolloweePosts = fetchAllFolloweePosts;
   window.unFollow = unFollow;
   window.addNewFollow = addNewFollow;

@@ -1,19 +1,21 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Feed from './feed';
+import { selectFeedPosts } from '../../reducers/selectors';
+import { importFeedPosts } from '../../actions/post_actions';
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    posts: selectFeedPosts(state)
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    logout: () => dispatch(logout())
+    importFeedPosts: () => dispatch(importFeedPosts())
   };
 };
 

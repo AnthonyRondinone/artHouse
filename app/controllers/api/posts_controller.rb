@@ -5,7 +5,6 @@ class Api::PostsController < ApplicationController
 
     @followees = current_user.followed_artists.includes(posts: [:comments, :likes])
     @current_user_posts = current_user.posts.includes(:comments, :likes)
-
     render :index
 
   end

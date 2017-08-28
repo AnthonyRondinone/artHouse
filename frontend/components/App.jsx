@@ -12,7 +12,7 @@ const App = () => (
   <div>
       <NavBarContainer component={NavBarContainer}/>
       <Route path="/create" component={NewPostContainer}/>
-      <ProtectedRoute path="/" exact component={FeedContainer} />
+      <ProtectedRoute path="/" exact={true} component={FeedContainer} />
       <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
 
     <Switch>

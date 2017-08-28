@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :bio, length: { maximum: 150 }
 
-  has_attached_file :avatar, default_url: "defaultAvatar.png"
+  has_attached_file :avatar, default_url: "https://s3.amazonaws.com/arthouse-dev/default-user.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password
@@ -15,7 +15,11 @@ class User < ApplicationRecord
   foreign_key: :artist_id,
   dependent: :destroy
 
-  has_many :comments, dependent: :destroy
+  has_many :comments,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: :Comment,
+  dependent: :destroy
 
   has_many :post_comments,
     through: :posts
