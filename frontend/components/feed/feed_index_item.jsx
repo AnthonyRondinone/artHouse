@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HeartButton from './heart_button';
-// import CommentsContainer from '../comment/comments_container';
+import CommentsContainer from '../comments/comments_container';
 
 class FeedIndexItem extends React.Component {
   constructor(props) {
@@ -42,8 +42,8 @@ class FeedIndexItem extends React.Component {
             <span>{caption}</span>
           </div>
 
-          
 
+          <CommentsContainer commentIds={commentIds}/>
 
         </div>
 
