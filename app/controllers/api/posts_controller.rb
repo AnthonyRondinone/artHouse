@@ -1,6 +1,15 @@
 class Api::PostsController < ApplicationController
 
 
+  def index
+
+    @followees = current_user.followed_artists.includes(posts: [:comments, :likes])
+    @current_user_posts = current_user.posts.includes(:comments, :likes)
+
+    render :index
+
+  end
+
   def create
     @post = Post.new(post_params)
     @post.artist_id = current_user.id

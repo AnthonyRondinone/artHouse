@@ -15,10 +15,10 @@ class User < ApplicationRecord
   foreign_key: :artist_id,
   dependent: :destroy
 
-  # has_many :comments, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
-  # has_many :post_comments,
-  #   through: :posts
+  has_many :post_comments,
+    through: :posts
 
   has_many :followed,
   foreign_key: :follower_id,
