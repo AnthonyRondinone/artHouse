@@ -20,3 +20,17 @@ export const createNewPost = ( post ) => (dispatch) => {
     (post) => dispatch(receiveNewPost(post))
   );
 };
+
+export const receiveFeedPosts = (posts) => {
+  return {
+    type: 'RECEIVE_FEED_POSTS',
+    posts
+  };
+};
+
+export const importFeedPosts = (posts) => (dispatch) => {
+  return fetchAllFolloweePosts()
+  .then(
+    (posts) => dispatch(receiveFeedPosts(posts))
+  );
+};
