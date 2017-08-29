@@ -12,6 +12,7 @@ class NavBarItem extends React.Component {
     e.preventDefault();
     this.props.logout();
   }
+  
 
 
   render() {
