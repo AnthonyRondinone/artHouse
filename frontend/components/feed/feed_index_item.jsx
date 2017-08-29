@@ -12,17 +12,17 @@ class FeedIndexItem extends React.Component {
 
 
   render() {
-    const { id, artistId, avatar, username, image, createdAt, likeIds, liked, commentIds, caption} = this.props;
+    const { id, currentUserId, artistId, avatar, username, image, createdAt, likerIds, liked, commentIds, caption} = this.props;
 
 
     let like;
     let likeCount;
-    if (likeIds === undefined) {
+    if (likerIds === undefined) {
       likeCount = 0;
       like = " likes";
     } else {
-      likeCount = likeIds.length;
-      like = likeIds.length === 1 ? " like" : " likes";
+      likeCount = likerIds.length;
+      like = likerIds.length === 1 ? " like" : " likes";
     }
 
 
@@ -49,8 +49,14 @@ class FeedIndexItem extends React.Component {
 
           <div className="under-image" >
             <div className="button-contain" >
-              <HeartButton className="heart" liked={liked} />
-              <button className="comment-button" ><img src={images.comment} /></button>
+              <HeartButton className="heart"
+                addNewLike={this.props.addNewLike}
+                likerIds={likerIds}
+                postId={id}
+                currentUserId={currentUserId}
+                unLike={this.props.unLike}
+              />
+              <button className="comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i></button>
             </div>
 
             <div className="likes" >

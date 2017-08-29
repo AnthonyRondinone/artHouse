@@ -14,6 +14,8 @@ import {selectUsersPosts, selectFeedPosts, selectPostComments} from './reducers/
 import { addFollow, removeFollow } from './util/follow_api_util';
 import { addNewFollow, unFollow } from './actions/follow_actions';
 import {addComment} from './actions/comment_actions';
+import {addLike, removeLike} from './util/like_api_util';
+import {addNewLike, unLike} from './actions/like_actions';
 // test
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -28,6 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // test
+  window.unLike = unLike;
+  window.addNewLike = addNewLike;
+  window.removeLike = removeLike;
+  window.addLike = addLike;
   window.addComment = addComment;
   window.selectPostComments = selectPostComments;
   window.selectFeedPosts = selectFeedPosts;

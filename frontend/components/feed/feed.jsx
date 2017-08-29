@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import FeedIndexItem from './feed_index_item';
 
+
 class Feed extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +17,7 @@ class Feed extends React.Component {
 
   render() {
 
-    const { posts, currentUser } = this.props;
+    const { posts, currentUser, addNewLike, unLike } = this.props;
 
     const feedIndexItems = posts.map((post) => <FeedIndexItem
     id={post.id}
@@ -26,11 +27,14 @@ class Feed extends React.Component {
     username={post.username}
     image={post.image}
     createdAt={post.createdAt}
-    likeIds={post.likeIds}
+    likerIds={post.likerIds}
     liked={post.liked}
     commentIds={post.commentIds}
     caption={post.caption}
     posts={posts}
+    addNewLike={addNewLike}
+    currentUserId={currentUser.id}
+    unLike={unLike}
     />);
 
     return (

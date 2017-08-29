@@ -4,7 +4,7 @@ export const DELETE_FOLLOW = 'DELETE_FOLLOW';
 
 export const receiveFollow = (follow) => {
   return {
-    type: "RECEIVE_FOLLOW",
+    type: RECEIVE_FOLLOW,
     follow
   };
 };
@@ -20,7 +20,7 @@ export const addNewFollow = (follow) => (dispatch) => {
 
 export const deleteFollow = (follow) => {
   return {
-    type: "DELETE_FOLLOW",
+    type: DELETE_FOLLOW,
     follow
   };
 };

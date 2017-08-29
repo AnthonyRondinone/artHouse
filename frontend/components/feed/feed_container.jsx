@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Feed from './feed';
 import { selectFeedPosts } from '../../reducers/selectors';
 import { importFeedPosts } from '../../actions/post_actions';
+import { likerIds } from '../../actions/like_actions';
 
 const mapStateToProps = state => {
   return {
@@ -15,7 +16,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    importFeedPosts: () => dispatch(importFeedPosts())
+    importFeedPosts: () => dispatch(importFeedPosts()),
+    addNewLike: (like) => dispatch(addNewLike(like)),
+    unLike: (postId) => dispatch(unLike(postId))
   };
 };
 

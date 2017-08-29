@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :likes
+
   has_many :posts,
   primary_key: :id,
   foreign_key: :artist_id,
