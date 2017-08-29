@@ -6,6 +6,7 @@ import {selectPostComments} from '../../reducers/selectors';
 
 
 const mapStateToProps = ( state, ownProps ) => {
+
   return {
     comments: selectPostComments(state, ownProps)
   };

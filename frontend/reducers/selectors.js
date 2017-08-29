@@ -37,7 +37,13 @@ export const selectFeedPosts = state => {
 
 export const selectPostComments = (state, ownProps) => {
   let comments = state.entities.comments;
-  let commentIds = ownProps.commentIds;
-  const postComments = commentIds.map((id) => comments[id]);
+  let commentIds;
+  let postComments;
+  if(ownProps.commentIds) {
+    commentIds = ownProps.commentIds;
+    postComments = commentIds.map((id) => comments[id]);
+  } else {
+    postComments = [];
+  }
   return postComments;
 };

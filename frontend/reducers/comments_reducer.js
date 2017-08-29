@@ -1,4 +1,4 @@
-import { RECEIVE_FEED_POSTS, receiveFeedPosts, importFeedPosts } from '../actions/post_actions';
+import { RECEIVE_FEED_POSTS, importFeedPosts } from '../actions/post_actions';
 import { RECEIVE_COMMENT } from '../actions/comment_actions';
 import { merge } from 'lodash';
 

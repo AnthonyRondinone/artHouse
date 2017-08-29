@@ -14,7 +14,17 @@ class FeedIndexItem extends React.Component {
   render() {
     const { id, artistId, avatar, username, image, createdAt, likeIds, liked, commentIds, caption} = this.props;
 
-    let like = likeIds.length === 1 ? " like" : " likes";
+
+    let like;
+    let likeCount;
+    if (likeIds === undefined) {
+      likeCount = 0;
+      like = " likes";
+    } else {
+      likeCount = likeIds.length;
+      like = likeIds.length === 1 ? " like" : " likes";
+    }
+
 
     let artistName = caption ? username : "";
     let dateTime = createdAt;
@@ -44,7 +54,7 @@ class FeedIndexItem extends React.Component {
             </div>
 
             <div className="likes" >
-              <span>{likeIds.length}</span>
+              <span>{likeCount}</span>
               <span>{like}</span>
             </div>
 

@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.selectFeedPosts = selectFeedPosts;
   window.importFeedPosts = importFeedPosts;
   window.receiveFeedPosts = receiveFeedPosts;
-  window.fetchAllFolloweePosts = fetchAllFolloweePosts;
   window.unFollow = unFollow;
   window.addNewFollow = addNewFollow;
   window.removeFollow = removeFollow;
