@@ -14,37 +14,49 @@ class FeedIndexItem extends React.Component {
     const { id, artistId, avatar, username, image, createdAt, likeIds, liked, commentIds, caption} = this.props;
 
     let like = likeIds.length === 1 ? " like" : " likes";
+
+    let artistName = caption ? username : "";
+
     return (
       <div >
 
-        <div>
+        <div className="post" >
 
-          <div>
-            <Link to={`/users/${artistId}`}><img src={avatar} /></Link>
-            <Link to={`/users/${artistId}`}>{username}</Link>
+          <div className="artist-info" >
+
+            <div className="avatar-contain">
+            <Link to={`/users/${artistId}`}><img className="artist-avatar" src={avatar} /></Link>
+            </div>
+
+            <Link className='artist-name' to={`/users/${artistId}`}>{username}</Link>
           </div>
 
-          <div>
-            <img src={this.props.image}/>
+          <div className="post-image">
+            <img className="image" src={this.props.image}/>
           </div>
 
-          <div>
-            <HeartButton liked={liked} />
-            <button><img src={images.comment} /></button>
+          <div className="under-image" >
+            <div className="button-contain" >
+              <HeartButton className="heart" liked={liked} />
+              <button className="comment-button" ><img src={images.comment} /></button>
+            </div>
+
+            <div className="likes" >
+              <span>{likeIds.length}</span>
+              <span>{like}</span>
+            </div>
+
+            <div className="post-caption" >
+              <span className="author-name" >{artistName} </span>
+              <span>{caption}</span>
+            </div>
+
+            <CommentsContainer commentIds={commentIds} />
+
+            <CommentFormContainer postId={id} />
           </div>
 
-          <div>
-            <span>{likeIds.length}</span>
-            <span>{like}</span>
-          </div>
 
-          <div>
-            <span>{caption}</span>
-          </div>
-
-
-          <CommentsContainer commentIds={commentIds} />
-          <CommentFormContainer postId={id} />
         </div>
 
       </div>

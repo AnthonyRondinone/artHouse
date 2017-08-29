@@ -34,8 +34,10 @@ class Feed extends React.Component {
     />);
 
     return (
-      <div>
-        {feedIndexItems}
+      <div className='feed-contain'>
+        <div className='main-feed' >
+          {feedIndexItems}
+        </div>
       </div>
     );
 

@@ -1,0 +1,106 @@
+.feed-contain {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  width: 600px;
+  display: flex;
+  margin: auto;
+}
+
+.main-feed {
+  margin-top: 60px;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-info {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  border-top: 1px solid #dbdbdb;
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.avatar-contain {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  -moz-border-radius:75px;
+    -webkit-border-radius: 75px;
+    margin: 0px;
+    float: left;
+}
+
+.artist-avatar {
+  overflow: hidden;
+  max-width: 102%;
+  max-height: 102%;
+}
+
+.artist-name {
+  padding-left: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+.post-image {
+  margin: 0px;
+  width: 600px;
+}
+
+.image {
+  min-width: 600px;
+  max-height: 100%;
+}
+
+.under-image {
+  border-bottom: 1px solid #dbdbdb;
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+
+.button-contain {
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+.heart {
+  padding: 8px;
+  margin: 8px;
+}
+
+.comment-button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  position: relative;
+  top: 2px;
+  margin-left: 8px;
+}
+
+.likes {
+  font-weight: 600;
+}
+
+.author-name {
+  font-weight: 600;
+}
+
+.post-caption {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}

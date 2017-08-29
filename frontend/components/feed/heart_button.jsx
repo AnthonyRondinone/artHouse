@@ -10,7 +10,7 @@ class HeartButton extends React.Component {
 
   render () {
     return (
-      <div>heart</div>
+      <img src={images.heart}></img>
     );
   }
 
