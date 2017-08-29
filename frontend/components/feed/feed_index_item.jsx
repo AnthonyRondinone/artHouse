@@ -56,7 +56,9 @@ class FeedIndexItem extends React.Component {
                 currentUserId={currentUserId}
                 unLike={this.props.unLike}
               />
-              <button className="comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i></button>
+
+              <button htmlFor="focus-input" className="comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i></button>
+
             </div>
 
             <div className="likes" >

@@ -14,7 +14,6 @@ json.posts do
         json.createdAt post.created_at
         json.commentIds post.comments.map(&:id)
         json.likerIds post.likes.map(&:user_id)
-        json.liked post.likes.map(&:user_id)
       end
     end
   end
@@ -29,7 +28,6 @@ json.posts do
       json.createdAt post.created_at
       json.commentIds post.comments.map(&:id)
       json.likerIds post.likes.map(&:user_id)
-      json.liked current_user.posts
     end
   end
 end
