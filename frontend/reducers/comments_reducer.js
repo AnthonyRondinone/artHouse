@@ -1,4 +1,5 @@
 import { RECEIVE_FEED_POSTS, receiveFeedPosts, importFeedPosts } from '../actions/post_actions';
+import { RECEIVE_COMMENT } from '../actions/comment_actions';
 import { merge } from 'lodash';
 
 export const commentsReducer = (state = {}, action ) => {
@@ -7,6 +8,9 @@ export const commentsReducer = (state = {}, action ) => {
   switch(action.type) {
     case RECEIVE_FEED_POSTS:
       return action.posts.comments;
+    case RECEIVE_COMMENT:
+      newState = merge({}, state, {[action.comment.id]: action.comment});
+      return newState;
     default:
       return state;
   }

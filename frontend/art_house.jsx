@@ -13,6 +13,7 @@ import { requestSignUp, requestLogin, requestLogout } from './util/session_api_u
 import {selectUsersPosts, selectFeedPosts, selectPostComments} from './reducers/selectors';
 import { addFollow, removeFollow } from './util/follow_api_util';
 import { addNewFollow, unFollow } from './actions/follow_actions';
+import {addComment} from './actions/comment_actions';
 // test
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // test
+  window.addComment = addComment;
   window.selectPostComments = selectPostComments;
   window.selectFeedPosts = selectFeedPosts;
   window.importFeedPosts = importFeedPosts;

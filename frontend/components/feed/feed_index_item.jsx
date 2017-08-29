@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import HeartButton from './heart_button';
 import CommentsContainer from '../comments/comments_container';
+import CommentFormContainer from '../comments/comment_form_container';
 
 class FeedIndexItem extends React.Component {
   constructor(props) {
@@ -42,8 +43,8 @@ class FeedIndexItem extends React.Component {
           </div>
 
 
-          <CommentsContainer commentIds={commentIds}/>
-
+          <CommentsContainer commentIds={commentIds} />
+          <CommentFormContainer postId={id} />
         </div>
 
       </div>
