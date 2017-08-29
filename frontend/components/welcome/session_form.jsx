@@ -55,30 +55,32 @@ class SessionForm extends React.Component {
       errors = '';
     }
     return (
-      <div className ="welcome" >
-        <div>
-           <img className="phones" src={ window.images.signIn} />
-        </div>
-        <section className="form">
-          <form className="inputSection" onSubmit={this.handleSubmit}>
-            <img src={window.images.signInLogo} />
-            <h4 className="pitch">{SignUpPitch}</h4>
-            <input className="authInput" type="text" onChange={this.handleUsernameChange} value={this.state.username} placeholder="Username"/>
-            <br></br>
-            <input className="authInput" type="password" onChange={this.handlePasswordChange} value={this.state.password} placeholder="Password" />
-            <br></br>
-            <button className="authButton" >{ buttonName }</button>
-            <p className="errors" >{ errors }</p>
-            <button onClick={this.handleDemoClick} className="authButton" >Demo Log in</button>
-            <p className="agreement" >{ agreement }</p>
-          </form>
-          <div className="questionSec" >
-            <section className="question">
-              <p className="pText" >{question}</p>
-              <Link className="logSignLink" to={sendLink}><span >{showLink}</span></Link>
-            </section>
+      <div className="sign-up-page" >
+        <div className ="welcome" >
+          <div>
+            <img className="phones" src={ window.images.signIn} />
           </div>
-        </section>
+          <section className="form">
+            <form className="inputSection" onSubmit={this.handleSubmit}>
+              <img src={window.images.signInLogo} />
+              <h4 className="pitch">{SignUpPitch}</h4>
+              <input className="authInput" type="text" onChange={this.handleUsernameChange} value={this.state.username} placeholder="Username"/>
+              <br></br>
+              <input className="authInput" type="password" onChange={this.handlePasswordChange} value={this.state.password} placeholder="Password" />
+              <br></br>
+              <button className="authButton" >{ buttonName }</button>
+              <p className="errors" >{ errors }</p>
+              <button onClick={this.handleDemoClick} className="authButton" >Demo Log in</button>
+              <p className="agreement" >{ agreement }</p>
+            </form>
+            <div className="questionSec" >
+              <section className="question">
+                <p className="pText" >{question}</p>
+                <Link className="logSignLink" to={sendLink}><span >{showLink}</span></Link>
+              </section>
+            </div>
+          </section>
+        </div>
       </div>
     );
   }
