@@ -3,6 +3,7 @@
   width: 600px;
   display: flex;
   margin: auto;
+  font-size: 14px;
 }
 
 .main-feed {
@@ -13,12 +14,13 @@
 }
 
 .post {
-  background: #fff;
   display: flex;
   flex-direction: column;
+  padding-bottom: 60px;
 }
 
 .artist-info {
+  background: #fff;
   width: 600px;
   display: flex;
   flex-direction: row;
@@ -48,7 +50,9 @@
 }
 
 .artist-name {
-  padding-left: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  padding-left: 8px;
   text-decoration: none;
   color: black;
 }
@@ -56,14 +60,17 @@
 .post-image {
   margin: 0px;
   width: 600px;
+  overflow: hidden;
 }
 
 .image {
   min-width: 600px;
   max-height: 100%;
+
 }
 
 .under-image {
+  background: #fff;
   border-bottom: 1px solid #dbdbdb;
   border-left: 1px solid #dbdbdb;
   border-right: 1px solid #dbdbdb;
@@ -90,17 +97,57 @@
   position: relative;
   top: 2px;
   margin-left: 8px;
+  outline: none;
 }
 
 .likes {
   font-weight: 600;
+  font-size: 15px;
 }
 
 .author-name {
+  font-size: 15px;
   font-weight: 600;
+  text-decoration: none;
+  color: black;
 }
 
 .post-caption {
   margin-top: 8px;
   margin-bottom: 8px;
+}
+
+.comment-contain {
+  margin-top: 5px;
+  margin-bottom: 6px;
+}
+
+.form-contain {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-top: 1px solid #dbdbdb;
+  margin-top: 5px;
+}
+
+.comment-form {
+  width: 542px;
+}
+
+.comment-input {
+  width: 542px;
+  border: none;
+  font-size: 14px;
+}
+
+.post-time {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 12px;
+  font-weight: 200;
+  color: grey;
+}
+
+.time-contain {
+  padding-top: 6px;
+  padding-bottom: 6px;
 }

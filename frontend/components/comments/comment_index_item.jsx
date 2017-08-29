@@ -9,8 +9,8 @@ class CommentIndexItem extends React.Component {
 
   render() {
     return (
-      <div>
-        <Link to={`/users/${this.props.authorId}`}>{this.props.author}</Link>
+      <div className="comment-contain">
+        <Link className="author-name" to={`/users/${this.props.authorId}`}>{this.props.author} </Link>
         <span>{this.props.body}</span>
       </div>
     );

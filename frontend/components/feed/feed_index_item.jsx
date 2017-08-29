@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import HeartButton from './heart_button';
 import CommentsContainer from '../comments/comments_container';
 import CommentFormContainer from '../comments/comment_form_container';
+import Moment from 'react-moment';
 
 class FeedIndexItem extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class FeedIndexItem extends React.Component {
     let like = likeIds.length === 1 ? " like" : " likes";
 
     let artistName = caption ? username : "";
+    let dateTime = createdAt;
 
     return (
       <div >
@@ -52,6 +54,10 @@ class FeedIndexItem extends React.Component {
             </div>
 
             <CommentsContainer commentIds={commentIds} />
+
+            <div className="time-contain">
+              <Moment className="post-time" fromNow>{dateTime}</Moment>
+            </div>
 
             <CommentFormContainer postId={id} />
           </div>
