@@ -48,8 +48,12 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+
 }
 
+.drop-zone:hover {
+  cursor: pointer;
+}
 
 .caption {
   width: 400px;
