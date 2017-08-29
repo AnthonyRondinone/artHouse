@@ -15,7 +15,11 @@ export const postsReducer = ( state = {}, action ) => {
       newState = merge({}, state, {[action.post.id]: action.post});
       return newState;
     case RECEIVE_FEED_POSTS:
-      return action.posts.posts;
+      if(action.posts.posts === undefined) {
+        return {};
+      } else {
+        return action.posts.posts;
+      }
     case RECEIVE_COMMENT:
       newState = merge({}, state);
       newState[action.comment.postId].commentIds.push(action.comment.id);

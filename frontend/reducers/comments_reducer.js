@@ -7,7 +7,11 @@ export const commentsReducer = (state = {}, action ) => {
   let newState;
   switch(action.type) {
     case RECEIVE_FEED_POSTS:
+    if(action.posts.posts === undefined) {
+      return {};
+    } else {
       return action.posts.comments;
+    }
     case RECEIVE_COMMENT:
       newState = merge({}, state, {[action.comment.id]: action.comment});
       return newState;
