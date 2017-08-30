@@ -49,7 +49,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 33%;
+  width: 335px;
   height: 100%;
   float: right;
 }
@@ -96,7 +96,11 @@
   background: #fff;
   padding-left: 16px;
   padding-right: 16px;
+  width: 335px;
   box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 15px;
 }
 
 
@@ -210,8 +214,9 @@
   margin-bottom: 8px;
 }
 
-.s-comment-form {
-  border: 1px solid red;
+.s-cap-comment-index {
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .comment-contain {

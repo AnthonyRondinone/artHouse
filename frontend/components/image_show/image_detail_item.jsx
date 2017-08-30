@@ -78,8 +78,7 @@ class ImageDetailItem extends React.Component {
                   <Link className='s-artist-name' to={`/users/${post.artistId}`}>{post.username}</Link>
                 </div>
 
-
-                <div className="s-under-image" >
+                <div className="s-cap-comment-index" >
 
                   <div className="s-post-caption" >
                     <span className="s-author-name" >{artistName} </span>
@@ -87,6 +86,10 @@ class ImageDetailItem extends React.Component {
                   </div>
 
                   <CommentsContainer commentIds={post.commentIds} />
+                </div>
+
+                <div className="s-under-image" >
+
 
                   <div className="s-button-contain" >
                     <HeartButton className="s-heart"
