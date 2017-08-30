@@ -6,3 +6,10 @@ export const sendComment = (comment) => {
       data: {comment}
   });
 };
+
+export const removeComment = (commentId) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/comments/${commentId}`,
+  });
+};

@@ -57,7 +57,9 @@ class FeedIndexItem extends React.Component {
                 unLike={this.props.unLike}
               />
 
-              <button htmlFor="focus-input" className="comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i></button>
+              <button onClick={() => {document.getElementById(`${id}`).focus();}}
+                className="comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
+              </button>
 
             </div>
 
@@ -77,7 +79,7 @@ class FeedIndexItem extends React.Component {
               <Moment className="post-time" fromNow>{dateTime}</Moment>
             </div>
 
-            <CommentFormContainer postId={id} />
+            <CommentFormContainer id={id} postId={id} />
           </div>
 
 

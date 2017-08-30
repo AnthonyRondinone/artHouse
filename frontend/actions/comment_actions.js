@@ -16,3 +16,18 @@ export const addComment = (comment) => (dispatch) => {
     (newComment) => dispatch(receiveComment(newComment))
   );
 };
+
+export const receiveDeleteComment = (commentId) => {
+  return {
+    type: RECEIVE_DELETE_COMMENT,
+    comment
+  };
+};
+
+
+export const deleteComment = (commentId) => (dispatch) => {
+  return APIUtil.sendComment(commentId)
+  .then(
+    (oldComment) => dispatch(receiveComment(oldComment))
+  );
+};
