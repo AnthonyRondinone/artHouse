@@ -13,7 +13,14 @@ class Api::CommentsController < ApplicationController
   end
 
 
+  def destroy
+    @comment = Comment.find(params[:id])
 
+    if @comment.destroy
+      render :show
+    end
+
+  end
 
 
 
