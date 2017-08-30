@@ -32,6 +32,8 @@ json.posts do
   end
 end
 
+
+
 json.comments do
   @followees.each do |followee|
     followee.posts.each do |post|

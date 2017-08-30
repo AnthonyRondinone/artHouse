@@ -8,22 +8,23 @@
 
 User.destroy_all
 
-demo = User.create!({name: "Demo", website: "www.art.com", email: "Rondinone.design@gamil.com", bio: "I'm a cool artist", username: "demo", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.56+PM.png"})
-user1 = User.create!({name: "Anthony Rondinone Artwork", website: "www.art.com", email: "Rondinone.design@gamil.com", bio: "I'm a cool artist, please buy some art!", username: "anthony_rondinone", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.56+PM.png"})
-user2 = User.create!({name: "Chris Graphics", website: "www.art.com", email: "Chris@gamil.com", bio: "Email or DM me with questions!", username: "chris Graphic", password: "password"})
+user1 = User.create!({name: "Anthony Rondinone Artwork", website: "www.art.com", email: "Rondinone.design@gamil.com", bio: "Custom art work and album design", username: "anthony_rondinone", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.56+PM.png"})
+user2 = User.create!({name: "Chris Graphics", website: "www.art.com", email: "Chris@gamil.com", bio: "💵 Email or DM me with questions!", username: "chris Graphic", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.56+PM.png"})
 user3 = User.create!({name: "E.d Photography", website: "www.photo.com", email: "EdPhoto@gamil.com", bio: "Travel and Food photographer", username: "e.d_photography", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-24+at+7.32.30+PM.png"})
+user4 = User.create!({name: "Adam", website: "www.paint.com", email: "EdPhoto@gamil.com", bio: "🌅 Love to Create", username: "adam_G", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-24+at+7.32.30+PM.png"})
+user5 = User.create!({name: "Kate", website: "www.brush.com", email: "EdPhoto@gamil.com", bio: "Abstract and contemporary", username: "krschreidt", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-24+at+7.32.30+PM.png"})
 
 Post.destroy_all
 
-post1 = Post.create!({caption: "This is cool! I can't believe how cool this is!", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.39+PM.png"})
-post2 = Post.create!({caption: "This is cool!", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.32+PM.png"})
-post3 = Post.create!({caption: "This is cool!", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.16+PM.png"})
-post4 = Post.create!({caption: "This is cool!", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.07.03+PM.png"})
-post5 = Post.create!({caption: "This is cool!", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.06.46+PM.png"})
-post6 = Post.create!({caption: "This is cool!", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.06.31+PM.png"})
-post7 = Post.create!({caption: "This is cool!", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.06.24+PM.png"})
-post8 = Post.create!({caption: "This is cool!", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.05.57+PM.png"})
-post9 = Post.create!({caption: "This is cool!", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-23+at+2.05.48+PM.png"})
+post1 = Post.create!({caption: "For sale, connact with any questions", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/Anthony/Screen+Shot+2017-08-23+at+2.05.48+PM.png"})
+post2 = Post.create!({caption: "This is how I feel right now", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/Anthony/Screen+Shot+2017-08-23+at+2.05.57+PM.png"})
+post3 = Post.create!({caption: "Making up titles is fun", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/Anthony/Screen+Shot+2017-08-23+at+2.06.24+PM.png"})
+post4 = Post.create!({caption: "Where are you right now?", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/Anthony/Screen+Shot+2017-08-23+at+2.06.31+PM.png"})
+post5 = Post.create!({caption: "Pulk Pull revolving doors", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/Anthony/Screen+Shot+2017-08-23+at+2.07.39+PM.png"})
+post6 = Post.create!({caption: "Everything's in it's right place", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/Anthony/Screen+Shot+2017-08-24+at+7.33.02+PM.png"})
+post7 = Post.create!({caption: "No where man", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/Anthony/Screen+Shot+2017-08-24+at+7.33.11+PM.png"})
+post8 = Post.create!({caption: "Where you end and I begin", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/Anthony/Screen+Shot+2017-08-24+at+7.33.20+PM.png"})
+post9 = Post.create!({caption: "All that is and ever was", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/Anthony/Screen+Shot+2017-08-24+at+7.34.09+PM.png"})
 
 
 post10 = Post.create!({caption: "This is cool!", artist_id: user2.id, image: "https://s3.amazonaws.com/arthouse-dev/seed+photos/Screen+Shot+2017-08-24+at+7.35.41+PM.png"})

@@ -32,6 +32,7 @@ class ProfileItem extends React.Component {
       key={post.id}
       postId={post.id}
       image={post.image_url}
+      userId={user.id}
       />);
 
 

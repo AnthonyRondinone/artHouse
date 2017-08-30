@@ -30,7 +30,7 @@ class FeedIndexItem extends React.Component {
     let dateTime = createdAt;
 
     return (
-      <div >
+      <div>
 
         <div className="post" >
 

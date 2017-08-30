@@ -9,7 +9,7 @@ json.post do
     json.image_url asset_path(@post.image.url)
     json.caption @post.caption
     json.createdAt @post.created_at
-    json.commentId @post.comments.map(&:id)
+    json.commentIds @post.comments.map(&:id)
     json.likerId @post.likes.map(&:user_id)
 
 end

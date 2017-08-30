@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { addNewLike, unLike } from '../../actions/like_actions';
 import { importPostDetail } from '../../actions/post_actions';
 import ImageDetailItem from './image_detail_item';
-import closeModal from '../../actions/modal_actions';
+import {closeModal} from '../../actions/modal_actions';
 
 const mapStateToProps = ( state, ownProps ) => {
   return {
@@ -19,7 +19,9 @@ const mapDispatchToProps = dispatch => {
   return {
     importPostDetail: (postId) => dispatch(importPostDetail(postId)),
     addNewLike: (like) => dispatch(addNewLike(like)),
-    unLike: (postId) => dispatch(unLike(postId))
+    unLike: (postId) => dispatch(unLike(postId)),
+    closeModal: () => dispatch(closeModal())
+
   };
 };
 
