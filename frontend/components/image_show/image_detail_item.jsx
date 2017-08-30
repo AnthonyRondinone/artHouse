@@ -99,8 +99,9 @@ class ImageDetailItem extends React.Component {
                       currentUserId={currentUser.id}
                       unLike={this.props.unLike}
                       />
-                    <button className="s-comment-button" >
-                      <i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
+
+                    <button onClick={() => {document.getElementById(`${post.id}`).focus();}}
+                      className="s-comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
                     </button>
                   </div>
 
