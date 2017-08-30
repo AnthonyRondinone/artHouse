@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoClick = this.handleDemoClick.bind(this);
+    this.demoLogIn = this.demoLogIn.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -19,10 +20,14 @@ class SessionForm extends React.Component {
     }
   }
 
+  demoLogIn() {
+    dispatch(login(this.state)).then(() => this.props.history.push('/'));
+  }
+
   handleDemoClick(e) {
     e.preventDefault();
-    let user = { username: "anthony_rondinone", password: "password"};
-    dispatch(login(user)).then(() => this.props.history.push('/'));
+    this.setState({ username: "anthony_rondinone", password: "password"});
+    setTimeout(this.demoLogIn, 500);
   }
 
   handleUsernameChange(e) {
