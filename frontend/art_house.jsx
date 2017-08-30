@@ -5,7 +5,7 @@ import Root from './components/root';
 
 // test
 import { sendNewPost, fetchAllFolloweePosts } from './util/post_api_util';
-import {createNewPost, receiveNewPost, receiveFeedPosts, importFeedPosts} from './actions/post_actions';
+import {createNewPost, receiveNewPost, receiveFeedPosts, importFeedPosts, importPostDetail} from './actions/post_actions';
 import { requestSingleUser } from './actions/user_actions';
 import { login, logout, signup } from './actions/session_actions';
 import { fetchSingleUser } from './util/user_api_util';
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // test
+  window.importPostDetail = importPostDetail;
   window.unLike = unLike;
   window.addNewLike = addNewLike;
   window.removeLike = removeLike;

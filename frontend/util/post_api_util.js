@@ -16,3 +16,10 @@ export const fetchAllFolloweePosts = () => {
       url: '/api/posts'
   });
 };
+
+export const fetchSinglePost = (postId) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/posts/${postId}`
+  });
+};

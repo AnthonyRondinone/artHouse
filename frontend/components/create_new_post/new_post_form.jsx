@@ -31,7 +31,6 @@ class NewPostForm extends React.Component {
   }
 
   updateFile(e) {
-    // debugger
     let file = e.currentTarget.files[0];
     let fileReader = new FileReader();
     fileReader.onloadend = function () {

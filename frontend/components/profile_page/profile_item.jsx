@@ -30,7 +30,9 @@ class ProfileItem extends React.Component {
 
       const userPostIndexItems = posts.map((post) => <UserPostIndexItem
       key={post.id}
+      postId={post.id}
       image={post.image_url}
+      userId={user.id}
       />);
 
 
