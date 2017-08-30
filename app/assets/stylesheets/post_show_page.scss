@@ -23,6 +23,8 @@
   display: flex;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-size: 14px;
+  background: #fff;
+  margin: 0px;
 }
 
 .s-image-left-contain {
@@ -41,7 +43,7 @@
 
 .s-image {
   width: 100%;
-  max-height: 100%;
+  height: 100%;
 }
 
 .s-info-right-contain {
@@ -100,7 +102,6 @@
   position: fixed;
   bottom: 0;
   margin-bottom: 15px;
-  margin-bottom: 3px;
 }
 
 
