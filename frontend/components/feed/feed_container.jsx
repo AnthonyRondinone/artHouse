@@ -1,11 +1,9 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import Feed from './feed';
 import { selectFeedPosts } from '../../reducers/selectors';
 import { importFeedPosts } from '../../actions/post_actions';
-import { likerIds } from '../../actions/like_actions';
+import { addNewLike, unLike } from '../../actions/like_actions';
 
 const mapStateToProps = state => {
   return {

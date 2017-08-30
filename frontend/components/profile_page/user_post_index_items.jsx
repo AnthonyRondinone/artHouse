@@ -14,8 +14,6 @@ class UserPostIndexItem extends React.Component {
     );
   }
 
-
-
 }
 
 

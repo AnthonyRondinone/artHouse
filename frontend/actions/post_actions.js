@@ -1,5 +1,6 @@
 export const RECEIVE_NEW_POST = 'RECEIVE_NEW_POST';
 export const RECEIVE_FEED_POSTS = 'RECEIVE_FEED_POSTS';
+export const RECEIVE_POST_DETAIL = 'RECEIVE_POST_DETAIL';
 import * as APIUtil from '../util/post_api_util';
 
 export const receiveNewPost = (post) => {
@@ -8,6 +9,7 @@ export const receiveNewPost = (post) => {
     post
   };
 };
+
 
 export const receivePostErrors = (errors) => {
   return {
@@ -34,5 +36,19 @@ export const importFeedPosts = (payload) => (dispatch) => {
   return APIUtil.fetchAllFolloweePosts()
   .then(
     (payload) => dispatch(receiveFeedPosts(payload))
+  );
+};
+
+export const receivePostDetail = (post) => {
+  return {
+    type: RECEIVE_POST_DETAIL,
+    post
+  };
+};
+
+export const importPostDetail = ( postId ) => (dispatch) => {
+  return APIUtil.fetchSinglePost(postId)
+  .then(
+    (postDetail) => dispatch(receivePostDetail(postDetail))
   );
 };
