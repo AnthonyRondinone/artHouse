@@ -10,7 +10,7 @@ json.post do
     json.caption @post.caption
     json.createdAt @post.created_at
     json.commentIds @post.comments.map(&:id)
-    json.likerId @post.likes.map(&:user_id)
+    json.likerIds @post.likes.map(&:user_id)
 
 end
 

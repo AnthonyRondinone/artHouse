@@ -52,7 +52,7 @@ class ImageDetailItem extends React.Component {
 
           <div className="modal-back" onClick={this.handleModalClose} ></div>
 
-          <div>
+          <div className="modal-main" >
 
 
             <div className="s-post" onClick={(e) => e.stopPropagation()}>
@@ -110,7 +110,9 @@ class ImageDetailItem extends React.Component {
                     <Moment className="s-post-time" fromNow>{dateTime}</Moment>
                   </div>
 
-                  <CommentFormContainer postId={post.id} />
+                  <div className="s-comment-form" >
+                    <CommentFormContainer postId={post.id} />
+                  </div>
 
 
                 </div>

@@ -17,9 +17,10 @@ export const commentsReducer = (state = {}, action ) => {
       return newState;
     case RECEIVE_POST_DETAIL:
       if(action.post.comments === undefined) {
-        return {};
+        return state;
       } else {
-        return action.post.comments;
+        newState = merge({}, state, action.post.comments);
+        return newState;
       }
     default:
       return state;
