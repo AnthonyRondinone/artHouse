@@ -79,7 +79,7 @@ class FeedIndexItem extends React.Component {
               <Moment className="post-time" fromNow>{dateTime}</Moment>
             </div>
 
-            <CommentFormContainer id={id} postId={id} />
+            <CommentFormContainer postId={id} />
           </div>
 
 

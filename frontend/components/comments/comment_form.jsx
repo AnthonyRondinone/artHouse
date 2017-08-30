@@ -28,7 +28,7 @@ class CommentForm extends React.Component {
     return (
       <div className="form-contain">
         <form className="comment-form" onSubmit={this.handleSubmit}>
-          <input className="comment-input" id="focus-input" type="text"
+          <input className="comment-input" id={this.props.postId} type="text"
             onChange={this.handleBodyChange}
             value={this.state.body}
             placeholder="Add comment . . ." >
