@@ -25,7 +25,7 @@ class ProfileItem extends React.Component {
 
 
   render() {
-    const {user, posts, currentUser} = this.props;
+    const {user, posts, currentUser, addNewFollow, unFollow } = this.props;
 
     if (this.props.user) {
       let postText = posts.length === 1 ? " post": " posts";

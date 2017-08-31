@@ -9,18 +9,18 @@ class EditFollowButton extends React.Component {
   }
 
   handleUnfollow(e) {
+    debugger
     e.preventDefault();
-    dispatch(this.props.unFollow(this.props.user.id));
+    this.props.unFollow(this.props.user.id);
   }
 
   handleFollow(e) {
-    e.preventDefault();
 
-    dispatch(this.props.addNewFollow({follow: {
+    e.preventDefault();
+    this.props.addNewFollow({follow: {
       follower_id: this.props.currentUser.id,
       followee_id: this.props.user.id
-    }}));
-
+    }});
   }
 
 
