@@ -30,7 +30,11 @@ h1 {
   background: #fafafa;
   justify-content: center;
   align-items: center;
-  margin-top: 8%;
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 

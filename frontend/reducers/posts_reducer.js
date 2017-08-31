@@ -1,4 +1,4 @@
-import { RECEIVE_SINGLE_USER, requestSingleUser } from '../actions/user_actions';
+import { RECEIVE_SINGLE_USER, RECEIVE_SUGGESTED_USERS } from '../actions/user_actions';
 import { RECEIVE_NEW_POST, RECEIVE_FEED_POSTS, RECEIVE_POST_DETAIL } from '../actions/post_actions';
 import { RECEIVE_COMMENT, RECEIVE_DELETE_COMMENT } from '../actions/comment_actions';
 import { RECEIVE_LIKE, DELETE_LIKE } from '../actions/like_actions';
@@ -41,6 +41,9 @@ export const postsReducer = ( state = {}, action ) => {
       let index = newState[action.like.post_id].likerIds.indexOf(action.like.user_id);
       newState[action.like.post_id].likerIds.splice(index, 1);
     return newState;
+    case RECEIVE_SUGGESTED_USERS:
+      newState = action.payload.posts;
+      return newState;
     default:
     return state;
   }

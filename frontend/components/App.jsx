@@ -12,7 +12,7 @@ import SuggestedArtistContainer from './suggested_artists/suggested_artist_conta
 const App = () => (
   <div>
       <Route path="/users/:userId/:postId" component={ImageShowContainer} />
-    
+      <NavBarContainer component={NavBarContainer}/>
       <Route path="/create" component={NewPostContainer}/>
       <ProtectedRoute path="/welcome" component={SuggestedArtistContainer} />
       <ProtectedRoute path="/" exact={true} component={FeedContainer} />

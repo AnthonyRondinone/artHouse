@@ -6,9 +6,9 @@ import SuggestedUserItem from './suggested_user_item';
 import { selectSuggestedUsers } from '../../reducers/selectors';
 
 const mapStateToProps = ( state ) => {
-  debugger
   return {
     users: selectSuggestedUsers(state),
+    posts: state.entities.posts,
     currentUser: state.session.currentUser
   };
 };

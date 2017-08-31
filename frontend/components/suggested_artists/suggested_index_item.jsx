@@ -10,23 +10,27 @@ class SuggestedIndexItem extends React.Component {
   render() {
 
     const { user, currentUser, addNewFollow, unFollow } = this.props;
-    debugger
+
     return(
-      <div>
-        <div className="upAvatarContain" >
-          <img className="upAvatar" src={user.avatar_url} />
-        </div>
 
-        <p className="userName" >{user.username}</p>
 
-          <EditFollowButton className="editFollow"
+        <div className="su-container" >
+
+          <div className="su-avatar-contain" >
+            <Link to={`/users/${user.id}`}><img className="su-avatar" src={user.avatar_url} /></Link>
+          </div>
+
+          <Link className="su-user-name" to={`/users/${user.id}`}><p className="su-user-name" >{user.username}</p></Link>
+
+          <EditFollowButton className="su-follow"
             currentUser={currentUser}
             user={user}
             addNewFollow={addNewFollow}
             unFollow={unFollow}
-          />
+            />
 
-      </div>
+        </div>
+
     );
 
   }

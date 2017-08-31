@@ -20,7 +20,7 @@ export const usersReducer = ( state = {}, action ) => {
       newState[action.follow.followee_id].followerIds.splice(index, 1);
       return newState;
     case RECEIVE_SUGGESTED_USERS:
-      newState = action.users;
+      newState = action.payload.user;
       return newState;
     default:
     return state;

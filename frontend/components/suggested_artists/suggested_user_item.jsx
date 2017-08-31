@@ -14,7 +14,6 @@ class SuggestedUserItem extends React.Component {
 
 
   render() {
-    debugger
     const { users, currentUser, addNewFollow, unFollow } = this.props;
 
     const suggestedUserIndexItems = users.map((user) => <SuggestedIndexItem
@@ -27,8 +26,15 @@ class SuggestedUserItem extends React.Component {
     />);
 
     return (
-      <div>
-        { suggestedUserIndexItems }
+
+      <div className="su-main" >
+
+        <div className="discover" >Discover new artists</div>
+
+        <div className="su-contain-main" >
+          { suggestedUserIndexItems }
+        </div>
+
       </div>
     );
   }

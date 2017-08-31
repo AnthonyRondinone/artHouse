@@ -18,16 +18,16 @@ export const requestSingleUser = (user) => (dispatch) => {
   );
 };
 
-export const receiveSuggestedUsers = (users) => {
+export const receiveSuggestedUsers = (payload) => {
   return {
     type: RECEIVE_SUGGESTED_USERS,
-    users
+    payload
   }
 }
 
 export const suggestedUser = (users) => (dispatch) => {
   return APIUtil.fetchSuggestedUsers()
   .then(
-    (users) => dispatch(receiveSuggestedUsers(users))
+    (payload) => dispatch(receiveSuggestedUsers(payload))
   );
 };
