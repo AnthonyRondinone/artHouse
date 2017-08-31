@@ -9,8 +9,8 @@ class CommentIndex extends React.Component {
 
 
   render() {
-    const {comments} = this.props;
-
+    const {comments, currentUser} = this.props;
+    debugger
     let postCommentIndexItems = comments.map((comment) => <CommentIndexItem
     commentId={comment.id}
     key={comment.id}
@@ -18,6 +18,8 @@ class CommentIndex extends React.Component {
     author={comment.author}
     authorId={comment.authorId}
     deleteComment={this.props.deleteComment}
+    currentUserId={currentUser.id}
+    artistId={this.props.artistId}
     />);
     return (
       <div>

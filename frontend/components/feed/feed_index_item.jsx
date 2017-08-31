@@ -13,7 +13,7 @@ class FeedIndexItem extends React.Component {
 
   render() {
     const { id, currentUserId, artistId, avatar, username, image, createdAt, likerIds, liked, commentIds, caption} = this.props;
-
+    debugger
 
     let like;
     let likeCount;
@@ -79,7 +79,7 @@ class FeedIndexItem extends React.Component {
               <Moment className="post-time" fromNow>{dateTime}</Moment>
             </div>
 
-            <CommentFormContainer postId={id} />
+            <CommentFormContainer artistId={artistId} postId={id} />
           </div>
 
 

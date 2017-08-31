@@ -37,13 +37,19 @@ class Feed extends React.Component {
     unLike={unLike}
     />);
 
-    return (
-      <div className='feed-contain'>
-        <div className='main-feed' >
-          {feedIndexItems}
+    if (posts.length === 0) {
+      return (
+        <div>Nothing</div>
+      );
+    } else {
+      return (
+        <div className='feed-contain'>
+          <div className='main-feed' >
+            {feedIndexItems}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
 
   }
 }

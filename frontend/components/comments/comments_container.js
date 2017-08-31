@@ -10,7 +10,7 @@ const mapStateToProps = ( state, ownProps ) => {
 
   return {
     comments: selectPostComments(state, ownProps),
-
+    currentUser: state.session.currentUser
   };
 };
 

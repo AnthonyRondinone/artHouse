@@ -12,7 +12,7 @@ export const commentsReducer = (state = {}, action ) => {
       delete newState[action.comment.id]
       return newState;
     case RECEIVE_FEED_POSTS:
-    if(action.posts.posts === undefined) {
+    if(action.posts.comments === undefined) {
       return {};
     } else {
       return action.posts.comments;
