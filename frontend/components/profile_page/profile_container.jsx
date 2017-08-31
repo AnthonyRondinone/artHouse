@@ -7,9 +7,10 @@ import { addNewFollow, unFollow } from '../../actions/follow_actions';
 
 const mapStateToProps = ( state, ownProps ) => {
   if (state.entities.users[ownProps.match.params.userId]) {
+    let artistId = parseInt(ownProps.match.params.userId);
     return {
       user: state.entities.users[ownProps.match.params.userId],
-      posts: selectUsersPosts(state),
+      posts: selectUsersPosts(state, artistId),
       currentUser: state.session.currentUser
     };
   } else {

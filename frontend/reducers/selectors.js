@@ -1,9 +1,9 @@
 import { values } from 'lodash';
 
 
-export const selectUsersPosts = (state) => {
+export const selectUsersPosts = ( state, artistId) => {
+
   let usersPostsArray = [];
-  let artistId = state.ui.userDisplay;
   let artist = state.entities.users[artistId];
   let postIds = artist.postIds;
   for (let i = 0; i < postIds.length; i++) {
