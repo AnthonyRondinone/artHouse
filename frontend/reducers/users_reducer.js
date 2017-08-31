@@ -1,5 +1,5 @@
 import { RECEIVE_SINGLE_USER, RECEIVE_SUGGESTED_USERS } from '../actions/user_actions';
-import { RECEIVE_FOLLOW, addNewFollow, DELETE_FOLLOW, unFollow } from '../actions/follow_actions';
+import { RECEIVE_FOLLOW, DELETE_FOLLOW } from '../actions/follow_actions';
 import { merge } from 'lodash';
 
 export const usersReducer = ( state = {}, action ) => {
