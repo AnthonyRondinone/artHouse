@@ -152,27 +152,19 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
+  width: 945px;
 }
 
-.upPostIndex:after {
-  content: "";
-
-
-}
-
-.upPostImg:after {
-  margin-right: 25px;
-}
 
 .upPostContain {
   padding: 0px;
   width: 290px;
   height: 290px;
   overflow: hidden;
-  margin: auto;
   margin-bottom: 25px;
   text-align: center;
+  margin-right: 25px;
 }
 
 .upPostImg {
