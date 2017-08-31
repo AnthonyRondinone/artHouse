@@ -1,4 +1,4 @@
-import { RECEIVE_SINGLE_USER, requestSingleUser } from '../actions/user_actions';
+import { RECEIVE_SINGLE_USER, RECEIVE_SUGGESTED_USERS } from '../actions/user_actions';
 import { RECEIVE_FOLLOW, addNewFollow, DELETE_FOLLOW, unFollow } from '../actions/follow_actions';
 import { merge } from 'lodash';
 
@@ -18,6 +18,9 @@ export const usersReducer = ( state = {}, action ) => {
       newState = merge({}, state);
       let index = newState[action.follow.followee_id].followerIds.indexOf(action.follow.follower_id);
       newState[action.follow.followee_id].followerIds.splice(index, 1);
+      return newState;
+    case RECEIVE_SUGGESTED_USERS:
+      newState = action.users;
       return newState;
     default:
     return state;

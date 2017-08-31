@@ -1,7 +1,10 @@
 class Api::UsersController < ApplicationController
 
 
-
+  def index
+    @suggested_users = User.suggeted_top_three
+    render :index
+  end
 
   def create
     @user = User.new(user_params)
@@ -24,11 +27,7 @@ class Api::UsersController < ApplicationController
     end
   end
 
-
-  def index
-    @users = User.all
-    render :index
-  end
+  
 
   def show
     @user = User.find(params[:id])

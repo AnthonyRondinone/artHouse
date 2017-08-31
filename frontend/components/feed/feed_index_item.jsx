@@ -13,7 +13,6 @@ class FeedIndexItem extends React.Component {
 
   render() {
     const { id, currentUserId, artistId, avatar, username, image, createdAt, likerIds, liked, commentIds, caption} = this.props;
-    debugger
 
     let like;
     let likeCount;

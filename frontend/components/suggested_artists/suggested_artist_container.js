@@ -1,25 +1,21 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { requestSingleUser } from '../../actions/user_actions';
-import { selectUsersPosts } from '../../reducers/selectors';
+import { suggestedUser } from '../../actions/user_actions';
 import { addNewFollow, unFollow } from '../../actions/follow_actions';
+import SuggestedUserItem from './suggested_user_item';
 
 const mapStateToProps = ( state, ownProps ) => {
-  if (state.entities.users[ownProps.match.params.userId]) {
-    return {
-      user: state.entities.users[ownProps.match.params.userId],
-      posts: selectUsersPosts(state),
-      currentUser: state.session.currentUser
-    };
-  } else {
-    return {};
-  }
+
+  return {
+    users: state.entities.users,
+    currentUser: state.session.currentUser
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
-    requestSingleUser: (user) => dispatch(requestSingleUser(user)),
+    suggestedUser: () => dispatch(suggestedUser()),
     addNewFollow: (follow) => dispatch(addNewFollow(follow)),
     unFollow: (followId) => dispatch(unFollow(followId))
   };
@@ -27,4 +23,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProfileItem));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SuggestedUserItem));

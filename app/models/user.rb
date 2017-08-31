@@ -53,6 +53,19 @@ class User < ApplicationRecord
     end
   end
 
+  def self.suggeted_top_three
+    request = <<-SQL
+    SELECT users.*, COUNT(follower_id)
+    FROM users
+    JOIN follows ON users.id = follows.followee_id
+    GROUP BY users.id
+    ORDER BY COUNT(follower_id) DESC
+    LIMIT 3
+    SQL
+    User.find_by_sql(request)
+  end
+
+
   def reset_session_token!
     self.session_token = SecureRandom::urlsafe_base64(16)
     self.save!
@@ -71,5 +84,7 @@ class User < ApplicationRecord
     @password = password
     self.password_digest = BCrypt::Password.create(password)
   end
+
+
 
 end

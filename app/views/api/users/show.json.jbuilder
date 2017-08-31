@@ -7,7 +7,6 @@ json.user do
   json.postIds @user.posts.map(&:id)
   json.followerIds @user.followers.map(&:id)
   json.followeeIds @user.followed_artists.map(&:id)
-
 end
 
 

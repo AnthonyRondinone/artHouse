@@ -6,9 +6,9 @@ import Root from './components/root';
 // test
 import { sendNewPost, fetchAllFolloweePosts } from './util/post_api_util';
 import {createNewPost, receiveNewPost, receiveFeedPosts, importFeedPosts, importPostDetail} from './actions/post_actions';
-import { requestSingleUser } from './actions/user_actions';
+import { requestSingleUser, suggestedUser } from './actions/user_actions';
 import { login, logout, signup } from './actions/session_actions';
-import { fetchSingleUser } from './util/user_api_util';
+import { fetchSingleUser, fetchSuggestedUsers } from './util/user_api_util';
 import { requestSignUp, requestLogin, requestLogout } from './util/session_api_util';
 import {selectUsersPosts, selectFeedPosts, selectPostComments} from './reducers/selectors';
 import { addFollow, removeFollow } from './util/follow_api_util';

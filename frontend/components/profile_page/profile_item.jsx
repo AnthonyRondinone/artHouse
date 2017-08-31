@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import UserPostIndexItem from './user_post_index_items';
 import EditFollowButton from './edit_follow_button';
-import Dropzone from 'react-dropzone';
+
 
 class ProfileItem extends React.Component {
 

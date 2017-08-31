@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import FeedIndexItem from './feed_index_item';
 
@@ -11,7 +11,7 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
-    this.props.importFeedPosts();
+      this.props.importFeedPosts();
   }
 
 
@@ -37,19 +37,17 @@ class Feed extends React.Component {
     unLike={unLike}
     />);
 
-    if (posts.length === 0) {
-      return (
-        <div>Nothing</div>
-      );
-    } else {
-      return (
-        <div className='feed-contain'>
-          <div className='main-feed' >
-            {feedIndexItems}
+    if(currentUser) {
+
+        return (
+          <div className='feed-contain'>
+            <div className='main-feed' >
+              {feedIndexItems}
+            </div>
           </div>
-        </div>
-      );
-    }
+        );
+      }
+    
 
   }
 }
