@@ -3,11 +3,12 @@ import { withRouter } from 'react-router-dom';
 import { suggestedUser } from '../../actions/user_actions';
 import { addNewFollow, unFollow } from '../../actions/follow_actions';
 import SuggestedUserItem from './suggested_user_item';
+import { selectSuggestedUsers } from '../../reducers/selectors';
 
-const mapStateToProps = ( state, ownProps ) => {
-
+const mapStateToProps = ( state ) => {
+  debugger
   return {
-    users: state.entities.users,
+    users: selectSuggestedUsers(state),
     currentUser: state.session.currentUser
   };
 };

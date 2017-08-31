@@ -47,3 +47,8 @@ export const selectPostComments = (state, ownProps) => {
   }
   return postComments;
 };
+
+export const selectSuggestedUsers = (state) => {
+  let suggestedUsersArray = values(state.entities.users);
+  return suggestedUsersArray;
+};

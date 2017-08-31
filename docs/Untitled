@@ -55,3 +55,5 @@ https://s3.amazonaws.com/arthouse-dev/ed_photography/Screen+Shot+2017-08-29+at+1
 https://s3.amazonaws.com/arthouse-dev/ed_photography/Screen+Shot+2017-08-29+at+10.08.42+PM.png
 https://s3.amazonaws.com/arthouse-dev/ed_photography/Screen+Shot+2017-08-29+at+10.08.50+PM.png
 https://s3.amazonaws.com/arthouse-dev/ed_photography/Screen+Shot+2017-08-29+at+10.08.58+PM.png
+
+  <NavBarContainer component={NavBarContainer}/>

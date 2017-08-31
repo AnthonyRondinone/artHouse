@@ -11,7 +11,11 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
+    if (this.props.currentUser.followeeIds.length === 0) {
+      this.props.history.push('/welcome');
+    } else {
       this.props.importFeedPosts();
+    }
   }
 
 
@@ -37,7 +41,6 @@ class Feed extends React.Component {
     unLike={unLike}
     />);
 
-    if(currentUser) {
 
         return (
           <div className='feed-contain'>
@@ -46,8 +49,7 @@ class Feed extends React.Component {
             </div>
           </div>
         );
-      }
-    
+
 
   }
 }

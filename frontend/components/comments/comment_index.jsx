@@ -10,7 +10,6 @@ class CommentIndex extends React.Component {
 
   render() {
     const {comments, currentUser} = this.props;
-    debugger
     let postCommentIndexItems = comments.map((comment) => <CommentIndexItem
     commentId={comment.id}
     key={comment.id}
