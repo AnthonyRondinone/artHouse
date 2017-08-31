@@ -13,7 +13,7 @@ import { requestSignUp, requestLogin, requestLogout } from './util/session_api_u
 import {selectUsersPosts, selectFeedPosts, selectPostComments} from './reducers/selectors';
 import { addFollow, removeFollow } from './util/follow_api_util';
 import { addNewFollow, unFollow } from './actions/follow_actions';
-import {addComment} from './actions/comment_actions';
+import {addComment, deleteComment} from './actions/comment_actions';
 import {addLike, removeLike} from './util/like_api_util';
 import {addNewLike, unLike} from './actions/like_actions';
 // test
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // test
+  window.deleteComment = deleteComment;
   window.importPostDetail = importPostDetail;
   window.unLike = unLike;
   window.addNewLike = addNewLike;

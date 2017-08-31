@@ -12,10 +12,12 @@ class CommentIndex extends React.Component {
     const {comments} = this.props;
 
     let postCommentIndexItems = comments.map((comment) => <CommentIndexItem
+    commentId={comment.id}
     key={comment.id}
     body={comment.body}
     author={comment.author}
     authorId={comment.authorId}
+    deleteComment={this.props.deleteComment}
     />);
     return (
       <div>

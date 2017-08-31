@@ -1,4 +1,5 @@
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
+export const RECEIVE_DELETE_COMMENT = "RECEIVE_DELETE_COMMENT";
 import * as APIUtil from '../util/comment_api_util';
 
 
@@ -17,7 +18,7 @@ export const addComment = (comment) => (dispatch) => {
   );
 };
 
-export const receiveDeleteComment = (commentId) => {
+export const receiveDeleteComment = (comment) => {
   return {
     type: RECEIVE_DELETE_COMMENT,
     comment
@@ -26,8 +27,8 @@ export const receiveDeleteComment = (commentId) => {
 
 
 export const deleteComment = (commentId) => (dispatch) => {
-  return APIUtil.sendComment(commentId)
+  return APIUtil.removeComment(commentId)
   .then(
-    (oldComment) => dispatch(receiveComment(oldComment))
+    (oldComment) => dispatch(receiveDeleteComment(oldComment))
   );
 };
