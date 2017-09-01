@@ -32,7 +32,7 @@ h1 {
   align-items: center;
   margin: auto;
   position: fixed;
-  top: 50%;
+  top: 49%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -135,4 +135,26 @@ input:focus {
 
 .authButton:hover {
   cursor: pointer;
+}
+
+.icon-div {
+  display: flex;
+  width: 935px;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 10px;
+}
+
+.foot-icons {
+  font-size: 30px;
+  color: grey;
+}
+
+.foot-icons:hover {
+  color: orange;
 }
