@@ -11,7 +11,6 @@ class NewPostForm extends React.Component {
       imageURL: null
     };
     this.updateCaption = this.updateCaption.bind(this);
-    this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateDraggedFile = this.updateDraggedFile.bind(this);
   }
@@ -30,18 +29,7 @@ class NewPostForm extends React.Component {
     });
   }
 
-  updateFile(e) {
-    let file = e.currentTarget.files[0];
-    let fileReader = new FileReader();
-    fileReader.onloadend = function () {
-      this.setState({ imageFile: file, imageURL: fileReader.result });
-    }.bind(this);
 
-    if (file) {
-      fileReader.readAsDataURL(file);
-      $('.drag-zone').remove();
-    }
-  }
 
   updateDraggedFile (e) {
   let file = e[0];
@@ -52,6 +40,7 @@ class NewPostForm extends React.Component {
 
     if (file) {
       fileReader.readAsDataURL(file);
+      $('.drag-zone').remove();
     }
   }
 

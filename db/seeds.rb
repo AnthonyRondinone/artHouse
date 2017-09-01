@@ -56,6 +56,17 @@ user40 = User.create!({username: "Jones", password: "password"})
 
 Post.destroy_all
 
+
+
+post88 = Post.create!({caption: "Spirit lifting", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.29.17+PM.png"})
+post86 = Post.create!({caption: "Self-perfecting", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.28.24+PM.png"})
+post85 = Post.create!({caption: "What do you know?", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.28.12+PM.png"})
+post84 = Post.create!({caption: "Golem II", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.27.57+PM.png"})
+post83 = Post.create!({caption: "just 5 hours left", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.27.48+PM.png"})
+post87 = Post.create!({caption: "His induction", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.28.41+PM.png"})
+post82 = Post.create!({caption: "Lipstick", artist_id: user7.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.27.41+PM.png"})
+
+
 post1 = Post.create!({caption: "For sale, DM with any questions", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/Anthony/Screen+Shot+2017-08-23+at+2.05.48+PM.png"})
 post2 = Post.create!({caption: "😡 This is how I feel right now", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/Anthony/Screen+Shot+2017-08-23+at+2.05.57+PM.png"})
 post3 = Post.create!({caption: "Making up titles is fun", artist_id: user1.id, image: "https://s3.amazonaws.com/arthouse-dev/Anthony/Screen+Shot+2017-08-23+at+2.06.24+PM.png"})
@@ -121,27 +132,22 @@ post53 = Post.create!({caption: "Wrinkles smoothed", artist_id: user4.id, image:
 post54 = Post.create!({caption: "🍟 The black cloud", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.22.02+PM.png"})
 post55 = Post.create!({caption: "jubilation", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.22.13+PM.png"})
 post56 = Post.create!({caption: "Gasoline trees 🍘", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.22.27+PM.png"})
-post57 = Post.create!({caption: "walk-through walls", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.22.39+PM.png"})
 post58 = Post.create!({caption: "grey goo boiling", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.23.23+PM.png"})
 post59 = Post.create!({caption: "As the fenris wolf", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.23.36+PM.png"})
 post60 = Post.create!({caption: "Lindy hop around the truth", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.23.45+PM.png"})
 post61 = Post.create!({caption: "Migratory", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.23.52+PM.png"})
 post62 = Post.create!({caption: "Recombinant", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.23.58+PM.png"})
-post63 = Post.create!({caption: "Before you advertise", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.24.08+PM.png"})
 post64 = Post.create!({caption: "With no fortune unseen", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.24.17+PM.png"})
 post65 = Post.create!({caption: "Sell the rights", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.24.24+PM.png"})
 post66 = Post.create!({caption: "Time-machine", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.24.34+PM.png"})
-post67 = Post.create!({caption: "While I'm dulled by excess", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.24.43+PM.png"})
 
 
 
 post68 = Post.create!({caption: "Bloody smiling", artist_id: user6.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.24.52+PM.png"})
 post69 = Post.create!({caption: "Where's my rainbow?", artist_id: user6.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.25.10+PM.png"})
 post70 = Post.create!({caption: "There's my halo", artist_id: user6.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.25.17+PM.png"})
-post71 = Post.create!({caption: "Birds and fairies", artist_id: user6.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.25.27+PM.png"})
 post72 = Post.create!({caption: "From the skyscrapers", artist_id: user6.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.25.38+PM.png"})
 post73 = Post.create!({caption: "Down to the submarines", artist_id: user6.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.25.49+PM.png"})
-post74 = Post.create!({caption: "That pound the iron heart", artist_id: user6.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.25.57+PM.png"})
 post75 = Post.create!({caption: "Vandalizing", artist_id: user6.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.26.03+PM.png"})
 
 
@@ -151,15 +157,12 @@ post78 = Post.create!({caption: "Hush me, touch me", artist_id: user7.id, image:
 post79 = Post.create!({caption: "The burns, the holes in the sheets", artist_id: user7.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.26.49+PM.png"})
 post80 = Post.create!({caption: "Cognac", artist_id: user7.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.26.59+PM.png"})
 post81 = Post.create!({caption: "broken glass", artist_id: user7.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.27.12+PM.png"})
-post82 = Post.create!({caption: "Lipstick", artist_id: user7.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.27.41+PM.png"})
+post57 = Post.create!({caption: "walk-through walls", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.22.39+PM.png"})
 
-
-post83 = Post.create!({caption: "just 5 hours left", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.27.48+PM.png"})
-post84 = Post.create!({caption: "Golem II", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.27.57+PM.png"})
-post85 = Post.create!({caption: "What do you know?", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.28.12+PM.png"})
-post86 = Post.create!({caption: "Self-perfecting", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.28.24+PM.png"})
-post87 = Post.create!({caption: "His induction", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.28.41+PM.png"})
-post88 = Post.create!({caption: "Spirit lifting", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.29.17+PM.png"})
+post74 = Post.create!({caption: "That pound the iron heart", artist_id: user6.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.25.57+PM.png"})
+post67 = Post.create!({caption: "While I'm dulled by excess", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.24.43+PM.png"})
+post63 = Post.create!({caption: "Before you advertise", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.24.08+PM.png"})
+post71 = Post.create!({caption: "Birds and fairies", artist_id: user6.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.25.27+PM.png"})
 post89 = Post.create!({caption: "Building a new zion", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.29.27+PM.png"})
 
 
@@ -296,6 +299,7 @@ Like.create!({user_id: user9.id, post_id: post77.id})
 Like.create!({user_id: user9.id, post_id: post78.id})
 Like.create!({user_id: user9.id, post_id: post79.id})
 Like.create!({user_id: user9.id, post_id: post80.id})
+Like.create!({user_id: user9.id, post_id: post89.id})
 
 Like.create!({user_id: user10.id, post_id: post1.id})
 Like.create!({user_id: user10.id, post_id: post2.id})
@@ -457,6 +461,26 @@ Like.create!({user_id: user11.id, post_id: post77.id})
 Like.create!({user_id: user11.id, post_id: post78.id})
 Like.create!({user_id: user11.id, post_id: post79.id})
 Like.create!({user_id: user11.id, post_id: post80.id})
+
+Like.create!({user_id: user11.id, post_id: post89.id})
+Like.create!({user_id: user12.id, post_id: post89.id})
+Like.create!({user_id: user13.id, post_id: post89.id})
+Like.create!({user_id: user14.id, post_id: post89.id})
+Like.create!({user_id: user15.id, post_id: post89.id})
+Like.create!({user_id: user16.id, post_id: post89.id})
+Like.create!({user_id: user17.id, post_id: post89.id})
+Like.create!({user_id: user18.id, post_id: post89.id})
+Like.create!({user_id: user19.id, post_id: post89.id})
+Like.create!({user_id: user20.id, post_id: post89.id})
+Like.create!({user_id: user21.id, post_id: post89.id})
+Like.create!({user_id: user22.id, post_id: post89.id})
+Like.create!({user_id: user23.id, post_id: post89.id})
+Like.create!({user_id: user24.id, post_id: post89.id})
+Like.create!({user_id: user25.id, post_id: post89.id})
+Like.create!({user_id: user26.id, post_id: post89.id})
+
+
+
 
 Like.create!({user_id: user13.id, post_id: post1.id})
 Like.create!({user_id: user13.id, post_id: post2.id})
