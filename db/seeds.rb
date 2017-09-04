@@ -173,14 +173,12 @@ Comment.create!({body: "how much? 😗", author_id: user5.id, post_id: post42.id
 Comment.create!({body: "🤑 Love", author_id: user4.id, post_id: post54.id})
 Comment.create!({body: "This is exactly 👩‍👩‍👧 how I feel!", author_id: user3.id, post_id: post68.id})
 Comment.create!({body: "I want 😍", author_id: user2.id, post_id: post76.id})
-Comment.create!({body: "this is great 😂", author_id: user1.id, post_id: post83.id})
 Comment.create!({body: "Cool piccc 🧀", author_id: user7.id, post_id: post3.id})
 Comment.create!({body: "😍 Wow", author_id: user5.id, post_id: post26.id})
 Comment.create!({body: "how much? 😗", author_id: user6.id, post_id: post43.id})
 Comment.create!({body: "🤑 Love", author_id: user3.id, post_id: post55.id})
 Comment.create!({body: "This is exactly 👩‍👩‍👧 how I feel!", author_id: user4.id, post_id: post69.id})
 Comment.create!({body: "I want 😍", author_id: user1.id, post_id: post77.id})
-Comment.create!({body: "this is great 😂", author_id: user2.id, post_id: post84.id})
 
 Comment.create!({body: "Cool piccc 🧀", author_id: user6.id, post_id: post4.id})
 Comment.create!({body: "Love this one 🍎", author_id: user5.id, post_id: post18.id})
@@ -188,21 +186,18 @@ Comment.create!({body: "how much? 😗", author_id: user7.id, post_id: post44.id
 Comment.create!({body: "🤑 Love", author_id: user4.id, post_id: post56.id})
 Comment.create!({body: "This is exactly 👩‍👩‍👧 how I feel!", author_id: user1.id, post_id: post70.id})
 Comment.create!({body: "I want 😍", author_id: user2.id, post_id: post78.id})
-Comment.create!({body: "this is great 😂", author_id: user3.id, post_id: post85.id})
 
 Comment.create!({body: "this is awesome 😜", author_id: user6.id, post_id: post16.id})
 Comment.create!({body: "GREAT!! 🙌", author_id: user5.id, post_id: post4.id})
 Comment.create!({body: "🤑 Love", author_id: user5.id, post_id: post57.id})
 Comment.create!({body: "This is exactly 👩‍👩‍👧 how I feel!", author_id: user3.id, post_id: post71.id})
 Comment.create!({body: "I want 😍", author_id: user7.id, post_id: post79.id})
-Comment.create!({body: "this is great 😂", author_id: user4.id, post_id: post86.id})
 
 Comment.create!({body: "this is awesome 😜", author_id: user6.id, post_id: post16.id})
 Comment.create!({body: "GREAT!! 🙌", author_id: user5.id, post_id: post4.id})
 Comment.create!({body: "🤑 Love", author_id: user5.id, post_id: post57.id})
 Comment.create!({body: "This is exactly 👩‍👩‍👧 how I feel!", author_id: user3.id, post_id: post71.id})
 Comment.create!({body: "I want 😍", author_id: user7.id, post_id: post79.id})
-Comment.create!({body: "this is great 😂", author_id: user4.id, post_id: post86.id})
 
 Like.destroy_all
 
@@ -286,7 +281,6 @@ Like.create!({user_id: user9.id, post_id: post77.id})
 Like.create!({user_id: user9.id, post_id: post78.id})
 Like.create!({user_id: user9.id, post_id: post79.id})
 Like.create!({user_id: user9.id, post_id: post80.id})
-Like.create!({user_id: user9.id, post_id: post89.id})
 
 Like.create!({user_id: user10.id, post_id: post1.id})
 Like.create!({user_id: user10.id, post_id: post2.id})
@@ -448,23 +442,6 @@ Like.create!({user_id: user11.id, post_id: post77.id})
 Like.create!({user_id: user11.id, post_id: post78.id})
 Like.create!({user_id: user11.id, post_id: post79.id})
 Like.create!({user_id: user11.id, post_id: post80.id})
-
-Like.create!({user_id: user11.id, post_id: post89.id})
-Like.create!({user_id: user12.id, post_id: post89.id})
-Like.create!({user_id: user13.id, post_id: post89.id})
-Like.create!({user_id: user14.id, post_id: post89.id})
-Like.create!({user_id: user15.id, post_id: post89.id})
-Like.create!({user_id: user16.id, post_id: post89.id})
-Like.create!({user_id: user17.id, post_id: post89.id})
-Like.create!({user_id: user18.id, post_id: post89.id})
-Like.create!({user_id: user19.id, post_id: post89.id})
-Like.create!({user_id: user20.id, post_id: post89.id})
-Like.create!({user_id: user21.id, post_id: post89.id})
-Like.create!({user_id: user22.id, post_id: post89.id})
-Like.create!({user_id: user23.id, post_id: post89.id})
-Like.create!({user_id: user24.id, post_id: post89.id})
-Like.create!({user_id: user25.id, post_id: post89.id})
-Like.create!({user_id: user26.id, post_id: post89.id})
 
 
 
