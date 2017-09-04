@@ -17,7 +17,6 @@ user6 = User.create!({name: "Dan", website: "www.sdfg.com", email: "EdPhoto@gami
 user7 = User.create!({name: "jon", website: "www.adfadsf.com", email: "EdPhoto@gamil.com", bio: "Making wierd stuff", username: "dark & lite", password: "password", avatar: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.26.11+PM.png"})
 
 user9 = User.create!({username: "joe_photo", password: "password"})
-user8 = User.create!({username: "art", password: "password"})
 user100 = User.create!({username: "jane", password: "password"})
 user10 = User.create!({username: "christina123", password: "password"})
 user11 = User.create!({username: "dan", password: "password"})
@@ -58,12 +57,7 @@ Post.destroy_all
 
 
 
-post88 = Post.create!({caption: "Spirit lifting", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.29.17+PM.png"})
-post86 = Post.create!({caption: "Self-perfecting", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.28.24+PM.png"})
-post85 = Post.create!({caption: "What do you know?", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.28.12+PM.png"})
-post84 = Post.create!({caption: "Golem II", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.27.57+PM.png"})
-post83 = Post.create!({caption: "just 5 hours left", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.27.48+PM.png"})
-post87 = Post.create!({caption: "His induction", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.28.41+PM.png"})
+
 post82 = Post.create!({caption: "Lipstick", artist_id: user7.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.27.41+PM.png"})
 
 
@@ -163,7 +157,6 @@ post74 = Post.create!({caption: "That pound the iron heart", artist_id: user6.id
 post67 = Post.create!({caption: "While I'm dulled by excess", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.24.43+PM.png"})
 post63 = Post.create!({caption: "Before you advertise", artist_id: user5.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.24.08+PM.png"})
 post71 = Post.create!({caption: "Birds and fairies", artist_id: user6.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.25.27+PM.png"})
-post89 = Post.create!({caption: "Building a new zion", artist_id: user8.id, image: "https://s3.amazonaws.com/arthouse-dev/second+seed/Screen+Shot+2017-08-31+at+7.29.27+PM.png"})
 
 
 
@@ -173,7 +166,7 @@ post89 = Post.create!({caption: "Building a new zion", artist_id: user8.id, imag
 
 Comment.destroy_all
 
-Comment.create!({body: "Cool piccc 🧀", author_id: user8.id, post_id: post2.id})
+
 Comment.create!({body: "Love this one 🍎", author_id: user7.id, post_id: post16.id})
 Comment.create!({body: "😍 Wow", author_id: user6.id, post_id: post25.id})
 Comment.create!({body: "how much? 😗", author_id: user5.id, post_id: post42.id})
@@ -182,7 +175,6 @@ Comment.create!({body: "This is exactly 👩‍👩‍👧 how I feel!", author_
 Comment.create!({body: "I want 😍", author_id: user2.id, post_id: post76.id})
 Comment.create!({body: "this is great 😂", author_id: user1.id, post_id: post83.id})
 Comment.create!({body: "Cool piccc 🧀", author_id: user7.id, post_id: post3.id})
-Comment.create!({body: "Love this one 🍎", author_id: user8.id, post_id: post17.id})
 Comment.create!({body: "😍 Wow", author_id: user5.id, post_id: post26.id})
 Comment.create!({body: "how much? 😗", author_id: user6.id, post_id: post43.id})
 Comment.create!({body: "🤑 Love", author_id: user3.id, post_id: post55.id})
@@ -192,7 +184,6 @@ Comment.create!({body: "this is great 😂", author_id: user2.id, post_id: post8
 
 Comment.create!({body: "Cool piccc 🧀", author_id: user6.id, post_id: post4.id})
 Comment.create!({body: "Love this one 🍎", author_id: user5.id, post_id: post18.id})
-Comment.create!({body: "😍 Wow", author_id: user8.id, post_id: post27.id})
 Comment.create!({body: "how much? 😗", author_id: user7.id, post_id: post44.id})
 Comment.create!({body: "🤑 Love", author_id: user4.id, post_id: post56.id})
 Comment.create!({body: "This is exactly 👩‍👩‍👧 how I feel!", author_id: user1.id, post_id: post70.id})
@@ -201,8 +192,6 @@ Comment.create!({body: "this is great 😂", author_id: user3.id, post_id: post8
 
 Comment.create!({body: "this is awesome 😜", author_id: user6.id, post_id: post16.id})
 Comment.create!({body: "GREAT!! 🙌", author_id: user5.id, post_id: post4.id})
-Comment.create!({body: "😍 Wow", author_id: user8.id, post_id: post27.id})
-Comment.create!({body: "how much? 😗", author_id: user8.id, post_id: post45.id})
 Comment.create!({body: "🤑 Love", author_id: user5.id, post_id: post57.id})
 Comment.create!({body: "This is exactly 👩‍👩‍👧 how I feel!", author_id: user3.id, post_id: post71.id})
 Comment.create!({body: "I want 😍", author_id: user7.id, post_id: post79.id})
@@ -210,8 +199,6 @@ Comment.create!({body: "this is great 😂", author_id: user4.id, post_id: post8
 
 Comment.create!({body: "this is awesome 😜", author_id: user6.id, post_id: post16.id})
 Comment.create!({body: "GREAT!! 🙌", author_id: user5.id, post_id: post4.id})
-Comment.create!({body: "😍 Wow", author_id: user8.id, post_id: post27.id})
-Comment.create!({body: "how much? 😗", author_id: user8.id, post_id: post45.id})
 Comment.create!({body: "🤑 Love", author_id: user5.id, post_id: post57.id})
 Comment.create!({body: "This is exactly 👩‍👩‍👧 how I feel!", author_id: user3.id, post_id: post71.id})
 Comment.create!({body: "I want 😍", author_id: user7.id, post_id: post79.id})
@@ -2517,7 +2504,6 @@ Follow.create!({follower_id: user1.id, followee_id: user4.id})
 Follow.create!({follower_id: user1.id, followee_id: user5.id})
 Follow.create!({follower_id: user1.id, followee_id: user6.id})
 Follow.create!({follower_id: user1.id, followee_id: user7.id})
-Follow.create!({follower_id: user1.id, followee_id: user8.id})
 
 Follow.create!({follower_id: user2.id, followee_id: user1.id})
 Follow.create!({follower_id: user2.id, followee_id: user3.id})
@@ -2525,7 +2511,6 @@ Follow.create!({follower_id: user2.id, followee_id: user4.id})
 Follow.create!({follower_id: user2.id, followee_id: user5.id})
 Follow.create!({follower_id: user2.id, followee_id: user6.id})
 Follow.create!({follower_id: user2.id, followee_id: user7.id})
-Follow.create!({follower_id: user2.id, followee_id: user8.id})
 
 Follow.create!({follower_id: user3.id, followee_id: user1.id})
 Follow.create!({follower_id: user3.id, followee_id: user2.id})
@@ -2533,7 +2518,6 @@ Follow.create!({follower_id: user3.id, followee_id: user4.id})
 Follow.create!({follower_id: user3.id, followee_id: user5.id})
 Follow.create!({follower_id: user3.id, followee_id: user6.id})
 Follow.create!({follower_id: user3.id, followee_id: user7.id})
-Follow.create!({follower_id: user3.id, followee_id: user8.id})
 
 Follow.create!({follower_id: user4.id, followee_id: user1.id})
 Follow.create!({follower_id: user4.id, followee_id: user2.id})
@@ -2541,7 +2525,6 @@ Follow.create!({follower_id: user4.id, followee_id: user3.id})
 Follow.create!({follower_id: user4.id, followee_id: user5.id})
 Follow.create!({follower_id: user4.id, followee_id: user6.id})
 Follow.create!({follower_id: user4.id, followee_id: user7.id})
-Follow.create!({follower_id: user4.id, followee_id: user8.id})
 
 Follow.create!({follower_id: user5.id, followee_id: user1.id})
 Follow.create!({follower_id: user5.id, followee_id: user2.id})
@@ -2549,7 +2532,6 @@ Follow.create!({follower_id: user5.id, followee_id: user3.id})
 Follow.create!({follower_id: user5.id, followee_id: user4.id})
 Follow.create!({follower_id: user5.id, followee_id: user6.id})
 Follow.create!({follower_id: user5.id, followee_id: user7.id})
-Follow.create!({follower_id: user5.id, followee_id: user8.id})
 
 Follow.create!({follower_id: user6.id, followee_id: user1.id})
 Follow.create!({follower_id: user6.id, followee_id: user2.id})
@@ -2557,7 +2539,6 @@ Follow.create!({follower_id: user6.id, followee_id: user3.id})
 Follow.create!({follower_id: user6.id, followee_id: user4.id})
 Follow.create!({follower_id: user6.id, followee_id: user5.id})
 Follow.create!({follower_id: user6.id, followee_id: user7.id})
-Follow.create!({follower_id: user6.id, followee_id: user8.id})
 
 Follow.create!({follower_id: user7.id, followee_id: user1.id})
 Follow.create!({follower_id: user7.id, followee_id: user2.id})
@@ -2565,15 +2546,7 @@ Follow.create!({follower_id: user7.id, followee_id: user3.id})
 Follow.create!({follower_id: user7.id, followee_id: user4.id})
 Follow.create!({follower_id: user7.id, followee_id: user5.id})
 Follow.create!({follower_id: user7.id, followee_id: user6.id})
-Follow.create!({follower_id: user7.id, followee_id: user8.id})
 
-Follow.create!({follower_id: user8.id, followee_id: user1.id})
-Follow.create!({follower_id: user8.id, followee_id: user2.id})
-Follow.create!({follower_id: user8.id, followee_id: user3.id})
-Follow.create!({follower_id: user8.id, followee_id: user4.id})
-Follow.create!({follower_id: user8.id, followee_id: user5.id})
-Follow.create!({follower_id: user8.id, followee_id: user6.id})
-Follow.create!({follower_id: user8.id, followee_id: user7.id})
 
 Follow.create!({follower_id: user9.id, followee_id: user1.id})
 Follow.create!({follower_id: user10.id, followee_id: user1.id})
@@ -2694,20 +2667,3 @@ Follow.create!({follower_id: user22.id, followee_id: user7.id})
 Follow.create!({follower_id: user23.id, followee_id: user7.id})
 Follow.create!({follower_id: user24.id, followee_id: user7.id})
 Follow.create!({follower_id: user25.id, followee_id: user7.id})
-Follow.create!({follower_id: user9.id, followee_id: user8.id})
-Follow.create!({follower_id: user10.id, followee_id: user8.id})
-Follow.create!({follower_id: user11.id, followee_id: user8.id})
-Follow.create!({follower_id: user12.id, followee_id: user8.id})
-Follow.create!({follower_id: user13.id, followee_id: user8.id})
-Follow.create!({follower_id: user14.id, followee_id: user8.id})
-Follow.create!({follower_id: user15.id, followee_id: user8.id})
-Follow.create!({follower_id: user16.id, followee_id: user8.id})
-Follow.create!({follower_id: user17.id, followee_id: user8.id})
-Follow.create!({follower_id: user18.id, followee_id: user8.id})
-Follow.create!({follower_id: user19.id, followee_id: user8.id})
-Follow.create!({follower_id: user20.id, followee_id: user8.id})
-Follow.create!({follower_id: user21.id, followee_id: user8.id})
-Follow.create!({follower_id: user22.id, followee_id: user8.id})
-Follow.create!({follower_id: user23.id, followee_id: user8.id})
-Follow.create!({follower_id: user24.id, followee_id: user8.id})
-Follow.create!({follower_id: user25.id, followee_id: user8.id})

@@ -21,7 +21,6 @@ const mapDispatchToProps = dispatch => {
     addNewLike: (like) => dispatch(addNewLike(like)),
     unLike: (postId) => dispatch(unLike(postId)),
     closeModal: () => dispatch(closeModal())
-
   };
 };
 

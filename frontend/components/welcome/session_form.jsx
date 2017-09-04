@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
   }
 
   demoLogIn() {
-    dispatch(login(this.state)).then(() => this.props.history.push('/'));
+    this.props.login(this.state).then(() => this.props.history.push('/'));
   }
 
   handleDemoClick(e) {

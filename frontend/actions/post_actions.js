@@ -19,7 +19,7 @@ export const receivePostErrors = (errors) => {
 };
 
 export const createNewPost = ( post ) => (dispatch) => {
-  return sendNewPost(post)
+  return APIUtil.sendNewPost(post)
   .then(
     (post) => dispatch(receiveNewPost(post))
   );
