@@ -6,7 +6,7 @@
 
 [heroku]: https://arthouse.herokuapp.com/#/signup
 
-artHouse is a full-stack web application modeled after Instagram.  This app is designed for artists to post their work with the social media aspect of users being able to follow artists they find, and like posts they favor.  I am planning on adding a bid or buy feature so followers can buy pieces from artists directly.  artHour uses Ruby on Rails for the backend, a PostgreSQL database, and React/Redux architectural framework on the frontend.
+artHouse is a full-stack web application modeled after Instagram.  This app is designed for artists to post their work with the social media aspect of users being able to follow artists they find, and like posts they favor.  I am planning on adding a bid or buy feature so followers can buy pieces from artists directly.  artHouse uses Ruby on Rails for the backend, a PostgreSQL database, and React/Redux architectural framework on the frontend.
 
 ## Features & Implementation
 

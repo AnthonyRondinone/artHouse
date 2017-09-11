@@ -1,4 +1,4 @@
-// .then((data) => console.log(data))
+
 
 export const sendNewPost = (post) => {
     return $.ajax({
