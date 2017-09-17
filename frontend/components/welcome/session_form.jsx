@@ -89,9 +89,9 @@ class SessionForm extends React.Component {
 
         <div className="icon-div">
           <a target="_blank" href="https://github.com/AnthonyRondinone/artHouse"><i className="foot-icons fa fa-github" aria-hidden="true"></i></a>
-          <a target="_blank" href="mailto:a.rondinone@gmail.com"><i className="foot-icons fa fa-envelope" aria-hidden="true"></i></a>
           <a target="_blank" href="https://www.linkedin.com/in/anthony-rondinone-a1111446"><i className="foot-icons fa fa-linkedin" aria-hidden="true"></i></a>
-          <a target="_blank" href="https://anthonyrondinone.github.io/" ><i className="foot-icons fa fa-laptop" aria-hidden="true"></i></a>
+          <a target="_blank" href="http://anthonyrondinone.com"><i className="foot-icons fa fa-laptop" aria-hidden="true"></i></a>
+          <a target="_blank" href="mailto:a.rondinone@gmail.com"><i className="foot-icons fa fa-envelope" aria-hidden="true"></i></a>
         </div>
 
       </div>
