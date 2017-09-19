@@ -15,6 +15,7 @@ class NewPostForm extends React.Component {
     this.updateDraggedFile = this.updateDraggedFile.bind(this);
   }
 
+
   handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData();
