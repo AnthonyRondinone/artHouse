@@ -24,7 +24,6 @@ export const usersReducer = ( state = {}, action ) => {
       return newState;
     case RECEIVE_UPDATED_USER_AVATAR:
       newState = merge({}, state);
-      debugger
       newState[action.user.id].avatar_url = action.user.avatar_url;
       return newState;
     default:

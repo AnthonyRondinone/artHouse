@@ -16,7 +16,6 @@ class ProfileAvatar extends React.Component {
   handleDrop(e) {
     let formData = new FormData();
     formData.append("user[avatar]", e[0]);
-    debugger
     this.props.updateUserAvatar(formData, this.props.currentUser.id);
 
   }

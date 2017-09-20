@@ -34,7 +34,6 @@ export const suggestedUser = (users) => (dispatch) => {
 };
 
 export const receiveUpdatedUserAvatar = ( { user, posts } ) => {
-  debugger
   return {
     type: RECEIVE_UPDATED_USER_AVATAR,
     user,

@@ -16,7 +16,6 @@ export const fetchSuggestedUsers = () => {
 };
 
 export const updateUserInfo = (info, userId) => {
-  debugger
   return $.ajax({
     method: 'PATCH',
     url: `/api/users/${userId}`,
