@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import UserPostIndexItem from './user_post_index_items';
 import EditFollowButton from './edit_follow_button';
-import Dropzone from 'react-dropzone';
+import ProfileAvatar from './profile_avatar';
 
 
 class ProfileItem extends React.Component {
@@ -26,7 +26,7 @@ class ProfileItem extends React.Component {
 
 
   render() {
-    const {user, posts, currentUser, addNewFollow, unFollow } = this.props;
+    const {user, posts, currentUser, addNewFollow, unFollow, updateUserAvatar } = this.props;
 
     if (this.props.user) {
       let postText = posts.length === 1 ? " post": " posts";
@@ -48,7 +48,7 @@ class ProfileItem extends React.Component {
 
               <div className="upAvatarCush">
                 <div className="upAvatarContain" >
-                  <img className="upAvatar" src={user.avatar_url} />
+                  <ProfileAvatar user={user} currentUser={currentUser} updateUserAvatar={updateUserAvatar} />
                 </div>
               </div>
 

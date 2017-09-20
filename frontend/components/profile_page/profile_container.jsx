@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import ProfileItem from './profile_item';
-import { requestSingleUser } from '../../actions/user_actions';
+import { requestSingleUser, updateUserAvatar } from '../../actions/user_actions';
 import { selectUsersPosts } from '../../reducers/selectors';
 import { addNewFollow, unFollow } from '../../actions/follow_actions';
 
@@ -23,7 +23,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     requestSingleUser: (user) => dispatch(requestSingleUser(user)),
     addNewFollow: (follow) => dispatch(addNewFollow(follow)),
-    unFollow: (followId) => dispatch(unFollow(followId))
+    unFollow: (followId) => dispatch(unFollow(followId)),
+    updateUserAvatar: (userInfo, userId) => dispatch(updateUserAvatar(userInfo, userId))
   };
 };
 

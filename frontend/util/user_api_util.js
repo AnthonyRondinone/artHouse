@@ -14,3 +14,14 @@ export const fetchSuggestedUsers = () => {
     url: 'api/users'
   });
 };
+
+export const updateUserInfo = (info, userId) => {
+  debugger
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${userId}`,
+    contentType: false,
+    processData: false,
+    data: info
+  });
+};

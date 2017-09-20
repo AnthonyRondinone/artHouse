@@ -1,4 +1,4 @@
-import { RECEIVE_SINGLE_USER, RECEIVE_SUGGESTED_USERS } from '../actions/user_actions';
+import { RECEIVE_SINGLE_USER, RECEIVE_SUGGESTED_USERS, RECEIVE_UPDATED_USER_AVATAR } from '../actions/user_actions';
 import { RECEIVE_FOLLOW, DELETE_FOLLOW } from '../actions/follow_actions';
 import { merge } from 'lodash';
 
@@ -21,6 +21,11 @@ export const usersReducer = ( state = {}, action ) => {
       return newState;
     case RECEIVE_SUGGESTED_USERS:
       newState = action.payload.user;
+      return newState;
+    case RECEIVE_UPDATED_USER_AVATAR:
+      newState = merge({}, state);
+      debugger
+      newState[action.user.id].avatar_url = action.user.avatar_url;
       return newState;
     default:
     return state;
