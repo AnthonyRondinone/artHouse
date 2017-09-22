@@ -34,27 +34,25 @@ export const suggestedUser = (users) => (dispatch) => {
   );
 };
 
-export const receiveUpdatedUserAvatar = ( { user, posts } ) => {
+export const receiveUpdatedUserAvatar = ( { user } ) => {
   return {
     type: RECEIVE_UPDATED_USER_AVATAR,
-    user,
-    posts
+    user
   };
 };
 
 export const updateUserAvatar = ( userInfo, userId ) => ( dispatch ) => {
-  return APIUtil.updateUserInfo( userInfo, userId )
+  return APIUtil.updateUserInfoAva( userInfo, userId )
   .then(
     (user) => dispatch(receiveUpdatedUserAvatar(user))
   );
 };
 
 
-export const receiveUpdatedUser = ( { user, posts } ) => {
+export const receiveUpdatedUser = ( { user } ) => {
   return {
     type: RECEIVE_UPDATED_USER,
-    user,
-    posts
+    user
   };
 };
 

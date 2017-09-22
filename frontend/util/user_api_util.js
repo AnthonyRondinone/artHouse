@@ -15,12 +15,20 @@ export const fetchSuggestedUsers = () => {
   });
 };
 
-export const updateUserInfo = (info, userId) => {
+export const updateUserInfoAva = (info, userId) => {
   return $.ajax({
     method: 'PATCH',
     url: `/api/users/${userId}`,
     contentType: false,
     processData: false,
     data: info
+  });
+};
+
+export const updateUserInfo = (user, userId) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${userId}`,
+    data: {user}
   });
 };

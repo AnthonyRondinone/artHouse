@@ -9,10 +9,10 @@ import NewPostContainer from './create_new_post/new_post_container';
 import ImageShowContainer from './image_show/image_show_container';
 import SuggestedArtistContainer from './suggested_artists/suggested_artist_container';
 import UserEditContainer from './user_edit/user_edit_container';
-// <NavBarContainer component={NavBarContainer}/>
 
 const App = () => (
   <div>
+    <NavBarContainer component={NavBarContainer}/>
       <ProtectedRoute path="/create" component={NewPostContainer}/>
       <ProtectedRoute path="/welcome" component={SuggestedArtistContainer} />
       <ProtectedRoute path="/" exact={true} component={FeedContainer} />

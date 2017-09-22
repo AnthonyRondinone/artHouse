@@ -1,0 +1,54 @@
+.ue-main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+
+}
+
+
+.ue-form-contain {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  margin-top: 60px;
+  width: 933px;
+  height: 676px;
+}
+
+.edit-left-contain {
+  width: 237px;
+  border-right: 1px solid #e6e6e6;
+}
+
+.ue-edit {
+  padding-left: 30px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-weight: 500;
+  font-size: 18px;
+  border-left: 2px solid black;
+  margin: 0px;
+}
+
+
+
+.ue-avatar-contain {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  -moz-border-radius:75px;
+    -webkit-border-radius: 75px;
+    margin: 0px;
+    float: left;
+}
+
+.ue-avatar {
+  overflow: hidden;
+  max-width: 102%;
+  max-height: 102%;
+}
