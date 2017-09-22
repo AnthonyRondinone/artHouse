@@ -18,7 +18,6 @@ class ProfileItem extends React.Component {
   }
 
   componentDidMount() {
-
     this.props.requestSingleUser(this.props.match.params.userId);
   }
 
@@ -48,7 +47,7 @@ class ProfileItem extends React.Component {
 
               <div className="upAvatarCush">
                 <div className="upAvatarContain" >
-                  
+
                   <ProfileAvatar user={user} currentUser={currentUser} updateUserAvatar={updateUserAvatar} />
                 </div>
               </div>
