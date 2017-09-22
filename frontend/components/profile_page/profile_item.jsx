@@ -48,6 +48,7 @@ class ProfileItem extends React.Component {
 
               <div className="upAvatarCush">
                 <div className="upAvatarContain" >
+                  
                   <ProfileAvatar user={user} currentUser={currentUser} updateUserAvatar={updateUserAvatar} />
                 </div>
               </div>

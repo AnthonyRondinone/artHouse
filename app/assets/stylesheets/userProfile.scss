@@ -78,6 +78,15 @@
     margin: auto;
 }
 
+.avatar-hover {
+  background: black;
+  // opacity: .3;
+}
+
+.upAvatar-dropZone:hover {
+  cursor: pointer;
+}
+
 .upAvatar {
   overflow: hidden;
   max-width: 102%;

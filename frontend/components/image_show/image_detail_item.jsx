@@ -18,7 +18,7 @@ class ImageDetailItem extends React.Component {
 
   handleModalClose() {
     this.props.closeModal();
-    this.props.history.push(`/users/${this.props.match.params.userId}`);
+    this.props.history.push(`/users/${this.props.posts[this.props.match.params.postId].artistId}`);
   }
 
   render() {

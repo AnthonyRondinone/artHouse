@@ -1,4 +1,4 @@
-import { RECEIVE_SINGLE_USER, RECEIVE_SUGGESTED_USERS, RECEIVE_UPDATED_USER_AVATAR } from '../actions/user_actions';
+import { RECEIVE_SINGLE_USER, RECEIVE_SUGGESTED_USERS, RECEIVE_UPDATED_USER_AVATAR, RECEIVE_UPDATED_USER } from '../actions/user_actions';
 import { RECEIVE_FOLLOW, DELETE_FOLLOW } from '../actions/follow_actions';
 import { merge } from 'lodash';
 
@@ -26,7 +26,11 @@ export const usersReducer = ( state = {}, action ) => {
       newState = merge({}, state);
       newState[action.user.id].avatar_url = action.user.avatar_url;
       return newState;
+    case RECEIVE_UPDATED_USER:
+      newState = merge({}, state);
+      newState[action.user.id] = action.user;
+      return newState;
     default:
-    return state;
+      return state;
   }
 };
