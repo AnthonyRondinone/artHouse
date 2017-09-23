@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-
 }
 
 
@@ -17,7 +16,7 @@
   border: 1px solid #e6e6e6;
   margin-top: 60px;
   width: 933px;
-  height: 676px;
+  height: 500px;
 }
 
 .edit-left-contain {
@@ -35,11 +34,17 @@
   margin: 0px;
 }
 
+.edit-right-contain {
+  display: flex;
+  flex-direction: column;
+}
+
 .edit-right-head {
   width: 664px;
   height: 42px;
   display: flex;
   align-items: center;
+  margin-top: 35px;
 }
 
 .ue-avatar-contain {
@@ -56,4 +61,116 @@
   overflow: hidden;
   max-width: 102%;
   max-height: 102%;
+}
+
+.avatar-aside {
+  min-height: 40px;
+}
+
+.ue-username-head {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.ue-right-form-contain {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  margin-bottom: 16px;
+
+}
+
+.eu-icon-div {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eu-links {
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #003569;
+  margin-right: 16px;
+}
+
+.eu-copyright {
+  margin: 0px;
+  color: grey;
+}
+
+
+
+.ue-form-line {
+  display: flex;
+  width: 696px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.ue-aside {
+  font-weight: 500;
+  font-size: 16px;
+  width: 130px;
+  height: 26px;
+  padding-right: 32px;
+  padding-left: 32px;
+  margin-top: 6px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ue-input-contain {
+  width: 442px;
+  height: 32px;
+  padding-right: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.eu-input {
+  width: 333px;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 3px;
+  border: 1px solid #efefef;
+  font-size: 16px;
+}
+
+.private-info {
+  border: none;
+  color: grey;
+  font-weight: 500;
+  font-size: 15px;
+  align-self: flex-start;
+  padding-left: 0px;
+}
+
+.eu-text-area {
+  height: 46px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  max-width: 333px;
+  max-height: 46px;
+}
+
+.eu-text-aside {
+  height: 54px;
+}
+
+.ue-submit-button {
+  height: 30px;
+  width: 96px;
+  color: #fff;
+  background: #3897f0;
+  border-color: #3897f0;
+  border-radius: 3px;
+  border-style: solid;
+  border: 1px solid #dbdbdb;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  margin-left: 0px;
+  cursor:pointer;
 }
