@@ -30,13 +30,13 @@ class ProfileAvatar extends React.Component {
           <div>
             <Dropzone className="upAvatar-dropZone"
               onDrop={this.handleDrop} >
-              <img className="upAvatar" src={user.avatar_url} />
+              <img className="upAvatar" src={user.avatarOrig} />
             </Dropzone>
           </div>
         );
       } else {
         return (
-          <img className="upAvatar" src={user.avatar_url} />
+          <img className="upAvatar" src={user.avatarOrig} />
         );
       }
     }

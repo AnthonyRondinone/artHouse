@@ -5,8 +5,8 @@ json.post do
     json.id @post.id
     json.artistId @post.artist.id
     json.username @post.artist.username
-    json.avatar @post.artist.avatar
-    json.image_url asset_path(@post.image.url)
+    json.avatarThumb @post.artist.avatar.url(:thumb)
+    json.imageOrig asset_path(@post.image.url(:original))
     json.caption @post.caption
     json.createdAt @post.created_at
     json.commentIds @post.comments.map(&:id)

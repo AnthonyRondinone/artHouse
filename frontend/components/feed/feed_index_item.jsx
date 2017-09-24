@@ -12,7 +12,7 @@ class FeedIndexItem extends React.Component {
 
 
   render() {
-    const { id, currentUserId, artistId, avatar, username, image, createdAt, likerIds, liked, commentIds, caption} = this.props;
+    const { id, currentUserId, artistId, avatarThumb, username, imageOrig, createdAt, likerIds, liked, commentIds, caption} = this.props;
 
     let like;
     let likeCount;
@@ -36,14 +36,14 @@ class FeedIndexItem extends React.Component {
           <div className="artist-info" >
 
             <div className="avatar-contain">
-            <Link to={`/users/${artistId}`}><img className="artist-avatar" src={avatar} /></Link>
+            <Link to={`/users/${artistId}`}><img className="artist-avatar" src={avatarThumb} /></Link>
             </div>
 
             <Link className='artist-name' to={`/users/${artistId}`}>{username}</Link>
           </div>
 
           <div className="post-image">
-            <img className="image" src={this.props.image}/>
+            <img className="image" src={this.props.imageOrig}/>
           </div>
 
           <div className="under-image" >

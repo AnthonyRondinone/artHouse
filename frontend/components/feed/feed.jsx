@@ -27,9 +27,9 @@ class Feed extends React.Component {
     id={post.id}
     key={post.id}
     artistId={post.artistId}
-    avatar={post.avatar}
+    avatarThumb={post.avatarThumb}
     username={post.username}
-    image={post.image}
+    imageOrig={post.imageOrig}
     createdAt={post.createdAt}
     likerIds={post.likerIds}
     liked={post.liked}

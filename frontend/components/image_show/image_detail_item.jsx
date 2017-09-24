@@ -59,7 +59,7 @@ class ImageDetailItem extends React.Component {
               <div className="s-image-left-contain">
 
                 <div className="s-post-image">
-                  <img className="s-image" src={post.image_url}/>
+                  <img className="s-image" src={post.imageOrig}/>
                 </div>
 
               </div>
@@ -70,7 +70,7 @@ class ImageDetailItem extends React.Component {
 
                   <div className="s-avatar-contain">
                     <Link to={`/users/${post.artistId}`}>
-                      <img className="s-artist-avatar" src={post.avatar} />
+                      <img className="s-artist-avatar" src={post.avatarThumb} />
                     </Link>
                   </div>
 

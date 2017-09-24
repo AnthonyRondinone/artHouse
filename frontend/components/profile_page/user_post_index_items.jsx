@@ -9,7 +9,7 @@ class UserPostIndexItem extends React.Component {
   render() {
     return (
       <Link className="upPostContain" to={`/post/${this.props.postId}`}>
-          <img className="upPostImg" src={this.props.image} />
+          <img className="upPostImg" src={this.props.imageThumb} />
       </Link>
     );
   }

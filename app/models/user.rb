@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :bio, length: { maximum: 150 }
 
-  has_attached_file :avatar, default_url: "https://s3.amazonaws.com/arthouse-dev/default-user.png"
+  has_attached_file :avatar, styles: { original: "155x155#", thumb: "45x45#" }, default_url: "https://s3.amazonaws.com/arthouse-dev/default-user.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password

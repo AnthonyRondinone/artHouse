@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
   has_many :likes, dependent: :destroy
 
-  has_attached_file :image
+  has_attached_file :image, styles: { original: "600x", thumb: "290x290#" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :artist,

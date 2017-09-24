@@ -8,8 +8,8 @@ json.posts do
         json.id post.id
         json.artistId followee.id
         json.username followee.username
-        json.avatar followee.avatar
-        json.image post.image
+        json.avatarThumb followee.avatar.url(:thumb)
+        json.imageOrig post.image.url(:original)
         json.caption post.caption
         json.createdAt post.created_at
         json.commentIds post.comments.map(&:id)
@@ -22,8 +22,8 @@ json.posts do
       json.id post.id
       json.artistId current_user.id
       json.username current_user.username
-      json.avatar current_user.avatar
-      json.image post.image
+      json.avatarThumb current_user.avatar.url(:thumb)
+      json.imageOrig post.image.url(:original)
       json.caption post.caption
       json.createdAt post.created_at
       json.commentIds post.comments.map(&:id)
