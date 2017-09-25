@@ -62,7 +62,7 @@ class EditForm extends React.Component {
 
                   <div className="ue-aside avatar-aside" >
                     <div className="ue-avatar-contain">
-                      <img className="ue-avatar" src={user.avatar_url} />
+                      <img className="ue-avatar" src={user.avatarOrig} />
                     </div>
                   </div>
 
