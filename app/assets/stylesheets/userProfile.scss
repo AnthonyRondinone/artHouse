@@ -78,10 +78,6 @@
     margin: auto;
 }
 
-.avatar-hover {
-  background: black;
-  // opacity: .3;
-}
 
 .upAvatar-dropZone:hover {
   cursor: pointer;
@@ -176,6 +172,27 @@
   margin-right: 25px;
 }
 
+.upPostContain:hover .post-hover {
+  display: block;
+}
+
+.post-hover {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  width: inherit;
+  height: inherit;
+}
+
+.up-post-cover {
+  position: absolute;
+  z-index: 1;
+  width: inherit;
+  height: inherit;
+  background:rgba(0,0,0,0.3);
+
+}
+
 .upPostImg {
   overflow: hidden;
   max-width: 100%;
@@ -185,4 +202,5 @@
   vertical-align: middle;
   height: auto;
   padding-bottom:100%;
+  opacity: 1;
 }

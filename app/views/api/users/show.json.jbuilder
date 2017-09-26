@@ -15,6 +15,8 @@ json.posts do
     json.set! post.id do
       json.imageThumb asset_path(post.image.url(:thumb))
       json.id post.id
+      json.commentIds post.comments.map(&:id)
+      json.likerIds post.likes.map(&:user_id)
     end
   end
 end
