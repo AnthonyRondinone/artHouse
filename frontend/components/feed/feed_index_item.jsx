@@ -27,7 +27,6 @@ class FeedIndexItem extends React.Component {
 
     let artistName = caption ? username : "";
     let dateTime = createdAt;
-
     return (
       <div>
 

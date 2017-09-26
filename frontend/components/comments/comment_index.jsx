@@ -9,22 +9,22 @@ class CommentIndex extends React.Component {
 
 
   render() {
-    const {comments, currentUser} = this.props;
-    let postCommentIndexItems = comments.map((comment) => <CommentIndexItem
-    commentId={comment.id}
-    key={comment.id}
-    body={comment.body}
-    author={comment.author}
-    authorId={comment.authorId}
-    deleteComment={this.props.deleteComment}
-    currentUserId={currentUser.id}
-    artistId={this.props.artistId}
-    />);
-    return (
-      <div>
-        { postCommentIndexItems }
-      </div>
-    );
+      const {comments, currentUser} = this.props;
+      let postCommentIndexItems = comments.map((comment) => <CommentIndexItem
+      commentId={comment.id}
+      key={comment.id}
+      body={comment.body}
+      author={comment.author}
+      authorId={comment.authorId}
+      deleteComment={this.props.deleteComment}
+      currentUserId={currentUser.id}
+      artistId={this.props.artistId}
+      />);
+      return (
+        <div>
+          { postCommentIndexItems }
+        </div>
+      );
   }
 
 }

@@ -20,7 +20,7 @@ class Feed extends React.Component {
 
 
   render() {
-
+    debugger
     const { posts, currentUser, addNewLike, unLike } = this.props;
 
     const feedIndexItems = posts.map((post) => <FeedIndexItem

@@ -4,7 +4,6 @@ import { merge } from 'lodash';
 
 export const usersReducer = ( state = {}, action ) => {
   Object.freeze(state);
-  // debugger
   let newState;
   switch(action.type) {
     case RECEIVE_SINGLE_USER:
@@ -24,11 +23,11 @@ export const usersReducer = ( state = {}, action ) => {
       return newState;
     case RECEIVE_UPDATED_USER_AVATAR:
       newState = merge({}, state);
-      newState[action.user.id].avatar_url = action.user.avatar_url;
+      newState[action.user.id].avatarOrig = action.user.avatarOrig;
       return newState;
     case RECEIVE_UPDATED_USER:
       newState = merge({}, state);
-      newState[action.user.id] = action.user;
+      newState = {[action.user.id]: action.user};
       return newState;
     default:
       return state;

@@ -12,11 +12,10 @@ class NavBarItem extends React.Component {
     e.preventDefault();
     this.props.logout();
   }
-  
+
 
 
   render() {
-
     if (this.props.currentUser) {
       return (
         <div className="nav-main" >
@@ -32,6 +31,7 @@ class NavBarItem extends React.Component {
 
             <div className="nav-right">
               <div className="icon-container" >
+
                 <Link to={`/users/${this.props.currentUser.id}`}><img src={window.images.profileIcon} alt="profile-icon" /></Link>
                 <Link className="right-nav-icon"
                   to={`/create`}>
