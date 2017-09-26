@@ -25,7 +25,6 @@ class ProfileItem extends React.Component {
 
 
   render() {
-    debugger
     const {user, posts, currentUser, addNewFollow, unFollow, updateUserAvatar } = this.props;
 
     if (this.props.user) {
@@ -35,6 +34,7 @@ class ProfileItem extends React.Component {
       const userPostIndexItems = posts.map((post) => <UserPostIndexItem
       key={post.id}
       postId={post.id}
+      post={post}
       imageThumb={post.imageThumb}
       userId={user.id}
       />);

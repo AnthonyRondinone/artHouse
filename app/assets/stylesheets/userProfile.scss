@@ -176,6 +176,20 @@
   display: block;
 }
 
+.like-comment-contain {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.count-cover {
+  position: absolute;
+  z-index: 3;
+  color: white;
+}
+
 .post-hover {
   position: absolute;
   z-index: 1;

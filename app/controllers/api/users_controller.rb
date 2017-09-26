@@ -30,6 +30,9 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @followers = @user.followers
+    @followed_artists = @user.followed_artists
+    @user_posts = @user.posts.includes(:comments, :likes)
     render :show
   end
 
