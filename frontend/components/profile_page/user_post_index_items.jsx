@@ -12,7 +12,7 @@ class UserPostIndexItem extends React.Component {
           <div className="post-hover" >
             <div className="like-comment-contain" >
               <div className="count-contain">
-                <div className="count-cover" >{this.props.post.commentIds.length}</div>
+                <div className="count-cover" >{this.props.post.commentCount}</div>
                 <img src={images.commentWhite}/>
               </div>
               <div className="count-contain">

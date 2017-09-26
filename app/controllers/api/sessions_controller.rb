@@ -4,9 +4,9 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
     if @user
       log_in(@user)
-      # @user_posts = @user.posts.includes(:comments, :likes)
-      # @followers = @user.followers
-      # @followed_artists = @user.followed_artists
+      @user_posts = @user.posts.includes(:comments, :likes)
+      @followers = @user.followers
+      @followed_artists = @user.followed_artists
       render 'api/users/show'
     else
       render json: ["Sorry, please double-check your username or password."], status: 422
