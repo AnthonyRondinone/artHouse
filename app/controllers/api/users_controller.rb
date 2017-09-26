@@ -10,6 +10,9 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in(@user)
+      @followers = @user.followers
+      @followed_artists = @user.followed_artists
+      @user_posts = @user.posts.includes(:comments, :likes)
       render :show
     else
       render json: @user.errors.full_messages, status: 422
@@ -19,6 +22,9 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @user_posts = @user.posts.includes(:comments, :likes)
+    @followers = @user.followers
+    @followed_artists = @user.followed_artists
     if @user.update(user_params)
       render :show
     else

@@ -11,8 +11,15 @@ class UserPostIndexItem extends React.Component {
         <Link className="upPostContain" to={`/post/${this.props.postId}`}>
           <div className="post-hover" >
             <div className="like-comment-contain" >
-              <div className="count-cover" >{this.props.post.likerIds.length}</div>
-              <div className="count-cover" >{this.props.post.commentIds.length}</div>
+              <div className="count-contain">
+                <div className="count-cover" >{this.props.post.commentIds.length}</div>
+                <img src={images.commentWhite}/>
+              </div>
+              <div className="count-contain">
+                <div className="count-cover" >{this.props.post.likerIds.length}</div>
+                <img src={images.heartWhite}/>
+              </div>
+
             </div>
             <div className="up-post-cover"></div>
           </div>

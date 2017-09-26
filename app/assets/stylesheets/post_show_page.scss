@@ -242,6 +242,11 @@
   font-size: 14px;
 }
 
+.comment-input:focus {
+  outline: none;
+}
+
+
 .s-post-time {
   padding-top: 10px;
   padding-bottom: 10px;
