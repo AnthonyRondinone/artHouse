@@ -16,9 +16,9 @@ const App = () => (
       <ProtectedRoute path="/create" component={NewPostContainer}/>
       <ProtectedRoute path="/welcome" component={SuggestedArtistContainer} />
       <ProtectedRoute path="/" exact={true} component={FeedContainer} />
+      <ProtectedRoute path="/users/:userId/:postId" component={ImageShowContainer} />
       <ProtectedRoute path="/users/:userId" exact component={ProfileContainer} />
       <ProtectedRoute path="/users/:userId/edit" component={UserEditContainer} />
-      <ProtectedRoute path="/post/:postId" component={ImageShowContainer} />
 
     <Switch>
       <AuthRoute path="/signin" component={SessionContainer} />
