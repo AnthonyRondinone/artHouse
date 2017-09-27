@@ -13,10 +13,10 @@ import UserEditContainer from './user_edit/user_edit_container';
 const App = () => (
   <div>
     <NavBarContainer component={NavBarContainer}/>
+    <Route path="/users/:userId/:postId" component={ImageShowContainer} />
       <ProtectedRoute path="/create" component={NewPostContainer}/>
       <ProtectedRoute path="/welcome" component={SuggestedArtistContainer} />
       <ProtectedRoute path="/" exact={true} component={FeedContainer} />
-      <ProtectedRoute path="/users/:userId/:postId" component={ImageShowContainer} />
       <ProtectedRoute path="/users/:userId" exact component={ProfileContainer} />
       <ProtectedRoute path="/users/:userId/edit" component={UserEditContainer} />
 
