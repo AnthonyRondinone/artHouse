@@ -5,7 +5,6 @@ import CommentsContainer from '../comments/comments_container';
 import CommentFormContainer from '../comments/comment_form_container';
 import Moment from 'react-moment';
 
-
 class ImageDetailItem extends React.Component {
   constructor(props) {
     super(props);
