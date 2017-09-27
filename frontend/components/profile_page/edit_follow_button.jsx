@@ -29,7 +29,7 @@ class EditFollowButton extends React.Component {
     if (currentUser) {
       if (this.props.match.params.userId === String(currentUser.id)) {
         return (
-          <Link to={`/users/${currentUser.id}/edit`} >
+          <Link to={`/edit/${currentUser.id}`} >
             <button className="editFollowing" >Edit Profile</button>
           </Link>
         );
