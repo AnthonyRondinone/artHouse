@@ -2,7 +2,6 @@ export const RECEIVE_BID = "RECEIVE_BID";
 import * as APIUtil from '../util/bid_api_util';
 
 export const receiveBid = (bid) => {
-  debugger
   return {
     type: RECEIVE_BID,
     bid
