@@ -12,6 +12,8 @@ class User < ApplicationRecord
 
   has_many :likes
 
+  has_many :bids, dependent: :destroy
+
   has_many :posts,
   primary_key: :id,
   foreign_key: :artist_id,
