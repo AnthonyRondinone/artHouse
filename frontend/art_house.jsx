@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // test
   window.sendBid = sendBid;
   window.addBid = addBid;
+  window.dispatch = store.dispatch;
+  window.getState = store.getState;
+
   //
 
   if (window.currentUser) {

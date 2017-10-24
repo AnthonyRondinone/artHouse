@@ -1,6 +1,7 @@
 class Api::BidsController < ApplicationController
 
   def create
+    debugger
     @bid = Bid.new(bid_params)
     @bid.user_id = current_user.id
 
@@ -15,7 +16,7 @@ class Api::BidsController < ApplicationController
   private
 
   def bid_params
-    params.require(:bid).permit(:note, :post_id, :user_id)
+    params.require(:bid).permit(:note, :post_id, :user_id, :bid)
   end
 
 end
