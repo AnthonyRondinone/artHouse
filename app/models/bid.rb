@@ -1,0 +1,2 @@
+class Bid < ApplicationRecord
+end
