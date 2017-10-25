@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024154918) do
+ActiveRecord::Schema.define(version: 20171025135514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bids", force: :cascade do |t|
-    t.decimal "bid", precision: 10, scale: 2, null: false
+    t.decimal "bid", precision: 10, scale: 2, default: "0.0", null: false
     t.integer "user_id", null: false
     t.integer "post_id", null: false
     t.string "note"

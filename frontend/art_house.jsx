@@ -6,7 +6,7 @@ import Root from './components/root';
 //
 import { sendBid } from './util/bid_api_util';
 import { RECEIVE_BID, addBid, receiveBid } from './actions/bid_actions';
-
+import {addNewLike} from './actions/like_actions';
 //
 
 
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addBid = addBid;
   window.dispatch = store.dispatch;
   window.getState = store.getState;
+  window.addNewLike = addNewLike;
 
   //
 

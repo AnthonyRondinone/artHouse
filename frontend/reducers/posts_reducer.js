@@ -2,6 +2,7 @@ import { RECEIVE_SINGLE_USER, RECEIVE_SUGGESTED_USERS } from '../actions/user_ac
 import { RECEIVE_NEW_POST, RECEIVE_FEED_POSTS, RECEIVE_POST_DETAIL } from '../actions/post_actions';
 import { RECEIVE_COMMENT, RECEIVE_DELETE_COMMENT } from '../actions/comment_actions';
 import { RECEIVE_LIKE, DELETE_LIKE } from '../actions/like_actions';
+import { RECEIVE_BID } from '../actions/bid_actions';
 import { merge } from 'lodash';
 
 export const postsReducer = ( state = {}, action ) => {
@@ -17,6 +18,11 @@ export const postsReducer = ( state = {}, action ) => {
     case RECEIVE_POST_DETAIL:
         newState = merge({}, state, {[action.post.post.id]: action.post.post});
         return newState;
+    case RECEIVE_BID:
+      debugger
+      newState = merge({}, state);
+      newState[action.bid.post_id].bidIds.push(action.bid.bidId);
+      return newState;
     case RECEIVE_FEED_POSTS:
       if(action.posts.posts === undefined) {
         return {};
@@ -33,6 +39,7 @@ export const postsReducer = ( state = {}, action ) => {
       newState[action.comment.postId].commentIds.splice(commentIndex, 1);
       return newState;
     case RECEIVE_LIKE:
+    debugger
       newState = merge({}, state);
       newState[action.like.post_id].likerIds.push(action.like.user_id);
       return newState;

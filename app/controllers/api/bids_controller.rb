@@ -1,7 +1,6 @@
 class Api::BidsController < ApplicationController
 
   def create
-    debugger
     @bid = Bid.new(bid_params)
     @bid.user_id = current_user.id
 

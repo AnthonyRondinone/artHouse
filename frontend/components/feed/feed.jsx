@@ -38,6 +38,7 @@ class Feed extends React.Component {
     addNewLike={addNewLike}
     currentUserId={currentUser.id}
     unLike={unLike}
+    addBid={addBid}
     />);
 
 

@@ -14,6 +14,8 @@ json.posts do
         json.createdAt post.created_at
         json.commentIds post.comments.map(&:id)
         json.likerIds post.likes.map(&:user_id)
+        json.bidIds post.bids.map(&:id)
+        json.topBid post.bids.order("bid DESC").first
       end
     end
   end
@@ -28,6 +30,8 @@ json.posts do
       json.createdAt post.created_at
       json.commentIds post.comments.map(&:id)
       json.likerIds post.likes.map(&:user_id)
+      json.bidIds post.bids.map(&:id)
+      json.topBid post.bids.order("bid DESC").first
     end
   end
 end

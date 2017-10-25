@@ -4,6 +4,7 @@ import Feed from './feed';
 import { selectFeedPosts } from '../../reducers/selectors';
 import { importFeedPosts } from '../../actions/post_actions';
 import { addNewLike, unLike } from '../../actions/like_actions';
+import { addBid } from '../../actions/bid_actions';
 
 const mapStateToProps = state => {
   return {
@@ -16,7 +17,8 @@ const mapDispatchToProps = dispatch => {
   return {
     importFeedPosts: () => dispatch(importFeedPosts()),
     addNewLike: (like) => dispatch(addNewLike(like)),
-    unLike: (postId) => dispatch(unLike(postId))
+    unLike: (postId) => dispatch(unLike(postId)),
+    addBid: (bid) => dispatch(addBid(bid))
   };
 };
 

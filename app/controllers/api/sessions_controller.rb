@@ -4,7 +4,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
     if @user
       log_in(@user)
-      @user_posts = @user.posts.includes(:comments, :likes)
+      @user_posts = @user.posts.includes(:comments, :likes, :bids)
       @followers = @user.followers
       @followed_artists = @user.followed_artists
       render 'api/users/show'

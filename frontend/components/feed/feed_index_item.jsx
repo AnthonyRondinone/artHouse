@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HeartButton from './heart_button';
+import BidButton from './bid_button';
 import CommentsContainer from '../comments/comments_container';
 import CommentFormContainer from '../comments/comment_form_container';
 import Moment from 'react-moment';
@@ -58,6 +59,8 @@ class FeedIndexItem extends React.Component {
               <button onClick={() => {document.getElementById(`${id}`).focus();}}
                 className="comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
               </button>
+
+              <BidButton />
 
             </div>
 

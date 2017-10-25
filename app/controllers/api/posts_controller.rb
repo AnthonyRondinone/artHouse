@@ -3,8 +3,8 @@ class Api::PostsController < ApplicationController
 
   def index
 
-    @followees = current_user.followed_artists.includes(posts: [:comments, :likes])
-    @current_user_posts = current_user.posts.includes(:comments, :likes)
+    @followees = current_user.followed_artists.includes(posts: [:comments, :likes, :bids])
+    @current_user_posts = current_user.posts.includes(:comments, :likes, :bids)
     render :index
 
   end
@@ -20,7 +20,7 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:comments, :likes, :bids).find(params[:id])
     render :show
   end
 
