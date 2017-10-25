@@ -11,6 +11,7 @@ class ImageDetailItem extends React.Component {
     this.handleModalClose = this.handleModalClose.bind(this);
   }
 
+
   componentDidMount() {
     this.props.importPostDetail(this.props.match.params.postId);
   }

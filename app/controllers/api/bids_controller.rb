@@ -4,10 +4,17 @@ class Api::BidsController < ApplicationController
     @bid = Bid.new(bid_params)
     @bid.user_id = current_user.id
 
-    if @bid.save
-      render :show
-    else
-      render json: @bid.errors.full_messages, status: 422
+    bid_post = @bid.post
+    high_bid = bid_post.bids.order("bid DESC").first.bid.to_f
+
+    if @bid.bid.to_f > high_bid
+      if @bid.save
+        render :show
+      else
+        render json: @bid.errors.full_messages, status: 422
+      end
+    elsif @bid.bid.to_f < high_bid
+      render json: ["Bid amount must be higher then current bid"], status: 422
     end
   end
 
