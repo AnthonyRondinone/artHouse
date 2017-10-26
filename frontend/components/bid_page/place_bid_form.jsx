@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class PlaceBidForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {bid: 0, post_id: this.props.match.params.postId};
+    this.state = {bid: "", post_id: this.props.match.params.postId};
     this.handleBidChange = this.handleBidChange.bind(this);
     this.handlePlaceBid = this.handlePlaceBid.bind(this);
   }
@@ -15,11 +15,6 @@ class PlaceBidForm extends React.Component {
     this.props.importPostDetail(this.props.match.params.postId);
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.errors.responseJSON) {
-      this.props.clearBidErrors();
-    }
-  }
 
   handleBidChange(e) {
     this.setState({bid: e.target.value});
@@ -28,7 +23,8 @@ class PlaceBidForm extends React.Component {
   handlePlaceBid(e) {
     e.preventDefault();
     const newBid = Object.assign({}, this.state);
-    this.props.addBid({bid: newBid});
+    this.props.addBid({bid: newBid}).then(this.props.clearBidErrors);
+    this.setState({bid: ""});
   }
 
   render() {
@@ -43,7 +39,7 @@ class PlaceBidForm extends React.Component {
 
       return (
         <div>
-          <div className="s-post">
+          <div className="b-post">
 
             <div className="s-image-left-contain">
               <div className="s-post-image">
@@ -52,8 +48,8 @@ class PlaceBidForm extends React.Component {
             </div>
 
 
-            <div className="s-artist-info" >
-              <div>
+            <div className="b-artist-info" >
+              <div className="b-name-contain">
                 <div className="s-avatar-contain">
                   <Link to={`/users/${post.artistId}`}>
                     <img className="s-artist-avatar" src={post.avatarThumb} />
@@ -64,16 +60,22 @@ class PlaceBidForm extends React.Component {
               </div>
 
 
-                <div className="bid-info">
+              <div className="bid-info">
+                <div className="current-bid-contain">
+                  <span className="current-bid-text">Current bid: </span>
+                  <span className="current-bid">US ${bidAmount}</span>
+                </div>
+                <div>
                   <input className='bid-input'
                     type="text"
                     onChange={this.handleBidChange}
+                    value={this.state.bid}
                     placeholder="Enter bid"/>
-                  <button onClick={this.handlePlaceBid}>Place bid</button>
-                  <div>{post.bidIds.length}</div>
-                  <div>{bidAmount}</div>
-                  <div>{ errors }</div>
+                  <button className="submit-bid-button" onClick={this.handlePlaceBid}>Place bid</button>
                 </div>
+                <span className="current-bid-text">Enter US $ {bidAmount} or more</span>
+                <div>{ errors }</div>
+              </div>
 
             </div>
 

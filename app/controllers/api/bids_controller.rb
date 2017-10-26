@@ -18,7 +18,7 @@ class Api::BidsController < ApplicationController
         render json: @bid.errors.full_messages, status: 422
       end
     elsif @bid.bid.to_f < high_bid
-      render json: ["Amount must be higher then current bid"], status: 422
+      render json: ["Invalide bid amount"], status: 422
     end
 
   end
