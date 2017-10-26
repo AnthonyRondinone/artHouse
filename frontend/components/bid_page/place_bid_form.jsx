@@ -36,6 +36,7 @@ class PlaceBidForm extends React.Component {
     if (post) {
       let zero = 0;
       let bidAmount = post.topBid ? parseFloat(post.topBid.bid).toFixed(2) : zero.toFixed(2);
+      let minBid = post.topBid ? (parseFloat(post.topBid.bid) + 0.99).toFixed(2) : (zero + 0.99).toFixed(2);
 
       return (
         <div>
@@ -73,8 +74,10 @@ class PlaceBidForm extends React.Component {
                     placeholder="Enter bid"/>
                   <button className="submit-bid-button" onClick={this.handlePlaceBid}>Place bid</button>
                 </div>
-                <span className="current-bid-text">Enter US $ {bidAmount} or more</span>
-                <div>{ errors }</div>
+                <div className="under-input">
+                  <span className="current-bid-text">Enter US $ {minBid} or more</span>
+                  <div className="bid-error">{ errors }</div>
+                </div>
               </div>
 
             </div>

@@ -7,9 +7,9 @@ class Api::BidsController < ApplicationController
 
 
 
+    debugger
     bid_post = @bid.post
-    high_bid = bid_post.bids.order("bid DESC").first.bid.to_f
-
+    high_bid = bid_post.bids.order("bid DESC").first ? bid_post.bids.order("bid DESC").first.bid.to_f : 0.00
 
     if @bid.bid.to_f > high_bid
       if @bid.save
