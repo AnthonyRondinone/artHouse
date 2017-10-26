@@ -12,64 +12,66 @@ class FeedIndexItem extends React.Component {
 
 
   render() {
-    const { id, currentUserId, artistId, avatarThumb, username, imageOrig, createdAt, likerIds, liked, commentIds, caption, topBid, bidIds } = this.props;
+    if (this.props.imageOrig) {
 
-    let like;
-    let likeCount;
-    if (likerIds === undefined) {
-      likeCount = 0;
-      like = " likes";
-    } else {
-      likeCount = likerIds.length;
-      like = likerIds.length === 1 ? " like" : " likes";
-    }
+      const { id, currentUserId, artistId, avatarThumb, username, imageOrig, createdAt, likerIds, liked, commentIds, caption, topBid, bidIds } = this.props;
 
-    let zero = 0;
-    let currBid = topBid ? parseFloat(topBid.bid).toFixed(2) : zero.toFixed(2);
+      let like;
+      let likeCount;
+      if (likerIds === undefined) {
+        likeCount = 0;
+        like = " likes";
+      } else {
+        likeCount = likerIds.length;
+        like = likerIds.length === 1 ? " like" : " likes";
+      }
 
-    let bidText = bidIds.length == 1 ? "bid" : "bids";
+      let zero = 0;
+      let currBid = topBid ? parseFloat(topBid.bid).toFixed(2) : zero.toFixed(2);
 
-    let artistName = caption ? username : "";
-    let dateTime = createdAt;
-    return (
-      <div>
+      let bidText = bidIds.length == 1 ? "bid" : "bids";
 
-        <div className="post" >
+      let artistName = caption ? username : "";
+      let dateTime = createdAt;
+      return (
+        <div>
 
-          <div className="artist-info" >
+          <div className="post" >
 
-            <div className="avatar-contain">
-            <Link to={`/users/${artistId}`}><img className="artist-avatar" src={avatarThumb} /></Link>
+            <div className="artist-info" >
+
+              <div className="avatar-contain">
+                <Link to={`/users/${artistId}`}><img className="artist-avatar" src={avatarThumb} /></Link>
+              </div>
+
+              <Link className='artist-name' to={`/users/${artistId}`}>{username}</Link>
             </div>
 
-            <Link className='artist-name' to={`/users/${artistId}`}>{username}</Link>
-          </div>
+            <div className="post-image">
+              <img className="image" src={this.props.imageOrig}/>
+            </div>
 
-          <div className="post-image">
-            <img className="image" src={this.props.imageOrig}/>
-          </div>
+            <div className="under-image" >
+              <div className="button-contain" >
 
-          <div className="under-image" >
-            <div className="button-contain" >
+                <div className="f-like-comment-contain">
 
-              <div className="f-like-comment-contain">
-
-                <HeartButton className="heart"
-                  addNewLike={this.props.addNewLike}
-                  likerIds={likerIds}
-                  postId={id}
-                  currentUserId={currentUserId}
-                  unLike={this.props.unLike}
-                  />
+                  <HeartButton className="heart"
+                    addNewLike={this.props.addNewLike}
+                    likerIds={likerIds}
+                    postId={id}
+                    currentUserId={currentUserId}
+                    unLike={this.props.unLike}
+                    />
 
                   <button onClick={() => {document.getElementById(`${id}`).focus();}}
                     className="comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
-                  </button>
+                </button>
 
 
               </div>
 
-              <Link to={`/bid/${artistId}/${id}`}><button className="feed-bid-button" >Place Bid</button></Link>
+              <Link to={`/bid/${artistId}/${id}`}><button className="feed-bid-button" >Place bid</button></Link>
 
             </div>
 
@@ -106,6 +108,11 @@ class FeedIndexItem extends React.Component {
 
       </div>
     );
+  } else {
+    return (
+      <div></div>
+    );
+  }
   }
 
 

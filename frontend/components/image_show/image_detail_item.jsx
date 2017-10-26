@@ -41,6 +41,11 @@ class ImageDetailItem extends React.Component {
         like = post.likerIds.length === 1 ? " like" : " likes";
       }
 
+      let zero = 0;
+      let currBid = post.topBid ? parseFloat(post.topBid.bid).toFixed(2) : zero.toFixed(2);
+
+      let bidText = post.bidIds.length == 1 ? "bid" : "bids";
+
 
       let artistName = post.caption ? post.username : "";
       let dateTime = post.createdAt;
@@ -91,22 +96,38 @@ class ImageDetailItem extends React.Component {
 
 
                   <div className="s-button-contain" >
-                    <HeartButton className="s-heart"
-                      addNewLike={this.props.addNewLike}
-                      likerIds={post.likerIds}
-                      postId={post.id}
-                      currentUserId={currentUser.id}
-                      unLike={this.props.unLike}
-                      />
 
-                    <button onClick={() => {document.getElementById(`${post.id}`).focus();}}
-                      className="s-comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
-                    </button>
+                    <div className="f-like-comment-contain">
+                      <HeartButton className="s-heart"
+                        addNewLike={this.props.addNewLike}
+                        likerIds={post.likerIds}
+                        postId={post.id}
+                        currentUserId={currentUser.id}
+                        unLike={this.props.unLike}
+                        />
+
+                      <button onClick={() => {document.getElementById(`${post.id}`).focus();}}
+                        className="s-comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
+                      </button>
+
+                    </div>
+
+                    <Link to={`/bid/${post.artistId}/${post.id}`}><button className="feed-bid-button" >Place bid</button></Link>
+
                   </div>
 
-                  <div className="s-likes" >
-                    <span>{likeCount}</span>
-                    <span>{like}</span>
+                  <div className="likes-bids">
+
+                    <div className="s-likes" >
+                      <span>{likeCount}</span>
+                      <span>{like}</span>
+                    </div>
+
+                    <div className="feed-bid-info">
+                      <span className="f-curr-bid">${currBid}</span>
+                      <span className="f-num-bids">{post.bidIds.length} {bidText}</span>
+                    </div>
+
                   </div>
 
                   <div className="s-time-contain">

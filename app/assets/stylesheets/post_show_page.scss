@@ -105,6 +105,8 @@
 
 
 .s-button-contain {
+  display: flex;
+  justify-content: space-between;
   margin-top: 4px;
   margin-bottom: 6px;
 }
