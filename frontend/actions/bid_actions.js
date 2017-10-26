@@ -1,7 +1,22 @@
 export const RECEIVE_BID = "RECEIVE_BID";
 export const RECEIVE_BID_ERRORS = "RECEIVE_BID_ERRORS";
+export const RECEIVE_BID_MESSAGE = "RECEIVE_BID_MESSAGE";
+export const CLEAR_BID_MESSAGE = "CLEAR_BID_MESSAGE";
 export const CLEAR_BID_ERRORS = "CLEAR_BID_ERRORS";
 import * as APIUtil from '../util/bid_api_util';
+
+
+export const receiveBidMessage = (message) => {
+  return {
+    type: RECEIVE_BID_MESSAGE
+  };
+};
+
+export const clearBidMessage = (message) => {
+  return {
+    type: CLEAR_BID_MESSAGE
+  };
+};
 
 
 export const clearBidErrors = (errors) => {

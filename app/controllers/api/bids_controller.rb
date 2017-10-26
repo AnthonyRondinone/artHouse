@@ -1,13 +1,10 @@
 class Api::BidsController < ApplicationController
 
   def create
+
     @bid = Bid.new(bid_params)
     @bid.user_id = current_user.id
 
-
-
-
-    debugger
     bid_post = @bid.post
     high_bid = bid_post.bids.order("bid DESC").first ? bid_post.bids.order("bid DESC").first.bid.to_f : 0.00
 
@@ -17,7 +14,7 @@ class Api::BidsController < ApplicationController
       else
         render json: @bid.errors.full_messages, status: 422
       end
-    elsif @bid.bid.to_f < high_bid
+    else
       render json: ["Invalide bid amount"], status: 422
     end
 

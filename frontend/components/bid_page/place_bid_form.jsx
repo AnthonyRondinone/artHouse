@@ -15,6 +15,11 @@ class PlaceBidForm extends React.Component {
     this.props.importPostDetail(this.props.match.params.postId);
   }
 
+  componentWillUnmount() {
+    this.props.clearBidErrors();
+    this.props.clearBidMessage();
+  }
+
 
   handleBidChange(e) {
     this.setState({bid: e.target.value});
@@ -23,20 +28,21 @@ class PlaceBidForm extends React.Component {
   handlePlaceBid(e) {
     e.preventDefault();
     const newBid = Object.assign({}, this.state);
-    this.props.addBid({bid: newBid}).then(this.props.clearBidErrors);
+    this.props.addBid({bid: newBid}).then(this.props.clearBidErrors).then(this.props.receiveBidMessage);
     this.setState({bid: ""});
   }
 
   render() {
 
     let errors = this.props.errors.responseJSON ? this.props.errors.responseJSON.join(", ") : "";
+    let messages = this.props.messages ? this.props.messages : "";
 
     let post = this.props.post[this.props.match.params.postId];
 
     if (post) {
       let zero = 0;
       let bidAmount = post.topBid ? parseFloat(post.topBid.bid).toFixed(2) : zero.toFixed(2);
-      let minBid = post.topBid ? (parseFloat(post.topBid.bid) + 0.99).toFixed(2) : (zero + 0.99).toFixed(2);
+      let minBid = post.topBid ? (parseFloat(post.topBid.bid) + 1.00).toFixed(2) : (zero + 1.00).toFixed(2);
 
       return (
         <div>
@@ -77,6 +83,7 @@ class PlaceBidForm extends React.Component {
                 <div className="under-input">
                   <span className="current-bid-text">Enter US $ {minBid} or more</span>
                   <div className="bid-error">{ errors }</div>
+                  <div className="bid-error">{ messages }</div>
                 </div>
               </div>
 
