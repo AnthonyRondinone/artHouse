@@ -82,6 +82,9 @@
 .button-contain {
   margin-top: 4px;
   margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  width: 566px;
 }
 
 .fa-heart-o {
@@ -146,7 +149,10 @@
 }
 
 
-
+.f-like-comment-contain {
+  display: flex;
+  justify-content: flex-start;
+}
 
 .heart-button {
   cursor:pointer;
@@ -173,9 +179,26 @@
   outline: none;
 }
 
+.likes-bids {
+  display: flex;
+  justify-content: space-between;
+}
+
 .likes {
   font-weight: 600;
   font-size: 15px;
+}
+
+.f-curr-bid {
+  font-weight: 600;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.f-num-bids {
+  font-size: 12px;
+  font-weight: 200;
+  color: grey;
 }
 
 .author-name {
@@ -237,4 +260,22 @@
 .time-contain {
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.feed-bid-button {
+  background: #3897f0;
+  border-color: #3897f0;
+  color: #fff;
+  border-radius: 3px;
+  border-style: solid;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 120px;
+  height: 24px;
+  margin: 5px;
+  margin-right: 0px;
+  padding: 1px;
 }

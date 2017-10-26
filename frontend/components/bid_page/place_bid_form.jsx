@@ -27,6 +27,7 @@ class PlaceBidForm extends React.Component {
 
   handlePlaceBid(e) {
     e.preventDefault();
+    this.props.clearBidMessage();
     const newBid = Object.assign({}, this.state);
     this.props.addBid({bid: newBid}).then(this.props.clearBidErrors).then(this.props.receiveBidMessage);
     this.setState({bid: ""});
@@ -35,17 +36,18 @@ class PlaceBidForm extends React.Component {
   render() {
 
     let errors = this.props.errors.responseJSON ? this.props.errors.responseJSON.join(", ") : "";
-    let messages = this.props.messages ? this.props.messages : "";
+    let message = this.props.messages ? this.props.messages : "";
 
     let post = this.props.post[this.props.match.params.postId];
 
     if (post) {
       let zero = 0;
-      let bidAmount = post.topBid ? parseFloat(post.topBid.bid).toFixed(2) : zero.toFixed(2);
+      let currBid = post.topBid ? parseFloat(post.topBid.bid).toFixed(2) : zero.toFixed(2);
       let minBid = post.topBid ? (parseFloat(post.topBid.bid) + 1.00).toFixed(2) : (zero + 1.00).toFixed(2);
 
       return (
-        <div>
+        <div className="bid-main">
+          <h2 className="auction">Auction</h2>
           <div className="b-post">
 
             <div className="s-image-left-contain">
@@ -70,7 +72,7 @@ class PlaceBidForm extends React.Component {
               <div className="bid-info">
                 <div className="current-bid-contain">
                   <span className="current-bid-text">Current bid: </span>
-                  <span className="current-bid">US ${bidAmount}</span>
+                  <span className="current-bid">US ${currBid}</span>
                 </div>
                 <div>
                   <input className='bid-input'
@@ -83,7 +85,7 @@ class PlaceBidForm extends React.Component {
                 <div className="under-input">
                   <span className="current-bid-text">Enter US $ {minBid} or more</span>
                   <div className="bid-error">{ errors }</div>
-                  <div className="bid-error">{ messages }</div>
+                  <div className="bid-message">{ message }</div>
                 </div>
               </div>
 

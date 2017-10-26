@@ -12,7 +12,7 @@ class FeedIndexItem extends React.Component {
 
 
   render() {
-    const { id, currentUserId, artistId, avatarThumb, username, imageOrig, createdAt, likerIds, liked, commentIds, caption} = this.props;
+    const { id, currentUserId, artistId, avatarThumb, username, imageOrig, createdAt, likerIds, liked, commentIds, caption, topBid, bidIds } = this.props;
 
     let like;
     let likeCount;
@@ -24,6 +24,10 @@ class FeedIndexItem extends React.Component {
       like = likerIds.length === 1 ? " like" : " likes";
     }
 
+    let zero = 0;
+    let currBid = topBid ? parseFloat(topBid.bid).toFixed(2) : zero.toFixed(2);
+
+    let bidText = bidIds.length == 1 ? "bid" : "bids";
 
     let artistName = caption ? username : "";
     let dateTime = createdAt;
@@ -47,26 +51,41 @@ class FeedIndexItem extends React.Component {
 
           <div className="under-image" >
             <div className="button-contain" >
-              <HeartButton className="heart"
-                addNewLike={this.props.addNewLike}
-                likerIds={likerIds}
-                postId={id}
-                currentUserId={currentUserId}
-                unLike={this.props.unLike}
-              />
 
-              <button onClick={() => {document.getElementById(`${id}`).focus();}}
-                className="comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
-              </button>
+              <div className="f-like-comment-contain">
 
-              <Link to={`/bid/${artistId}/${id}`}><button className="bid-button" >Place Bid</button></Link>
+                <HeartButton className="heart"
+                  addNewLike={this.props.addNewLike}
+                  likerIds={likerIds}
+                  postId={id}
+                  currentUserId={currentUserId}
+                  unLike={this.props.unLike}
+                  />
+
+                  <button onClick={() => {document.getElementById(`${id}`).focus();}}
+                    className="comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
+                  </button>
+
+
+              </div>
+
+              <Link to={`/bid/${artistId}/${id}`}><button className="feed-bid-button" >Place Bid</button></Link>
 
             </div>
 
-            <div className="likes" >
-              <span>{likeCount}</span>
-              <span>{like}</span>
+            <div className="likes-bids">
+              <div className="likes" >
+                <span>{likeCount}</span>
+                <span>{like}</span>
+              </div>
+
+              <div className="feed-bid-info">
+                <span className="f-curr-bid">${currBid}</span>
+                <span className="f-num-bids">{bidIds.length} {bidText}</span>
+              </div>
+
             </div>
+
 
             <div className="post-caption" >
               <span className="author-name" >{artistName} </span>
