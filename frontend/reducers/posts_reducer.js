@@ -39,7 +39,6 @@ export const postsReducer = ( state = {}, action ) => {
       newState[action.comment.postId].commentIds.splice(commentIndex, 1);
       return newState;
     case RECEIVE_LIKE:
-    debugger
       newState = merge({}, state);
       newState[action.like.post_id].likerIds.push(action.like.user_id);
       return newState;
