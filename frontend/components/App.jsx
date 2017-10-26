@@ -11,9 +11,9 @@ import SuggestedArtistContainer from './suggested_artists/suggested_artist_conta
 import UserEditContainer from './user_edit/user_edit_container';
 import BidContainer from './bid_page/bid_container';
 
-// <NavBarContainer component={NavBarContainer}/>
 const App = () => (
   <div>
+    <NavBarContainer component={NavBarContainer}/>
     <Route path="/users/:userId/:postId" component={ImageShowContainer} />
       <ProtectedRoute path="/create" component={NewPostContainer}/>
       <ProtectedRoute path="/bid/:userId/:postId" component={BidContainer}/>

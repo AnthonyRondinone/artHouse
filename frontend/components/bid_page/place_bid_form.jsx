@@ -15,20 +15,27 @@ class PlaceBidForm extends React.Component {
     this.props.importPostDetail(this.props.match.params.postId);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.errors.responseJSON) {
+      this.props.clearBidErrors();
+    }
+  }
+
   handleBidChange(e) {
     this.setState({bid: e.target.value});
   }
 
   handlePlaceBid(e) {
     e.preventDefault();
-    
     const newBid = Object.assign({}, this.state);
     this.props.addBid({bid: newBid});
   }
 
   render() {
-    let post = this.props.post[this.props.match.params.postId];
 
+    let errors = this.props.errors.responseJSON ? this.props.errors.responseJSON.join(", ") : "";
+
+    let post = this.props.post[this.props.match.params.postId];
 
     if (post) {
       let zero = 0;
@@ -65,13 +72,13 @@ class PlaceBidForm extends React.Component {
                   <button onClick={this.handlePlaceBid}>Place bid</button>
                   <div>{post.bidIds.length}</div>
                   <div>{bidAmount}</div>
+                  <div>{ errors }</div>
                 </div>
 
             </div>
 
           </div>
         </div>
-
 
       );
     } else {
