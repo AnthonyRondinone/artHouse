@@ -60,3 +60,14 @@
   margin-right: 0px;
   padding: 1px;
 }
+
+.no-bids {
+  position: fixed;
+  top: 25%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: 300;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color: gray;
+}

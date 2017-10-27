@@ -20,11 +20,19 @@ class UserBidIndex extends React.Component {
     currentUser={currentUser}
     />);
 
-    return (
-      <div className="ub-index">
-        { userBidIndexItems }
-      </div>
-    );
+    if (bids.length > 0) {
+      return (
+        <div className="ub-index">
+          { userBidIndexItems }
+        </div>
+      );
+    } else {
+      return (
+        <div className="ub-index">
+          <h2 className="no-bids">You are not bidding on any items</h2>
+        </div>
+      );
+    }
   }
 }
 
