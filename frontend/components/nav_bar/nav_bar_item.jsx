@@ -32,14 +32,13 @@ class NavBarItem extends React.Component {
             <div className="nav-right">
               <div className="icon-container" >
 
-                <Link to={`/users/${this.props.currentUser.id}`}><img src={window.images.profileIcon} alt="profile-icon" /></Link>
+                <Link to={`/users/${this.props.currentUser.id}`}><i className="fa fa-user nav-icon" aria-hidden="true"></i></Link>
+                <Link to={`/bids/${this.props.currentUser.id}`}><i className="fa fa-gavel nav-icon" aria-hidden="true"></i></Link>
                 <Link className="right-nav-icon"
                   to={`/create`}>
-                  <img src={window.images.addPhoto} alt="profile-icon" />
+                  <i className="fa fa-camera nav-icon" aria-hidden="true"></i>
                 </Link>
-                <button className="logout-icon" >
-                  <img src={window.images.logout} alt="logout-icon" onClick={this.handleClick} />
-                </button>
+                  <i className="fa fa-sign-out nav-icon" aria-hidden="true" onClick={this.handleClick} ></i>
               </div>
             </div>
 

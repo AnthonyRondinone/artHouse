@@ -7,3 +7,10 @@ export const sendBid = (bid) => {
     data: bid
   });
 };
+
+export const fetchUserBids = () => {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/bids'
+  });
+};

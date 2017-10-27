@@ -67,14 +67,11 @@
   align-items: center;
 }
 
-.logout-icon {
-  padding: 0px;
-  background: none;
-  border: none;
-  object-fit: cover;
-  outline: none;
+.nav-icon {
+  color: gray;
+  font-size: 19px;
 }
 
-.logout-icon:hover {
+.nav-icon:hover {
   cursor: pointer;
 }

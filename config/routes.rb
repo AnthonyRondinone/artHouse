@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :follows, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy, :show]
     resources :comments, only: [:create, :destroy, :index]
-    resources :bids, only: [:create, :show]
+    resources :bids, only: [:create, :show, :index]
   end
 
 

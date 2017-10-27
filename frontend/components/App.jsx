@@ -10,6 +10,7 @@ import ImageShowContainer from './image_show/image_show_container';
 import SuggestedArtistContainer from './suggested_artists/suggested_artist_container';
 import UserEditContainer from './user_edit/user_edit_container';
 import BidContainer from './bid_page/bid_container';
+import UserBidsContainer from './user_bids/user_bids_container';
 
 const App = () => (
   <div>
@@ -20,6 +21,7 @@ const App = () => (
       <ProtectedRoute path="/welcome" component={SuggestedArtistContainer} />
       <ProtectedRoute path="/" exact={true} component={FeedContainer} />
       <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
+      <ProtectedRoute path="/bids/:userId" component={UserBidsContainer} />
       <ProtectedRoute path="/edit/:userId" component={UserEditContainer} />
 
     <Switch>
