@@ -25,6 +25,7 @@ class PlaceBidForm extends React.Component {
     this.setState({bid: e.target.value});
   }
 
+
   handlePlaceBid(e) {
     e.preventDefault();
     this.props.clearBidMessage();
@@ -44,6 +45,12 @@ class PlaceBidForm extends React.Component {
       let zero = 0;
       let currBid = post.topBid ? parseFloat(post.topBid.bid).toFixed(2) : zero.toFixed(2);
       let minBid = post.topBid ? (parseFloat(post.topBid.bid) + 1.00).toFixed(2) : (zero + 1.00).toFixed(2);
+
+      let CurrUserHighBid = "";
+
+      if (post.topBid !== null){
+        CurrUserHighBid = post.topBid.user_id == this.props.currentUser.id ? "You have the current high bid!" : "";
+      }
 
       return (
         <div className="bid-main">
@@ -66,6 +73,10 @@ class PlaceBidForm extends React.Component {
                 </div>
                 <Link className='s-artist-name' to={`/users/${post.artistId}`}>{post.username}</Link>
 
+              </div>
+
+              <div className="curr-user-high-bid">
+                <span className="curr-user-high-bid"> { CurrUserHighBid } </span>
               </div>
 
 
