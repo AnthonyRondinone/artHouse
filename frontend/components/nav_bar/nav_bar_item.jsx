@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, NavLink } from 'react-router-dom';
 
 
 class NavBarItem extends React.Component {
@@ -32,13 +32,14 @@ class NavBarItem extends React.Component {
             <div className="nav-right">
               <div className="icon-container" >
 
-                <Link to={`/users/${this.props.currentUser.id}`}><i className="fa fa-user nav-icon" aria-hidden="true"></i></Link>
-                <Link to={`/bids/${this.props.currentUser.id}`}><i className="fa fa-gavel nav-icon" aria-hidden="true"></i></Link>
-                <Link className="right-nav-icon"
+                <NavLink className='icon-nav' to={`/users/${this.props.currentUser.id}`} activeStyle={{ color: 'black' }} ><i className="fa fa-user nav-icon" aria-hidden="true"></i></NavLink>
+                <NavLink className='icon-nav' to={`/bids/${this.props.currentUser.id}`} activeStyle={{ color: 'black' }}><i className="fa fa-gavel nav-icon" aria-hidden="true"></i></NavLink>
+                <NavLink className="right-nav-icon icon-nav"
+                  activeStyle={{ color: 'black' }}
                   to={`/create`}>
                   <i className="fa fa-camera nav-icon" aria-hidden="true"></i>
-                </Link>
-                  <i className="fa fa-sign-out nav-icon" aria-hidden="true" onClick={this.handleClick} ></i>
+                </NavLink>
+                  <i className="fa fa-sign-out icon-nav" aria-hidden="true" onClick={this.handleClick} ></i>
               </div>
             </div>
 
