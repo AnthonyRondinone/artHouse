@@ -57,11 +57,12 @@ class PlaceBidForm extends React.Component {
           <h2 className="auction">Auction</h2>
           <div className="b-post">
 
-            <div className="s-image-left-contain">
-              <div className="s-post-image">
-                <img className="s-image" src={post.imageOrig}/>
+            <Link className="ub-post-contain" to={`/users/${post.artistId}/${post.id}`}>
+              <div className="post-hover" >
+                <div className="up-post-cover"></div>
               </div>
-            </div>
+              <img className="upPostImg" src={post.imageOrig} />
+            </Link>
 
 
             <div className="b-artist-info" >

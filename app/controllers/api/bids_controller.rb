@@ -24,7 +24,7 @@ class Api::BidsController < ApplicationController
         render json: @bid.errors.full_messages, status: 422
       end
     else
-      render json: ["Invalide bid amount"], status: 422
+      render json: ["Invalid bid amount"], status: 422
     end
 
   end

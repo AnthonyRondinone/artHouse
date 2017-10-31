@@ -15,7 +15,7 @@
 
 .auction {
   position: fixed;
-  top: 17%;
+  top: 12%;
   left: 5%;
   transform: translate(-50%, -50%);
   font-size: 20px;
@@ -30,9 +30,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 700px;
-  max-height: 700px;
-  min-height: 300px;
+  width: 600px;
+  height: 290px;
   display: flex;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-size: 14px;
@@ -45,7 +44,8 @@
 
 .b-artist-info {
   background: #fff;
-  width: 100%;
+  width: 55%;
+  height: 290px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +64,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 15%;
+  top: 12%;
   height: 14px;
   color: #3897f0;
   font-weight: 600;
@@ -94,7 +94,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 25%;
+  top: 21%;
 }
 
 .bid-input {
