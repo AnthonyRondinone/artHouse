@@ -58,7 +58,7 @@ class NewPostForm extends React.Component {
 
           <p className="create" >Create</p>
 
-          <form onSubmit={this.handleSubmit}>
+          <form className="create-form" onSubmit={this.handleSubmit}>
 
             <div className="preview-contain" >
               <img className="preview" src={ this.state.imageURL } />
