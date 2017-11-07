@@ -52,7 +52,7 @@ class FeedIndexItem extends React.Component {
             </div>
 
             <div className="under-image" >
-              <div className="button-contain" >
+              <div className="f-button-contain" >
 
                 <div className="f-like-comment-contain">
 
