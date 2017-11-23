@@ -14,7 +14,21 @@ class FeedIndexItem extends React.Component {
   render() {
     if (this.props.imageOrig) {
 
-      const { id, currentUserId, artistId, avatarThumb, username, imageOrig, createdAt, likerIds, liked, commentIds, caption, topBid, bidIds } = this.props;
+      const {
+        id,
+        currentUserId,
+        artistId,
+        avatarThumb,
+        username,
+        imageOrig,
+        createdAt,
+        likerIds,
+        liked,
+        commentIds,
+        caption,
+        topBid,
+        bidIds
+      } = this.props;
 
       let like;
       let likeCount;
@@ -33,18 +47,21 @@ class FeedIndexItem extends React.Component {
 
       let artistName = caption ? username : "";
       let dateTime = createdAt;
+      
       return (
         <div>
-
           <div className="post" >
-
             <div className="artist-info" >
-
               <div className="avatar-contain">
-                <Link to={`/users/${artistId}`}><img className="artist-avatar" src={avatarThumb} /></Link>
+                <Link
+                  to={`/users/${artistId}`}>
+                  <img className="artist-avatar" src={avatarThumb} />
+                </Link>
               </div>
-
-              <Link className='artist-name' to={`/users/${artistId}`}>{username}</Link>
+              <Link
+                className='artist-name'
+                to={`/users/${artistId}`}>{username}
+              </Link>
             </div>
 
             <div className="post-image">
@@ -55,7 +72,6 @@ class FeedIndexItem extends React.Component {
               <div className="f-button-contain" >
 
                 <div className="f-like-comment-contain">
-
                   <HeartButton className="heart"
                     addNewLike={this.props.addNewLike}
                     likerIds={likerIds}
@@ -63,15 +79,17 @@ class FeedIndexItem extends React.Component {
                     currentUserId={currentUserId}
                     unLike={this.props.unLike}
                     />
-
-                  <button onClick={() => {document.getElementById(`${id}`).focus();}}
-                    className="comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
-                </button>
-
-
+                  <button
+                    onClick={() => {document.getElementById(`${id}`).focus();}}
+                    className="comment-button" >
+                    <i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
+                  </button>
               </div>
 
-              <Link to={`/bid/${artistId}/${id}`}><button className="feed-bid-button" >Place bid</button></Link>
+              <Link
+                to={`/bid/${artistId}/${id}`}><button
+                className="feed-bid-button" >Place bid</button>
+              </Link>
 
             </div>
 

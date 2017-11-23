@@ -30,7 +30,8 @@ class PlaceBidForm extends React.Component {
     e.preventDefault();
     this.props.clearBidMessage();
     const newBid = Object.assign({}, this.state);
-    this.props.addBid({bid: newBid}).then(this.props.clearBidErrors).then(this.props.receiveBidMessage);
+    this.props.addBid({bid: newBid}).then(this.props.clearBidErrors)
+      .then(this.props.receiveBidMessage);
     this.setState({bid: ""});
   }
 
@@ -57,7 +58,8 @@ class PlaceBidForm extends React.Component {
           <h2 className="auction">Auction</h2>
           <div className="b-post">
 
-            <Link className="ub-post-contain" to={`/users/${post.artistId}/${post.id}`}>
+            <Link className="ub-post-contain"
+              to={`/users/${post.artistId}/${post.id}`}>
               <div className="post-hover" >
                 <div className="up-post-cover"></div>
               </div>
@@ -92,7 +94,8 @@ class PlaceBidForm extends React.Component {
                     onChange={this.handleBidChange}
                     value={this.state.bid}
                     placeholder="Enter bid"/>
-                  <button className="submit-bid-button" onClick={this.handlePlaceBid}>Place bid</button>
+                  <button className="submit-bid-button"
+                    onClick={this.handlePlaceBid}>Place bid</button>
                 </div>
                 <div className="under-input">
                   <span className="current-bid-text">Enter US $ {minBid} or more</span>

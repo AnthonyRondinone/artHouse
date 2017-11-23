@@ -47,12 +47,30 @@ class SessionForm extends React.Component {
   }
 
   render () {
-    let sendLink = this.props.formType === '/signin' ? '/signup' : '/signin';
-    let showLink = this.props.formType === '/signin' ? 'Sign up' : 'Log in';
-    let question = this.props.formType === '/signup' ? 'Have an account?' : "Don't have an account?";
-    let agreement = this.props.formType === '/signup' ? 'By signing up, you agree to our Terms & Private Policy.' : "";
-    let SignUpPitch = this.props.formType === '/signup' ? 'Sign up to find new artists' : '';
-    let buttonName = this.props.formType === '/signin' ? 'Log in' : 'Sign up';
+    let sendLink;
+    let showLink;
+    let question;
+    let agreement;
+    let SignUpPitch;
+    let buttonName;
+
+    if(this.props.formType === '/signin') {
+      sendLink = '/signup';
+      showLink = 'Sign up';
+      question = "Don't have an account?";
+      agreement = '';
+      SignUpPitch = '';
+      buttonName = 'Log in';
+    } else {
+      sendLink = '/signin';
+      showLink = 'Log in';
+      question = 'Have an account?';
+      agreement = 'By signing up, you agree to our Terms & Private Policy.';
+      SignUpPitch = 'Sign up to find new artists';
+      buttonName = 'Sign up';
+    }
+
+
     let errors = "";
     if (this.props.errors.responseJSON) {
       errors = this.props.errors.responseJSON.join(", ");
@@ -63,35 +81,77 @@ class SessionForm extends React.Component {
       <div className="sign-up-page" >
         <div className ="welcome" >
           <div>
-            <img className="phones" src={ window.images.signIn} />
+            <img className="phones" src={ window.images.signIn } />
           </div>
+
           <section className="form">
+
             <form className="inputSection" onSubmit={this.handleSubmit}>
               <img src={window.images.signInLogo} />
               <h4 className="pitch">{SignUpPitch}</h4>
-              <input className="authInput" type="text" onChange={this.handleUsernameChange} value={this.state.username} placeholder="Username"/>
+              <input className="authInput"
+                type="text"
+                onChange={this.handleUsernameChange}
+                value={this.state.username}
+                placeholder="Username"
+              />
               <br></br>
-              <input className="authInput" type="password" onChange={this.handlePasswordChange} value={this.state.password} placeholder="Password" />
+              <input
+                className="authInput"
+                type="password"
+                onChange={this.handlePasswordChange}
+                value={this.state.password}
+                placeholder="Password"
+              />
               <br></br>
               <button className="authButton" >{ buttonName }</button>
               <p className="errors" >{ errors }</p>
-              <button onClick={this.handleDemoClick} className="authButton" >Demo Log in</button>
+              <button
+                onClick={this.handleDemoClick}
+                className="authButton">Demo Log in
+              </button>
               <p className="agreement" >{ agreement }</p>
             </form>
+
             <div className="questionSec" >
+              
               <section className="question">
                 <p className="pText" >{question}</p>
-                <Link className="logSignLink" to={sendLink}><span >{showLink}</span></Link>
+                <Link
+                  className="logSignLink"
+                  to={sendLink}>
+                  <span >{showLink}</span>
+                </Link>
               </section>
+
             </div>
           </section>
+
         </div>
 
         <div className="icon-div">
-          <a target="_blank" href="https://github.com/AnthonyRondinone/artHouse"><i className="foot-icons fa fa-github" aria-hidden="true"></i></a>
-          <a target="_blank" href="https://www.linkedin.com/in/anthony-rondinone-a1111446"><i className="foot-icons fa fa-linkedin" aria-hidden="true"></i></a>
-          <a target="_blank" href="http://anthonyrondinone.com"><i className="foot-icons fa fa-laptop" aria-hidden="true"></i></a>
-          <a target="_blank" href="mailto:a.rondinone@gmail.com"><i className="foot-icons fa fa-envelope" aria-hidden="true"></i></a>
+          <a
+            target="_blank"
+            href="https://github.com/AnthonyRondinone/artHouse">
+            <i className="foot-icons fa fa-github" aria-hidden="true"></i>
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/anthony-rondinone-a1111446">
+            <i className="foot-icons fa fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a
+            target="_blank"
+            href="http://anthonyrondinone.com"><i
+            className="foot-icons fa fa-laptop"
+            aria-hidden="true"></i>
+          </a>
+          <a
+            target="_blank"
+            href="mailto:a.rondinone@gmail.com"><i
+            className="foot-icons fa fa-envelope"
+            aria-hidden="true"></i>
+          </a>
         </div>
 
       </div>
