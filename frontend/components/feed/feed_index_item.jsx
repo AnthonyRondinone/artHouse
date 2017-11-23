@@ -5,14 +5,9 @@ import CommentsContainer from '../comments/comments_container';
 import CommentFormContainer from '../comments/comment_form_container';
 import Moment from 'react-moment';
 
-class FeedIndexItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const FeedIndexItem = props => {
 
-
-  render() {
-    if (this.props.imageOrig) {
+    if (props.imageOrig) {
 
       const {
         id,
@@ -28,7 +23,7 @@ class FeedIndexItem extends React.Component {
         caption,
         topBid,
         bidIds
-      } = this.props;
+      } = props;
 
       let like;
       let likeCount;
@@ -47,7 +42,7 @@ class FeedIndexItem extends React.Component {
 
       let artistName = caption ? username : "";
       let dateTime = createdAt;
-      
+
       return (
         <div>
           <div className="post" >
@@ -65,7 +60,7 @@ class FeedIndexItem extends React.Component {
             </div>
 
             <div className="post-image">
-              <img className="image" src={this.props.imageOrig}/>
+              <img className="image" src={props.imageOrig}/>
             </div>
 
             <div className="under-image" >
@@ -73,11 +68,11 @@ class FeedIndexItem extends React.Component {
 
                 <div className="f-like-comment-contain">
                   <HeartButton className="heart"
-                    addNewLike={this.props.addNewLike}
+                    addNewLike={props.addNewLike}
                     likerIds={likerIds}
                     postId={id}
                     currentUserId={currentUserId}
-                    unLike={this.props.unLike}
+                    unLike={props.unLike}
                     />
                   <button
                     onClick={() => {document.getElementById(`${id}`).focus();}}
@@ -131,10 +126,9 @@ class FeedIndexItem extends React.Component {
       <div></div>
     );
   }
-  }
 
 
-}
+};
 
 
 export default FeedIndexItem;

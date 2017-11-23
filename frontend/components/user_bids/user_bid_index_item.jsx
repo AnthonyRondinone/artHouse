@@ -1,14 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class UserBidIndexItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const UserBidIndexItem = props => {
 
-  render() {
 
-    const { bid, currentUser } = this.props;
+    const { bid, currentUser } = props;
 
 
     let zero = 0;
@@ -19,16 +15,25 @@ class UserBidIndexItem extends React.Component {
     let button;
 
     if (bid.topBid !== null){
-      CurrUserHighBid = bid.topBid.user_id == currentUser.id ? "You have the current high bid!" : "";
+      CurrUserHighBid = bid.topBid.user_id == currentUser.id ?
+        "You have the current high bid!" : "";
     }
 
-    button = bid.topBid.user_id == currentUser.id ? <button className="ub-disablebid-button" >New bid</button> : <Link to={`/bid/${bid.artistId}/${bid.postId}`}><button className="feed-bid-button" >New bid</button></Link>;
+    button = bid.topBid.user_id == currentUser.id ?
+    <button className="ub-disablebid-button" >New bid</button> :
+      <Link
+        to={`/bid/${bid.artistId}/${bid.postId}`}><button
+        className="feed-bid-button" >New bid</button>
+      </Link>;
 
     return (
       <div>
         <div className="ub-main">
 
-          <Link className="ub-post-contain" to={`/users/${bid.artistId}/${bid.postId}`}>
+          <Link
+            className="ub-post-contain"
+            to={`/users/${bid.artistId}/${bid.postId}`}
+          >
             <div className="post-hover" >
               <div className="up-post-cover"></div>
             </div>
@@ -46,7 +51,10 @@ class UserBidIndexItem extends React.Component {
                     <img className="s-artist-avatar" src={bid.avatarThumb} />
                   </Link>
                 </div>
-                <Link className='s-artist-name' to={`/users/${bid.artistId}`}>{bid.username}</Link>
+                <Link
+                  className='s-artist-name'
+                  to={`/users/${bid.artistId}`}>{bid.username}
+                </Link>
 
               </div>
 
@@ -75,8 +83,6 @@ class UserBidIndexItem extends React.Component {
         </div>
       </div>
     );
-  }
-
-}
+  };
 
 export default UserBidIndexItem;

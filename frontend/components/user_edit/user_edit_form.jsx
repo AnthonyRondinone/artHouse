@@ -144,7 +144,10 @@ class EditForm extends React.Component {
                       <label className= "ue-label" ></label>
                     </div>
                     <div className="ue-input-contain" >
-                      <button onClick={this.handleEditClick} className="ue-submit-button" >Submit</button>
+                      <button
+                        onClick={this.handleEditClick}
+                        className="ue-submit-button" >Submit
+                      </button>
                     </div>
                   </section>
 
@@ -154,10 +157,24 @@ class EditForm extends React.Component {
 
             <div className="eu-icon-div">
               <div className="eu-link-contain">
-                <a className="eu-links" target="_blank" href="https://github.com/AnthonyRondinone/artHouse">GITHUB</a>
-                <a className="eu-links" target="_blank" href="https://www.linkedin.com/in/anthony-rondinone-a1111446">LINKEDIN</a>
-                <a className="eu-links" target="_blank" href="http://anthonyrondinone.com">PORTFOLIO</a>
-                <a className="eu-links" target="_blank" href="mailto:a.rondinone@gmail.com">EMAIL</a>
+                <a
+                  className="eu-links"
+                  target="_blank"
+                  href="https://github.com/AnthonyRondinone/artHouse">GITHUB
+                </a>
+                <a
+                  className="eu-links"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/anthony-rondinone-a1111446">LINKEDIN
+                </a>
+                <a className="eu-links"
+                  target="_blank"
+                  href="http://anthonyrondinone.com">PORTFOLIO
+                </a>
+                <a className="eu-links"
+                  target="_blank"
+                  href="mailto:a.rondinone@gmail.com">EMAIL
+                </a>
               </div>
               <p className="eu-copyright">© anthony rondinone</p>
             </div>

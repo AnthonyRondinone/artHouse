@@ -1,36 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class UserPostIndexItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const UserPostIndexItem = props => {
 
-  render() {
     return (
-        <Link className="upPostContain" to={`/users/${this.props.userId}/${this.props.postId}`}>
+        <Link className="upPostContain" to={`/users/${props.userId}/${props.postId}`}>
           <div className="post-hover" >
             <div className="like-comment-contain" >
               <div className="count-contain">
-                <div className="count-cover" >{this.props.post.commentCount}</div>
+                <div className="count-cover" >{props.post.commentCount}</div>
                 <img src={images.commentWhite}/>
               </div>
               <div className="count-contain">
-                <div className="count-cover" >{this.props.post.likerIds.length}</div>
+                <div className="count-cover" >{props.post.likerIds.length}</div>
                 <img src={images.heartWhite}/>
               </div>
 
             </div>
             <div className="up-post-cover"></div>
           </div>
-          <img className="upPostImg" src={this.props.imageThumb} />
+          <img className="upPostImg" src={props.imageThumb} />
         </Link>
 
     );
-  }
-
-}
-
-
+};
 
 export default UserPostIndexItem;
