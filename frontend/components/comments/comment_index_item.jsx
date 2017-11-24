@@ -12,23 +12,22 @@ class CommentIndexItem extends React.Component {
     this.props.deleteComment(this.props.commentId);
   }
 
-
-
-
   render() {
 
-    let visibleDeleteButton;
+    let DeleteCommentButton;
     if (this.props.authorId === this.props.currentUserId || this.props.artistId === this.props.currentUserId) {
-      visibleDeleteButton = <button onClick={this.handleDeleteComment} className="delete-comment" >x</button>;
+      DeleteCommentButton = <button onClick={this.handleDeleteComment} className="delete-comment" >x</button>;
     } else {
-      visibleDeleteButton = <div></div>;
+      DeleteCommentButton = <div></div>;
     }
 
     return (
       <div className="comment-contain">
-        <Link className="author-name" to={`/users/${this.props.authorId}`}>{this.props.author} </Link>
+        <Link className="author-name"
+          to={`/users/${this.props.authorId}`}>{this.props.author}
+        </Link>
         <span>{this.props.body}</span>
-        {visibleDeleteButton}
+        {DeleteCommentButton}
       </div>
     );
   }

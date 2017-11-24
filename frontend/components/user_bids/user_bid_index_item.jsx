@@ -32,15 +32,12 @@ const UserBidIndexItem = props => {
 
           <Link
             className="ub-post-contain"
-            to={`/users/${bid.artistId}/${bid.postId}`}
-          >
+            to={`/users/${bid.artistId}/${bid.postId}`}>
             <div className="post-hover" >
               <div className="up-post-cover"></div>
             </div>
             <img className="upPostImg" src={bid.imageThumb} />
           </Link>
-
-
 
           <div className="ub-bid-info">
 
@@ -55,7 +52,6 @@ const UserBidIndexItem = props => {
                   className='s-artist-name'
                   to={`/users/${bid.artistId}`}>{bid.username}
                 </Link>
-
               </div>
 
               <div className="curr-user-high-bid">
@@ -68,8 +64,8 @@ const UserBidIndexItem = props => {
                   <span className="current-bid-text">Current bid: </span>
                   <span className="current-bid">US ${currBid}</span>
                 </div>
-
               </div>
+
               <div className="ub-button-contain">
                 {button}
               </div>
@@ -77,9 +73,6 @@ const UserBidIndexItem = props => {
             </div>
 
           </div>
-
-
-
         </div>
       </div>
     );

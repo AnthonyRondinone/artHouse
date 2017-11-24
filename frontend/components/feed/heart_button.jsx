@@ -9,9 +9,6 @@ class HeartButton extends React.Component {
     this.handleUnLike = this.handleUnLike.bind(this);
   }
 
-
-
-
   handleLike(e) {
     e.preventDefault();
     this.props.addNewLike({like: {post_id: this.props.postId}});

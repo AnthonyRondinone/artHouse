@@ -10,7 +10,6 @@ class PlaceBidForm extends React.Component {
     this.handlePlaceBid = this.handlePlaceBid.bind(this);
   }
 
-
   componentDidMount() {
     this.props.importPostDetail(this.props.match.params.postId);
   }
@@ -20,11 +19,9 @@ class PlaceBidForm extends React.Component {
     this.props.clearBidMessage();
   }
 
-
   handleBidChange(e) {
     this.setState({bid: e.target.value});
   }
-
 
   handlePlaceBid(e) {
     e.preventDefault();
@@ -46,7 +43,6 @@ class PlaceBidForm extends React.Component {
       let zero = 0;
       let currBid = post.topBid ? parseFloat(post.topBid.bid).toFixed(2) : zero.toFixed(2);
       let minBid = post.topBid ? (parseFloat(post.topBid.bid) + 1.00).toFixed(2) : (zero + 1.00).toFixed(2);
-
       let CurrUserHighBid = "";
 
       if (post.topBid !== null){
@@ -74,12 +70,15 @@ class PlaceBidForm extends React.Component {
                     <img className="s-artist-avatar" src={post.avatarThumb} />
                   </Link>
                 </div>
-                <Link className='s-artist-name' to={`/users/${post.artistId}`}>{post.username}</Link>
+                <Link
+                  className='s-artist-name'
+                  to={`/users/${post.artistId}`}>{post.username}
+                </Link>
 
               </div>
 
               <div className="curr-user-high-bid">
-                <span className="curr-user-high-bid"> { CurrUserHighBid } </span>
+                <span className="curr-user-high-bid">{ CurrUserHighBid }</span>
               </div>
 
 

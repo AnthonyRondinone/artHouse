@@ -57,44 +57,37 @@ class ImageDetailItem extends React.Component {
           <div className="modal-back" onClick={this.handleModalClose} ></div>
 
           <div className="modal-main" >
-
-
-            <div className="s-post" onClick={(e) => e.stopPropagation()}>
+            <div className="s-post">
 
               <div className="s-image-left-contain">
-
                 <div className="s-post-image">
                   <img className="s-image" src={post.imageOrig}/>
                 </div>
-
               </div>
 
               <div className="s-info-right-contain">
-
                 <div className="s-artist-info" >
-
                   <div className="s-avatar-contain">
                     <Link to={`/users/${post.artistId}`}>
                       <img className="s-artist-avatar" src={post.avatarThumb} />
                     </Link>
                   </div>
 
-                  <Link className='s-artist-name' to={`/users/${post.artistId}`}>{post.username}</Link>
+                  <Link
+                    className='s-artist-name'
+                    to={`/users/${post.artistId}`}>{post.username}
+                  </Link>
                 </div>
 
                 <div className="s-cap-comment-index" >
-
                   <div className="s-post-caption" >
                     <span className="s-author-name" >{artistName} </span>
                     <span>{post.caption}</span>
                   </div>
-
                   <CommentsContainer commentIds={post.commentIds} />
                 </div>
 
                 <div className="s-under-image" >
-
-
                   <div className="s-button-contain" >
 
                     <div className="f-like-comment-contain">
@@ -104,15 +97,18 @@ class ImageDetailItem extends React.Component {
                         postId={post.id}
                         currentUserId={currentUser.id}
                         unLike={this.props.unLike}
-                        />
-
-                      <button onClick={() => {document.getElementById(`${post.id}`).focus();}}
-                        className="s-comment-button" ><i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
+                      />
+                      <button
+                        onClick={() => {document.getElementById(`${post.id}`).focus();}}
+                        className="s-comment-button" >
+                        <i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
                       </button>
-
                     </div>
 
-                    <Link to={`/bid/${post.artistId}/${post.id}`}><button className="feed-bid-button" >Place bid</button></Link>
+                    <Link
+                      to={`/bid/${post.artistId}/${post.id}`}>
+                      <button className="feed-bid-button" >Place bid</button>
+                    </Link>
 
                   </div>
 
@@ -137,18 +133,12 @@ class ImageDetailItem extends React.Component {
                   <div className="s-comment-form" >
                     <CommentFormContainer postId={post.id} />
                   </div>
-
-
                 </div>
 
               </div>
-
-
-
             </div>
-
+            
           </div>
-
         </div>
 
       );

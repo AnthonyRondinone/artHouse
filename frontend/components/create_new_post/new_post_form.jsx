@@ -45,8 +45,6 @@ class NewPostForm extends React.Component {
   }
 
 
-
-
   render() {
     let dropClass = "drop-zone";
     if (this.state.imageURL) {
