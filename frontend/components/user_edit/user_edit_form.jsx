@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import EditTextInput from './edit_text_input';
 
 class EditForm extends React.Component {
   constructor(props) {
@@ -80,41 +81,26 @@ class EditForm extends React.Component {
 
                 <div className="ue-right-form-contain" >
 
-                  <section className="ue-form-line" >
-                    <div className="ue-aside" >
-                      <label className= "ue-label" >Name</label>
-                    </div>
-                    <div className="ue-input-contain" >
-                      <input className="eu-input" type="text"
-                        value={this.state.name}
-                        onChange={ (e) => {this.handleChange("name", e);} }
-                        ></input>
-                    </div>
-                  </section>
+                  <EditTextInput
+                    userInfo={'name'}
+                    onChange={ (e) => {this.handleChange("name", e);} }
+                    value={ this.state.name }
+                    label={'Name'}
+                    />
 
-                  <section className="ue-form-line" >
-                    <div className="ue-aside" >
-                      <label className= "ue-label" >Username</label>
-                    </div>
-                    <div className="ue-input-contain" >
-                      <input className="eu-input" type="text"
-                        value={this.state.username}
-                        onChange={ (e) => {this.handleChange("username", e);} }
-                        ></input>
-                    </div>
-                  </section>
+                  <EditTextInput
+                    userInfo={'username'}
+                    onChange={ (e) => {this.handleChange("username", e);} }
+                    value={ this.state.username }
+                    label={'Username'}
+                    />
 
-                  <section className="ue-form-line" >
-                    <div className="ue-aside eu-text-aside" >
-                      <label className= "ue-label" >Bio</label>
-                    </div>
-                    <div className="ue-input-contain" >
-                      <textarea className="eu-input eu-text-area" type="text"
-                        value={this.state.bio}
-                        onChange={ (e) => {this.handleChange("bio", e);} }
-                        ></textarea>
-                    </div>
-                  </section>
+                  <EditTextInput
+                    userInfo={'bio'}
+                    onChange={ (e) => {this.handleChange("bio", e);} }
+                    value={ this.state.bio }
+                    label={'Bio'}
+                    />
 
                   <section className="ue-form-line" >
                     <div className="ue-aside" >
@@ -127,17 +113,12 @@ class EditForm extends React.Component {
                   </section>
 
 
-                  <section className="ue-form-line" >
-                    <div className="ue-aside" >
-                      <label className= "ue-label" >Email</label>
-                    </div>
-                    <div className="ue-input-contain" >
-                      <input className="eu-input" type="text"
-                        value={this.state.email}
-                        onChange={ (e) => {this.handleChange("email", e);} }
-                        ></input>
-                    </div>
-                  </section>
+                  <EditTextInput
+                    userInfo={'email'}
+                    onChange={ (e) => {this.handleChange("email", e);} }
+                    value={ this.state.email }
+                    label={'Email'}
+                    />
 
                   <section className="ue-form-line" >
                     <div className="ue-aside" >
