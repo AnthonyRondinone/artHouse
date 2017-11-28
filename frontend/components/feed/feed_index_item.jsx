@@ -108,7 +108,7 @@ const FeedIndexItem = props => {
             <span>{caption}</span>
           </div>
 
-          <CommentsContainer commentIds={commentIds} />
+          <CommentsContainer commentIds={commentIds} artistId={artistId} />
 
           <div className="time-contain">
             <Moment className="post-time" fromNow>{dateTime}</Moment>

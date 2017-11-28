@@ -7,6 +7,7 @@ import { deleteComment } from '../../actions/comment_actions';
 
 
 const mapStateToProps = ( state, ownProps ) => {
+  debugger
   if (state.entities.comments) {
     return {
       comments: selectPostComments(state, ownProps),

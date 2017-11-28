@@ -22,7 +22,7 @@ class ImageDetailItem extends React.Component {
   }
 
   render() {
-
+    debugger
     if(this.props.modal) {
 
 
@@ -84,7 +84,7 @@ class ImageDetailItem extends React.Component {
                     <span className="s-author-name" >{artistName} </span>
                     <span>{post.caption}</span>
                   </div>
-                  <CommentsContainer commentIds={post.commentIds} />
+                  <CommentsContainer commentIds={post.commentIds} artistId={post.artistId} />
                 </div>
 
                 <div className="s-under-image" >
@@ -137,7 +137,7 @@ class ImageDetailItem extends React.Component {
 
               </div>
             </div>
-            
+
           </div>
         </div>
 
