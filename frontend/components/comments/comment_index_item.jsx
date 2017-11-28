@@ -9,10 +9,13 @@ const CommentIndexItem = (props) => {
     props.deleteComment(props.commentId);
   }
 
-
   let DeleteCommentButton;
-  if (props.authorId === props.currentUserId || props.artistId === props.currentUserId) {
-    DeleteCommentButton = <button onClick={handleDeleteComment.bind(this)} className="delete-comment" >x</button>;
+  if (props.authorId === props.currentUserId ||
+      props.artistId === props.currentUserId) {
+    DeleteCommentButton = <button
+                            onClick={handleDeleteComment.bind(this)}
+                            className="delete-comment" >x
+                          </button>;
   } else {
     DeleteCommentButton = <div></div>;
   }

@@ -25,7 +25,15 @@ class ProfileItem extends React.Component {
 
 
   render() {
-    const {user, posts, currentUser, addNewFollow, unFollow, updateUserAvatar } = this.props;
+
+    const {
+      user,
+      posts,
+      currentUser,
+      addNewFollow,
+      unFollow,
+      updateUserAvatar
+    } = this.props;
 
     if (this.props.user) {
       let postText = posts.length === 1 ? " post": " posts";
@@ -45,16 +53,17 @@ class ProfileItem extends React.Component {
           <div className="upMain" >
             <section className="upMainInfo" >
 
-
               <div className="upAvatarCush">
                 <div className="upAvatarContain" >
-
-                  <ProfileAvatar user={user} currentUser={currentUser} updateUserAvatar={updateUserAvatar} />
+                  <ProfileAvatar
+                    user={user}
+                    currentUser={currentUser}
+                    updateUserAvatar={updateUserAvatar}
+                  />
                 </div>
               </div>
 
               <section className="upInfo">
-
                 <section className="upInfoTop">
                   <p className="userName" >{user.username}</p>
                   <EditFollowButton className="editFollow"
@@ -82,15 +91,11 @@ class ProfileItem extends React.Component {
 
                 <section className="upInfoBottom" >
                     <p className="upName" >{user.name}</p>
-
                     <span className="upBio" >{user.bio}</span>
-
                 </section>
-
               </section>
 
-            </section><br></br>
-
+            </section>
 
             <section className="upPostIndex" >
                   {userPostIndexItems}
