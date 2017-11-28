@@ -85,8 +85,9 @@
 }
 
 .caption-input:focus {
-
-  background: #fafafa;
+  outline-color: black;
+  outline-style: none;
+  border-color: lightgrey;
 }
 
 .button-contain {

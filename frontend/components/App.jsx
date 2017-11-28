@@ -16,13 +16,13 @@ const App = () => (
   <div>
     <NavBarContainer component={NavBarContainer}/>
     <Route path="/users/:userId/:postId" component={ImageShowContainer} />
-      <ProtectedRoute path="/create" component={NewPostContainer}/>
-      <ProtectedRoute path="/bid/:userId/:postId" component={BidContainer}/>
-      <ProtectedRoute path="/welcome" component={SuggestedArtistContainer} />
-      <ProtectedRoute path="/" exact={true} component={FeedContainer} />
-      <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
-      <ProtectedRoute path="/bids/:userId" component={UserBidsContainer} />
-      <ProtectedRoute path="/edit/:userId" component={UserEditContainer} />
+    <ProtectedRoute path="/create" component={NewPostContainer}/>
+    <ProtectedRoute path="/bid/:userId/:postId" component={BidContainer}/>
+    <ProtectedRoute path="/welcome" component={SuggestedArtistContainer} />
+    <ProtectedRoute path="/" exact={true} component={FeedContainer} />
+    <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
+    <ProtectedRoute path="/bids/:userId" component={UserBidsContainer} />
+    <ProtectedRoute path="/edit/:userId" component={UserEditContainer} />
 
     <Switch>
       <AuthRoute path="/signin" component={SessionContainer} />

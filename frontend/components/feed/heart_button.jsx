@@ -2,47 +2,39 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-class HeartButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleLike = this.handleLike.bind(this);
-    this.handleUnLike = this.handleUnLike.bind(this);
-  }
+const HeartButton = (props) => {
 
-  handleLike(e) {
+
+  function handleLike(e) {
     e.preventDefault();
-    this.props.addNewLike({like: {post_id: this.props.postId}});
+    props.addNewLike({like: {post_id: props.postId}});
   }
 
-  handleUnLike(e) {
+  function handleUnLike(e) {
     e.preventDefault();
-    this.props.unLike(this.props.postId);
+    props.unLike(props.postId);
   }
-
-  render () {
 
     let liked;
-    if (this.props.likerIds === undefined) {
+    if (props.likerIds === undefined) {
       liked = false;
     } else {
-      liked = this.props.likerIds.includes(this.props.currentUserId);
+      liked = props.likerIds.includes(props.currentUserId);
     }
 
     if(liked === true) {
         return (
-          <button className="heart-button" onClick={this.handleUnLike}>
+          <button className="heart-button" onClick={handleUnLike.bind(this)}>
             <i className="fa fa-heart" aria-hidden="true"></i>
           </button>
         );
     } else {
       return (
-        <button className="heart-button" onClick={this.handleLike}>
+        <button className="heart-button" onClick={handleLike.bind(this)}>
           <i className="fa fa-heart-o fa-2x" aria-hidden="true"></i>
         </button>
       );
     }
-  }
-
-}
+  };
 
 export default HeartButton;

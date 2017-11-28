@@ -7,78 +7,78 @@ import Moment from 'react-moment';
 
 const FeedIndexItem = props => {
 
-    if (props.imageOrig) {
+  if (props.imageOrig) {
 
-      const {
-        id,
-        currentUserId,
-        artistId,
-        avatarThumb,
-        username,
-        imageOrig,
-        createdAt,
-        likerIds,
-        liked,
-        commentIds,
-        caption,
-        topBid,
-        bidIds
-      } = props;
+    const {
+      id,
+      currentUserId,
+      artistId,
+      avatarThumb,
+      username,
+      imageOrig,
+      createdAt,
+      likerIds,
+      liked,
+      commentIds,
+      caption,
+      topBid,
+      bidIds
+    } = props;
 
-      let like;
-      let likeCount;
-      if (likerIds === undefined) {
-        likeCount = 0;
-        like = " likes";
-      } else {
-        likeCount = likerIds.length;
-        like = likerIds.length === 1 ? " like" : " likes";
-      }
+    let like;
+    let likeCount;
+    if (likerIds === undefined) {
+      likeCount = 0;
+      like = " likes";
+    } else {
+      likeCount = likerIds.length;
+      like = likerIds.length === 1 ? " like" : " likes";
+    }
 
-      let zero = 0;
-      let currBid = topBid ? parseFloat(topBid.bid).toFixed(2) : zero.toFixed(2);
+    let zero = 0;
+    let currBid = topBid ? parseFloat(topBid.bid).toFixed(2) : zero.toFixed(2);
 
-      let bidText = bidIds.length == 1 ? "bid" : "bids";
+    let bidText = bidIds.length == 1 ? "bid" : "bids";
 
-      let artistName = caption ? username : "";
-      let dateTime = createdAt;
+    let artistName = caption ? username : "";
+    let dateTime = createdAt;
 
-      return (
-        <div>
-          <div className="post" >
-            <div className="artist-info" >
-              <div className="avatar-contain">
-                <Link
-                  to={`/users/${artistId}`}>
-                  <img className="artist-avatar" src={avatarThumb} />
-                </Link>
-              </div>
+    return (
+      <div>
+        <div className="post" >
+          <div className="artist-info" >
+            <div className="avatar-contain">
               <Link
-                className='artist-name'
-                to={`/users/${artistId}`}>{username}
+                to={`/users/${artistId}`}>
+                <img className="artist-avatar" src={avatarThumb} />
               </Link>
             </div>
+            <Link
+              className='artist-name'
+              to={`/users/${artistId}`}>{username}
+            </Link>
+          </div>
 
-            <div className="post-image">
-              <img className="image" src={props.imageOrig}/>
-            </div>
+          <div className="post-image">
+            <img className="image" src={props.imageOrig}/>
+          </div>
 
-            <div className="under-image" >
-              <div className="f-button-contain" >
+          <div className="under-image" >
+            <div className="f-button-contain" >
 
-                <div className="f-like-comment-contain">
-                  <HeartButton className="heart"
-                    addNewLike={props.addNewLike}
-                    likerIds={likerIds}
-                    postId={id}
-                    currentUserId={currentUserId}
-                    unLike={props.unLike}
-                    />
-                  <button
-                    onClick={() => {document.getElementById(`${id}`).focus();}}
-                    className="comment-button" >
-                    <i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
-                  </button>
+              <div className="f-like-comment-contain">
+                <HeartButton className="heart"
+                  addNewLike={props.addNewLike}
+                  likerIds={likerIds}
+                  postId={id}
+                  currentUserId={currentUserId}
+                  unLike={props.unLike}
+                  />
+                <button
+                  onClick={() => {document.getElementById(`${id}`).focus();}}
+                  className="comment-button" >
+                  <i className="fa fa-comment-o fa-2x" aria-hidden="true"></i>
+                </button>
               </div>
 
               <Link
@@ -87,35 +87,34 @@ const FeedIndexItem = props => {
                 className="feed-bid-button" >Place bid
                 </button>
               </Link>
-
             </div>
 
-            <div className="likes-bids">
-              <div className="likes" >
-                <span>{likeCount}</span>
-                <span>{like}</span>
-              </div>
-
-              <div className="feed-bid-info">
-                <span className="f-curr-bid">${currBid}</span>
-                <span className="f-num-bids">{bidIds.length} {bidText}</span>
-              </div>
-
+          <div className="likes-bids">
+            <div className="likes" >
+              <span>{likeCount}</span>
+              <span>{like}</span>
             </div>
 
-
-            <div className="post-caption" >
-              <span className="author-name" >{artistName} </span>
-              <span>{caption}</span>
+            <div className="feed-bid-info">
+              <span className="f-curr-bid">${currBid}</span>
+              <span className="f-num-bids">{bidIds.length} {bidText}</span>
             </div>
 
-            <CommentsContainer commentIds={commentIds} />
+          </div>
 
-            <div className="time-contain">
-              <Moment className="post-time" fromNow>{dateTime}</Moment>
-            </div>
 
-            <CommentFormContainer artistId={artistId} postId={id} />
+          <div className="post-caption" >
+            <span className="author-name" >{artistName} </span>
+            <span>{caption}</span>
+          </div>
+
+          <CommentsContainer commentIds={commentIds} />
+
+          <div className="time-contain">
+            <Moment className="post-time" fromNow>{dateTime}</Moment>
+          </div>
+
+          <CommentFormContainer artistId={artistId} postId={id} />
           </div>
 
 
