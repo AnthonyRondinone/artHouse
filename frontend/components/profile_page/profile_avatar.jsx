@@ -12,14 +12,11 @@ class ProfileAvatar extends React.Component {
     this.handleDrop = this.handleDrop.bind(this);
   }
 
-
   handleDrop(e) {
     let formData = new FormData();
     formData.append("user[avatar]", e[0]);
     this.props.updateUserAvatar(formData, this.props.currentUser.id);
-
   }
-
 
   render() {
     const { user, currentUser } = this.props;

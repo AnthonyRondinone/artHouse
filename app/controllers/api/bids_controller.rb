@@ -3,8 +3,8 @@ class Api::BidsController < ApplicationController
 
 
   def index
-    latest = current_user.bids.group(:post_id).maximum(:id).values
-    @user_bids = current_user.bids.where(id: latest).includes(:post)
+    latestBidIDs = current_user.bids.group(:post_id).maximum(:id).values
+    @user_bids = current_user.bids.where(id: latestBidIDs).includes(:post)
   end
 
 

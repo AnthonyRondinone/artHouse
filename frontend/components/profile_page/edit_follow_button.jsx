@@ -22,8 +22,6 @@ class EditFollowButton extends React.Component {
     }});
   }
 
-
-
   render() {
     const {user, currentUser} = this.props;
     if (currentUser) {
@@ -35,16 +33,23 @@ class EditFollowButton extends React.Component {
         );
       } else if ((this.props.match.params.userId !== String(currentUser.id)) || currentUser === null) {
 
-          let followState = user.followerIds.includes(currentUser.id) ? "Following" : "Follow";
+          let followState = user.followerIds.includes(currentUser.id) ?
+            "Following" : "Follow";
 
           switch(followState) {
             case "Following":
             return (
-              <button className="editFollowing" onClick={this.handleUnfollow} >{followState}</button>
+              <button
+                className="editFollowing"
+                onClick={this.handleUnfollow} >{followState}
+              </button>
             );
             case "Follow":
             return (
-              <button className="editFollow" onClick={this.handleFollow} >{followState}</button>
+              <button
+                className="editFollow"
+                onClick={this.handleFollow} >{followState}
+              </button>
             );
           }
       }
@@ -55,8 +60,6 @@ class EditFollowButton extends React.Component {
     }
 
   }
-
-
 
 }
 

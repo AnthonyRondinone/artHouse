@@ -82,8 +82,10 @@ const FeedIndexItem = props => {
               </div>
 
               <Link
-                to={`/bid/${artistId}/${id}`}><button
-                className="feed-bid-button" >Place bid</button>
+                to={`/bid/${artistId}/${id}`}>
+                <button
+                className="feed-bid-button" >Place bid
+                </button>
               </Link>
 
             </div>

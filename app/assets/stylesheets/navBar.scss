@@ -72,11 +72,16 @@
   font-size: 19px;
 }
 
+
+
 .nav-icon {
   color: inherit;
   font-size: 19px;
 }
 
 .nav-icon:hover {
+  cursor: pointer;
+}
+.icon-nav:hover {
   cursor: pointer;
 }

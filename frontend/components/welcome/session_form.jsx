@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
   }
 
   render () {
-    let sendLink;
+    let sendPath;
     let showLink;
     let question;
     let agreement;
@@ -55,14 +55,14 @@ class SessionForm extends React.Component {
     let buttonName;
 
     if(this.props.formType === '/signin') {
-      sendLink = '/signup';
+      sendPath = '/signup';
       showLink = 'Sign up';
       question = "Don't have an account?";
       agreement = '';
       SignUpPitch = '';
       buttonName = 'Log in';
     } else {
-      sendLink = '/signin';
+      sendPath = '/signin';
       showLink = 'Log in';
       question = 'Have an account?';
       agreement = 'By signing up, you agree to our Terms & Private Policy.';
@@ -74,28 +74,25 @@ class SessionForm extends React.Component {
     let errors = "";
     if (this.props.errors.responseJSON) {
       errors = this.props.errors.responseJSON.join(", ");
-    } else {
-      errors = '';
     }
+
     return (
       <div className="sign-up-page" >
         <div className ="welcome" >
-          <div>
-            <img className="phones" src={ window.images.signIn } />
-          </div>
+          <img className="phones" src={ window.images.signIn } />
 
           <section className="form">
-
             <form className="inputSection" onSubmit={this.handleSubmit}>
               <img src={window.images.signInLogo} />
               <h4 className="pitch">{SignUpPitch}</h4>
+
               <input className="authInput"
                 type="text"
                 onChange={this.handleUsernameChange}
                 value={this.state.username}
                 placeholder="Username"
               />
-              <br></br>
+
               <input
                 className="authInput"
                 type="password"
@@ -103,7 +100,7 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 placeholder="Password"
               />
-              <br></br>
+
               <button className="authButton" >{ buttonName }</button>
               <p className="errors" >{ errors }</p>
               <button
@@ -114,19 +111,17 @@ class SessionForm extends React.Component {
             </form>
 
             <div className="questionSec" >
-              
               <section className="question">
                 <p className="pText" >{question}</p>
                 <Link
                   className="logSignLink"
-                  to={sendLink}>
+                  to={sendPath}>
                   <span >{showLink}</span>
                 </Link>
               </section>
 
             </div>
           </section>
-
         </div>
 
         <div className="icon-div">
