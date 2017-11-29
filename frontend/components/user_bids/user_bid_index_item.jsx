@@ -12,14 +12,13 @@ const UserBidIndexItem = props => {
     let minBid = bid.topBid ? (parseFloat(bid.topBid.bid) + 1.00).toFixed(2) : (zero + 1.00).toFixed(2);
 
     let CurrUserHighBid = "";
-    let button;
 
     if (bid.topBid !== null){
       CurrUserHighBid = bid.topBid.user_id == currentUser.id ?
         "You have the current high bid!" : "";
     }
 
-    button = bid.topBid.user_id == currentUser.id ?
+    let button = bid.topBid.user_id == currentUser.id ?
     <button className="ub-disablebid-button" >New bid</button> :
       <Link
         to={`/bid/${bid.artistId}/${bid.postId}`}><button
