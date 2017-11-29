@@ -3,26 +3,31 @@ import { Link } from 'react-router-dom';
 
 const UserPostIndexItem = props => {
 
-    return (
-        <Link className="upPostContain" to={`/users/${props.userId}/${props.postId}`}>
-          <div className="post-hover" >
-            <div className="like-comment-contain" >
-              <div className="count-contain">
-                <div className="count-cover" >{props.post.commentCount}</div>
-                <img src={images.commentWhite}/>
-              </div>
-              <div className="count-contain">
-                <div className="count-cover" >{props.post.likerIds.length}</div>
-                <img src={images.heartWhite}/>
-              </div>
+  return (
+    <Link
+      className="upPostContain"
+      to={`/users/${props.userId}/${props.postId}`}>
+      <div className="post-hover" >
+        <div className="like-comment-contain" >
 
-            </div>
-            <div className="up-post-cover"></div>
+          <div className="count-contain">
+            <div className="count-cover" >{props.post.commentCount}</div>
+            <img src={images.commentWhite}/>
           </div>
-          <img className="upPostImg" src={props.imageThumb} />
-        </Link>
 
-    );
+          <div className="count-contain">
+            <div className="count-cover" >{props.post.likerIds.length}</div>
+            <img src={images.heartWhite}/>
+          </div>
+
+        </div>
+
+        <div className="up-post-cover"></div>
+      </div>
+
+      <img className="upPostImg" src={props.imageThumb} />
+    </Link>
+  );
 };
 
 export default UserPostIndexItem;

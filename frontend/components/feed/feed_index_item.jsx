@@ -99,9 +99,7 @@ const FeedIndexItem = props => {
               <span className="f-curr-bid">${currBid}</span>
               <span className="f-num-bids">{bidIds.length} {bidText}</span>
             </div>
-
           </div>
-
 
           <div className="post-caption" >
             <span className="author-name" >{artistName} </span>
@@ -116,7 +114,6 @@ const FeedIndexItem = props => {
 
           <CommentFormContainer artistId={artistId} postId={id} />
           </div>
-
 
         </div>
 

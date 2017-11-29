@@ -9,7 +9,6 @@ const SuggestedIndexItem = props => {
 
     return(
         <div className="su-container" >
-
           <div className="su-avatar-contain" >
             <Link
               to={`/users/${user.id}`}><img
