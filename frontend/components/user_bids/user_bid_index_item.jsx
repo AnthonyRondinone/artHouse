@@ -19,10 +19,12 @@ const UserBidIndexItem = props => {
     }
 
     let button = bid.topBid.user_id == currentUser.id ?
-    <button className="ub-disablebid-button" >New bid</button> :
+      <button className="ub-disablebid-button" >New bid</button> :
       <Link
-        to={`/bid/${bid.artistId}/${bid.postId}`}><button
-        className="feed-bid-button" >New bid</button>
+        to={`/bid/${bid.artistId}/${bid.postId}`}>
+        <button
+          className="feed-bid-button" >New bid
+        </button>
       </Link>;
 
     return (
