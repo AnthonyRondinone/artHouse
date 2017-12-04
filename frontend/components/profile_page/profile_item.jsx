@@ -25,7 +25,6 @@ class ProfileItem extends React.Component {
 
 
   render() {
-
     const {
       user,
       posts,

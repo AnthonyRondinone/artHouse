@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { addNewLike, unLike } from '../../actions/like_actions';
-import { importPostDetail } from '../../actions/post_actions';
+import { importPostDetail, deletePost, openDelete, closeDelete } from '../../actions/post_actions';
 import ImageDetailItem from './image_detail_item';
 import {closeModal} from '../../actions/modal_actions';
 
@@ -20,7 +20,10 @@ const mapDispatchToProps = dispatch => {
     importPostDetail: (postId) => dispatch(importPostDetail(postId)),
     addNewLike: (like) => dispatch(addNewLike(like)),
     unLike: (postId) => dispatch(unLike(postId)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    deletePost: (postId) => dispatch(deletePost(postId)),
+    openDelete: (postId) => dispatch(openDelete(postId)),
+    closeDelete: (postId) => dispatch(closeDelete(postId))
   };
 };
 

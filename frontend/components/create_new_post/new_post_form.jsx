@@ -85,9 +85,6 @@ class NewPostForm extends React.Component {
       </div>
     );
   }
-
-
-
 }
 
 export default NewPostForm;

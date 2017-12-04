@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import Feed from './feed';
+import { withRouter } from 'react-router-dom';
 import { selectFeedPosts } from '../../reducers/selectors';
-import { importFeedPosts } from '../../actions/post_actions';
+import { importFeedPosts, deletePost, openDelete, closeDelete } from '../../actions/post_actions';
 import { addNewLike, unLike } from '../../actions/like_actions';
 
 
@@ -17,10 +18,13 @@ const mapDispatchToProps = dispatch => {
   return {
     importFeedPosts: () => dispatch(importFeedPosts()),
     addNewLike: (like) => dispatch(addNewLike(like)),
-    unLike: (postId) => dispatch(unLike(postId))
+    unLike: (postId) => dispatch(unLike(postId)),
+    deletePost: (postId) => dispatch(deletePost(postId)),
+    openDelete: (postId) => dispatch(openDelete(postId)),
+    closeDelete: (postId) => dispatch(closeDelete(postId))
   };
 };
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Feed);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Feed));

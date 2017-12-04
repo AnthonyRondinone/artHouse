@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HeartButton from './heart_button';
+import DeleteButton from '../delete_post/delete_button';
 import CommentsContainer from '../comments/comments_container';
+import DeletePostDropdown from '../delete_post/delete_post_container';
 import CommentFormContainer from '../comments/comment_form_container';
 import Moment from 'react-moment';
 
@@ -22,7 +24,11 @@ const FeedIndexItem = props => {
       commentIds,
       caption,
       topBid,
-      bidIds
+      bidIds,
+      openDelete,
+      deleteDropdown,
+      deletePost,
+      closeDelete
     } = props;
 
     let like;
@@ -45,18 +51,36 @@ const FeedIndexItem = props => {
 
     return (
       <div>
+        <DeletePostDropdown
+          deleteDropdown={deleteDropdown}
+          deletePost={deletePost}
+          postId={id}
+          closeDelete={closeDelete}
+          currentUserId={currentUserId}
+        />
+
         <div className="post" >
           <div className="artist-info" >
-            <div className="avatar-contain">
+            <div className="artist-left" >
+              <div className="avatar-contain">
+                <Link
+                  to={`/users/${artistId}`}>
+                  <img className="artist-avatar" src={avatarThumb} />
+                </Link>
+              </div>
               <Link
-                to={`/users/${artistId}`}>
-                <img className="artist-avatar" src={avatarThumb} />
+                className='artist-name'
+                to={`/users/${artistId}`}>{username}
               </Link>
             </div>
-            <Link
-              className='artist-name'
-              to={`/users/${artistId}`}>{username}
-            </Link>
+
+            <DeleteButton
+              currentUserId={currentUserId}
+              artistId={artistId}
+              openDelete={openDelete}
+              postId={id}
+            />
+
           </div>
 
           <div className="post-image">

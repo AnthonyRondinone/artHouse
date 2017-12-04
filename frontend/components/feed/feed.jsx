@@ -20,7 +20,14 @@ class Feed extends React.Component {
 
 
   render() {
-    const { posts, currentUser, addNewLike, unLike } = this.props;
+    const { posts,
+      currentUser,
+      addNewLike,
+      unLike,
+      deletePost,
+      openDelete,
+      closeDelete
+    } = this.props;
 
     const feedIndexItems = posts.map((post) => <FeedIndexItem
     id={post.id}
@@ -40,16 +47,19 @@ class Feed extends React.Component {
     unLike={unLike}
     bidIds={post.bidIds}
     topBid={post.topBid}
+    deletePost={deletePost}
+    openDelete={openDelete}
+    closeDelete={closeDelete}
+    deleteDropdown={post.deleteDropdown}
     />);
 
-
-        return (
-          <div className='feed-contain'>
-            <div className='main-feed' >
-              {feedIndexItems}
-            </div>
-          </div>
-        );
+    return (
+      <div className='feed-contain'>
+        <div className='main-feed' >
+          {feedIndexItems}
+        </div>
+      </div>
+    );
 
 
   }

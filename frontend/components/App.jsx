@@ -11,6 +11,7 @@ import SuggestedArtistContainer from './suggested_artists/suggested_artist_conta
 import UserEditContainer from './user_edit/user_edit_container';
 import BidContainer from './bid_page/bid_container';
 import UserBidsContainer from './user_bids/user_bids_container';
+import DeletePost from './delete_post/delete_post_container';
 
 const App = () => (
   <div>

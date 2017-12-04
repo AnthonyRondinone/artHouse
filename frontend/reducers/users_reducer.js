@@ -1,5 +1,6 @@
 import { RECEIVE_SINGLE_USER, RECEIVE_SUGGESTED_USERS, RECEIVE_UPDATED_USER_AVATAR, RECEIVE_UPDATED_USER } from '../actions/user_actions';
 import { RECEIVE_FOLLOW, DELETE_FOLLOW } from '../actions/follow_actions';
+import { RECEIVE_DELETED_POST } from '../actions/post_actions';
 import { merge } from 'lodash';
 
 export const usersReducer = ( state = {}, action ) => {
@@ -28,6 +29,13 @@ export const usersReducer = ( state = {}, action ) => {
     case RECEIVE_UPDATED_USER:
       newState = merge({}, state);
       newState = {[action.user.id]: action.user};
+      return newState;
+    case RECEIVE_DELETED_POST:
+      newState = merge({}, state);
+      if(newState[action.post.post.artistId]) {
+        let postIndex = newState[action.post.post.artistId].postIds.indexOf(action.post.post.id);
+        newState[action.post.post.artistId].postIds.splice(postIndex, 1);
+      }
       return newState;
     default:
       return state;

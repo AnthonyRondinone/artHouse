@@ -1,5 +1,5 @@
 import { RECEIVE_SINGLE_USER, RECEIVE_SUGGESTED_USERS } from '../actions/user_actions';
-import { RECEIVE_NEW_POST, RECEIVE_FEED_POSTS, RECEIVE_POST_DETAIL } from '../actions/post_actions';
+import { CLOSE_DELETE, OPEN_DELETE, RECEIVE_DELETED_POST, RECEIVE_NEW_POST, RECEIVE_FEED_POSTS, RECEIVE_POST_DETAIL } from '../actions/post_actions';
 import { RECEIVE_COMMENT, RECEIVE_DELETE_COMMENT } from '../actions/comment_actions';
 import { RECEIVE_LIKE, DELETE_LIKE } from '../actions/like_actions';
 import { RECEIVE_BID } from '../actions/bid_actions';
@@ -49,6 +49,18 @@ export const postsReducer = ( state = {}, action ) => {
     return newState;
     case RECEIVE_SUGGESTED_USERS:
       newState = action.payload.posts;
+      return newState;
+    case RECEIVE_DELETED_POST:
+      newState = merge({}, state);
+      delete newState[action.post.post.id];
+      return newState;
+    case OPEN_DELETE:
+      newState = merge({}, state);
+      newState[action.postId].deleteDropdown = 'open';
+      return newState;
+    case CLOSE_DELETE:
+      newState = merge({}, state);
+      newState[action.postId].deleteDropdown = 'closed';
       return newState;
     default:
     return state;
