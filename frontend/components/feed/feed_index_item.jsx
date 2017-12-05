@@ -6,6 +6,7 @@ import CommentsContainer from '../comments/comments_container';
 import DeletePostDropdown from '../delete_post/delete_post_container';
 import CommentFormContainer from '../comments/comment_form_container';
 import Moment from 'react-moment';
+import PlaceBidButton from '../bid_page/place_bid_button';
 
 const FeedIndexItem = props => {
 
@@ -33,21 +34,6 @@ const FeedIndexItem = props => {
 
     let zero = 0;
     let currBid = topBid ? parseFloat(topBid.bid).toFixed(2) : zero.toFixed(2);
-
-
-    let placeBidButton;
-    if (topBid !== null && topBid.user_id == currentUserId){
-      placeBidButton = <button
-                        className="feed-bid-button disablebid" >Thank you
-                       </button>;
-    } else {
-      placeBidButton = <Link
-                        to={`/bid/${artistId}/${id}`}>
-                        <button
-                        className="feed-bid-button" >Place bid
-                        </button>
-                      </Link>;
-    }
 
     return (
       <div>
@@ -106,7 +92,12 @@ const FeedIndexItem = props => {
                 </button>
               </div>
 
-              {placeBidButton}
+              <PlaceBidButton
+                topBid={topBid}
+                currentUserId={currentUserId}
+                artistId={artistId}
+                postId={id}
+              />
 
             </div>
 

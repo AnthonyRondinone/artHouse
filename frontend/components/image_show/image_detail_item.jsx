@@ -6,6 +6,7 @@ import CommentFormContainer from '../comments/comment_form_container';
 import Moment from 'react-moment';
 import DeletePostDropdown from '../delete_post/delete_post_container';
 import DeleteButton from '../delete_post/delete_button';
+import PlaceBidButton from '../bid_page/place_bid_button';
 
 class ImageDetailItem extends React.Component {
   constructor(props) {
@@ -129,10 +130,12 @@ class ImageDetailItem extends React.Component {
                       </button>
                     </div>
 
-                    <Link
-                      to={`/bid/${post.artistId}/${post.id}`}>
-                      <button className="feed-bid-button" >Place bid</button>
-                    </Link>
+                    <PlaceBidButton
+                      topBid={post.topBid}
+                      currentUserId={currentUser.id}
+                      artistId={post.artistId}
+                      postId={post.id}
+                    />
 
                   </div>
 
