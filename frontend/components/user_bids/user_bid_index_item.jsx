@@ -19,7 +19,7 @@ const UserBidIndexItem = props => {
     }
 
     let button = bid.topBid.user_id == currentUser.id ?
-      <button className="ub-disablebid-button" >New bid</button> :
+      <button className="ub-disablebid-button" >Thank you</button> :
       <Link
         to={`/bid/${bid.artistId}/${bid.postId}`}>
         <button

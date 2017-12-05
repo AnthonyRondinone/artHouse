@@ -85,7 +85,7 @@
   border: 1px solid #dbdbdb;
   width: 220px;
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -352,4 +352,13 @@
 
 .feed-bid-button:hover{
   cursor: pointer;
+}
+
+.disablebid {
+  background: lightgrey;
+  border-color: lightgrey;
+}
+
+.disablebid:hover {
+  cursor: auto;
 }

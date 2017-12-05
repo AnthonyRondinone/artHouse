@@ -11,33 +11,36 @@ const DeletePostDropdownItem = (props) => {
   } = props;
 
   function handleDeletePostClick() {
-    let id = postId;
     if (props.match.path === "/users/:userId/:postId") {
       props.history.push(`/users/${currentUserId}`);
     }
-    props.deletePost(id);
+    props.deletePost(postId);
   }
+
+  let handleDeletePostClickBound = handleDeletePostClick.bind(this);
 
   function handleCancelDeletePostClick() {
     closeDelete(postId);
   }
+
+  let handleCancelDeletePostClickBound = handleCancelDeletePostClick.bind(this);
 
   if (deleteDropdown === 'open') {
     return (
       <div className="delete-main">
         <div
           className="delete-modal"
-          onClick={handleCancelDeletePostClick.bind(this)} >
+          onClick={handleCancelDeletePostClickBound} >
         </div>
         <div className="delete-dropdown" >
           <div
             className="delete-dropdown-button dropdown-delete"
-            onClick={handleDeletePostClick.bind(this)}>
+            onClick={handleDeletePostClickBound}>
             <div>Delete Post</div>
           </div>
           <div
             className="delete-dropdown-button"
-            onClick={handleCancelDeletePostClick.bind(this)}>
+            onClick={handleCancelDeletePostClickBound}>
             <div>Cancel</div>
           </div>
         </div>

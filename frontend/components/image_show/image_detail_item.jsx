@@ -43,28 +43,15 @@ class ImageDetailItem extends React.Component {
 
       const post = posts[this.props.match.params.postId];
 
-      let like;
-      let likeCount;
-      if (post.likerIds === undefined) {
-        likeCount = 0;
-        like = " likes";
-      } else {
-        likeCount = post.likerIds.length;
-        like = post.likerIds.length === 1 ? " like" : " likes";
-      }
-
       let zero = 0;
       let currBid = post.topBid ? parseFloat(post.topBid.bid).toFixed(2) : zero.toFixed(2);
-      let bidText = post.bidIds.length == 1 ? "bid" : "bids";
-      let artistName = post.caption ? post.username : "";
-      let dateTime = post.createdAt;
 
-      let backing;
+      let deleteModalBacking;
       if (post.deleteDropdown === 'open') {
-        backing = <div
-                  className="backing"
-                  onClick={this.handleCancelDeletePostClick}
-                  >
+        deleteModalBacking = <div
+                    className="backing"
+                    onClick={this.handleCancelDeletePostClick}
+                    >
                   </div>;
       }
 
@@ -82,7 +69,7 @@ class ImageDetailItem extends React.Component {
           <div className="modal-back" onClick={this.handleModalClose} ></div>
           <div className="modal-main" >
             <div className="s-post">
-              {backing}
+              {deleteModalBacking}
               <div className="s-image-left-contain">
                 <div className="s-post-image">
                   <img className="s-image" src={post.imageOrig}/>
@@ -115,7 +102,10 @@ class ImageDetailItem extends React.Component {
 
                 <div className="s-cap-comment-index" >
                   <div className="s-post-caption" >
-                    <span className="s-author-name" >{artistName} </span>
+                    <span
+                      className="s-author-name" >
+                      {post.caption ? post.username : ""}
+                    </span>
                     <span>{post.caption}</span>
                   </div>
                   <CommentsContainer commentIds={post.commentIds} artistId={post.artistId} />
@@ -149,19 +139,25 @@ class ImageDetailItem extends React.Component {
                   <div className="likes-bids">
 
                     <div className="s-likes" >
-                      <span>{likeCount}</span>
-                      <span>{like}</span>
+                      <span>{post.likerIds.length}</span>
+                      <span>{post.likerIds.length === 1 ? " like" : " likes"}</span>
                     </div>
 
                     <div className="feed-bid-info">
                       <span className="f-curr-bid">${currBid}</span>
-                      <span className="f-num-bids">{post.bidIds.length} {bidText}</span>
+                      <span
+                        className="f-num-bids"
+                        >{post.bidIds.length} {post.bidIds.length == 1 ? "bid" : "bids"}
+                      </span>
                     </div>
 
                   </div>
 
                   <div className="s-time-contain">
-                    <Moment className="s-post-time" fromNow>{dateTime}</Moment>
+                    <Moment
+                      className="s-post-time"
+                      fromNow>{post.createdAt}
+                    </Moment>
                   </div>
 
                   <div className="s-comment-form" >

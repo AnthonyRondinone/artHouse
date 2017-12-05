@@ -31,23 +31,23 @@ const FeedIndexItem = props => {
       closeDelete
     } = props;
 
-    let like;
-    let likeCount;
-    if (likerIds === undefined) {
-      likeCount = 0;
-      like = " likes";
-    } else {
-      likeCount = likerIds.length;
-      like = likerIds.length === 1 ? " like" : " likes";
-    }
-
     let zero = 0;
     let currBid = topBid ? parseFloat(topBid.bid).toFixed(2) : zero.toFixed(2);
 
-    let bidText = bidIds.length == 1 ? "bid" : "bids";
 
-    let artistName = caption ? username : "";
-    let dateTime = createdAt;
+    let placeBidButton;
+    if (topBid !== null && topBid.user_id == currentUserId){
+      placeBidButton = <button
+                        className="feed-bid-button disablebid" >Thank you
+                       </button>;
+    } else {
+      placeBidButton = <Link
+                        to={`/bid/${artistId}/${id}`}>
+                        <button
+                        className="feed-bid-button" >Place bid
+                        </button>
+                      </Link>;
+    }
 
     return (
       <div>
@@ -106,35 +106,37 @@ const FeedIndexItem = props => {
                 </button>
               </div>
 
-              <Link
-                to={`/bid/${artistId}/${id}`}>
-                <button
-                className="feed-bid-button" >Place bid
-                </button>
-              </Link>
+              {placeBidButton}
+
             </div>
 
           <div className="likes-bids">
             <div className="likes" >
-              <span>{likeCount}</span>
-              <span>{like}</span>
+              <span>{ likerIds.length}</span>
+              <span>{likerIds.length === 1 ? " like" : " likes"}</span>
             </div>
 
             <div className="feed-bid-info">
               <span className="f-curr-bid">${currBid}</span>
-              <span className="f-num-bids">{bidIds.length} {bidText}</span>
+              <span
+                className="f-num-bids"
+                >{bidIds.length} {bidIds.length == 1 ? "bid" : "bids"}
+              </span>
             </div>
           </div>
 
           <div className="post-caption" >
-            <span className="author-name" >{artistName} </span>
+            <span className="author-name" >{caption ? username : ""} </span>
             <span>{caption}</span>
           </div>
 
           <CommentsContainer commentIds={commentIds} artistId={artistId} />
 
           <div className="time-contain">
-            <Moment className="post-time" fromNow>{dateTime}</Moment>
+            <Moment
+              className="post-time"
+              fromNow>{createdAt}
+            </Moment>
           </div>
 
           <CommentFormContainer artistId={artistId} postId={id} />

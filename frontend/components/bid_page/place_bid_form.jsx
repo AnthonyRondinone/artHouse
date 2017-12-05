@@ -45,8 +45,19 @@ class PlaceBidForm extends React.Component {
       let minBid = post.topBid ? (parseFloat(post.topBid.bid) + 1.00).toFixed(2) : (zero + 1.00).toFixed(2);
       let CurrUserHighBid = "";
 
-      if (post.topBid !== null){
-        CurrUserHighBid = post.topBid.user_id == this.props.currentUser.id ? "You have the current high bid!" : "";
+      let placeBidButton;
+      if (post.topBid !== null && post.topBid.user_id == this.props.currentUser.id){
+        CurrUserHighBid = "You have the current high bid!";
+        placeBidButton = <button
+                          className="submit-bid-button disablebid"
+                          >Thank you
+                         </button>;
+      } else {
+        placeBidButton = <button
+                           className="submit-bid-button"
+                           onClick={this.handlePlaceBid}
+                           >Place bid
+                         </button>;
       }
 
       return (
@@ -93,8 +104,7 @@ class PlaceBidForm extends React.Component {
                     onChange={this.handleBidChange}
                     value={this.state.bid}
                     placeholder="Enter bid"/>
-                  <button className="submit-bid-button"
-                    onClick={this.handlePlaceBid}>Place bid</button>
+                  {placeBidButton}
                 </div>
                 <div className="under-input">
                   <span className="current-bid-text">Enter US $ {minBid} or more</span>
