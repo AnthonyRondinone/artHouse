@@ -60,6 +60,7 @@ const FeedIndexItem = props => {
         />
 
         <div className="post" >
+
           <div className="artist-info" >
             <div className="artist-left" >
               <div className="avatar-contain">

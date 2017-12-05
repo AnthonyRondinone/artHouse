@@ -22,13 +22,18 @@ const DeletePostDropdownItem = (props) => {
     closeDelete(postId);
   }
 
+  let modalBack;
+  if (props.match.path !== "/users/:userId/:postId") {
+    modalBack = <div
+      className="delete-modal"
+      onClick={handleCancelDeletePostClick.bind(this)} >
+    </div>;
+  }
+
   if (deleteDropdown === 'open') {
     return (
       <div className="delete-main">
-        <div
-          className="delete-modal"
-          onClick={handleCancelDeletePostClick.bind(this)} >
-        </div>
+        {modalBack}
         <div className="delete-dropdown" >
           <div
             className="delete-dropdown-button dropdown-delete"

@@ -11,6 +11,7 @@ class ImageDetailItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleModalClose = this.handleModalClose.bind(this);
+    this.handleCancelDeletePostClick = this.handleCancelDeletePostClick.bind(this);
   }
 
 
@@ -20,7 +21,12 @@ class ImageDetailItem extends React.Component {
 
   handleModalClose() {
     this.props.closeModal();
+    this.handleCancelDeletePostClick();
     this.props.history.push(`/users/${this.props.posts[this.props.match.params.postId].artistId}`);
+  }
+
+  handleCancelDeletePostClick() {
+    this.props.closeDelete(this.props.posts[this.props.match.params.postId].id);
   }
 
   render() {
@@ -53,6 +59,15 @@ class ImageDetailItem extends React.Component {
       let artistName = post.caption ? post.username : "";
       let dateTime = post.createdAt;
 
+      let backing;
+      if (post.deleteDropdown === 'open') {
+        backing = <div
+                  className="backing"
+                  onClick={this.handleCancelDeletePostClick}
+                  >
+                  </div>;
+      }
+
       return (
         <div>
 
@@ -65,10 +80,9 @@ class ImageDetailItem extends React.Component {
           />
 
           <div className="modal-back" onClick={this.handleModalClose} ></div>
-
           <div className="modal-main" >
             <div className="s-post">
-
+              {backing}
               <div className="s-image-left-contain">
                 <div className="s-post-image">
                   <img className="s-image" src={post.imageOrig}/>
