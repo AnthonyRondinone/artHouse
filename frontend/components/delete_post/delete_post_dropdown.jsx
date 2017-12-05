@@ -28,7 +28,7 @@ const DeletePostDropdownItem = (props) => {
         <div
           className="delete-modal"
           onClick={handleCancelDeletePostClick.bind(this)} >
-        </div>;
+        </div>
         <div className="delete-dropdown" >
           <div
             className="delete-dropdown-button dropdown-delete"
