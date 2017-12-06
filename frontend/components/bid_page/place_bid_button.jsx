@@ -15,7 +15,8 @@ const PlaceBidButton = props => {
   if (topBid !== null && topBid.user_id == currentUserId){
     return (
       <button
-        className="feed-bid-button disablebid" >Thank you
+        className="feed-bid-button disablebid"
+        >Thank you
       </button>
     );
   } else {
@@ -23,7 +24,8 @@ const PlaceBidButton = props => {
       <Link
         to={`/bid/${artistId}/${postId}`}>
         <button
-        className="feed-bid-button" >Place bid
+          className="feed-bid-button"
+          >Place bid
         </button>
       </Link>
     );

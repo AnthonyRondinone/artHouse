@@ -23,7 +23,9 @@ class ImageDetailItem extends React.Component {
   handleModalClose() {
     this.props.closeModal();
     this.handleCancelDeletePostClick();
-    this.props.history.push(`/users/${this.props.posts[this.props.match.params.postId].artistId}`);
+    this.props.history.push(
+      `/users/${this.props.posts[this.props.match.params.postId].artistId}`
+    );
   }
 
   handleCancelDeletePostClick() {
@@ -45,15 +47,17 @@ class ImageDetailItem extends React.Component {
       const post = posts[this.props.match.params.postId];
 
       let zero = 0;
-      let currBid = post.topBid ? parseFloat(post.topBid.bid).toFixed(2) : zero.toFixed(2);
+      let currBid = post.topBid ?
+        parseFloat(post.topBid.bid).toFixed(2) :
+        zero.toFixed(2);
 
       let deleteModalBacking;
       if (post.deleteDropdown === 'open') {
         deleteModalBacking = <div
-                    className="backing"
-                    onClick={this.handleCancelDeletePostClick}
-                    >
-                  </div>;
+                              className="backing"
+                              onClick={this.handleCancelDeletePostClick}
+                              >
+                            </div>;
       }
 
       return (
@@ -67,7 +71,11 @@ class ImageDetailItem extends React.Component {
             currentUserId={currentUser.id}
           />
 
-          <div className="modal-back" onClick={this.handleModalClose} ></div>
+          <div
+            className="modal-back"
+            onClick={this.handleModalClose} >
+          </div>
+
           <div className="modal-main" >
             <div className="s-post">
               {deleteModalBacking}
@@ -82,7 +90,9 @@ class ImageDetailItem extends React.Component {
                   <div className="artist-left" >
                     <div className="s-avatar-contain">
                       <Link to={`/users/${post.artistId}`}>
-                        <img className="s-artist-avatar" src={post.avatarThumb} />
+                        <img
+                          className="s-artist-avatar"
+                          src={post.avatarThumb} />
                       </Link>
                     </div>
 
@@ -109,7 +119,10 @@ class ImageDetailItem extends React.Component {
                     </span>
                     <span>{post.caption}</span>
                   </div>
-                  <CommentsContainer commentIds={post.commentIds} artistId={post.artistId} />
+                  <CommentsContainer
+                    commentIds={post.commentIds}
+                    artistId={post.artistId}
+                  />
                 </div>
 
                 <div className="s-under-image" >
@@ -173,15 +186,12 @@ class ImageDetailItem extends React.Component {
 
           </div>
         </div>
-
       );
-
     } else {
       return (
         <div></div>
       );
     }
-
   }
 
 

@@ -33,7 +33,9 @@ const FeedIndexItem = props => {
     } = props;
 
     let zero = 0;
-    let currBid = topBid ? parseFloat(topBid.bid).toFixed(2) : zero.toFixed(2);
+    let currBid = topBid ?
+      parseFloat(topBid.bid).toFixed(2) :
+      zero.toFixed(2);
 
     return (
       <div>
@@ -103,8 +105,8 @@ const FeedIndexItem = props => {
 
           <div className="likes-bids">
             <div className="likes" >
-              <span>{ likerIds.length}</span>
-              <span>{likerIds.length === 1 ? " like" : " likes"}</span>
+              <span>{ likerIds.length }</span>
+              <span>{ likerIds.length === 1 ? " like" : " likes" }</span>
             </div>
 
             <div className="feed-bid-info">
@@ -121,7 +123,10 @@ const FeedIndexItem = props => {
             <span>{caption}</span>
           </div>
 
-          <CommentsContainer commentIds={commentIds} artistId={artistId} />
+          <CommentsContainer
+            commentIds={commentIds}
+            artistId={artistId}
+          />
 
           <div className="time-contain">
             <Moment
@@ -129,12 +134,9 @@ const FeedIndexItem = props => {
               fromNow>{createdAt}
             </Moment>
           </div>
-
           <CommentFormContainer artistId={artistId} postId={id} />
           </div>
-
         </div>
-
       </div>
     );
   } else {

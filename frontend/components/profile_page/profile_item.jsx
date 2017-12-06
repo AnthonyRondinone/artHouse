@@ -35,8 +35,6 @@ class ProfileItem extends React.Component {
     } = this.props;
 
     if (this.props.user) {
-      let postText = posts.length === 1 ? " post": " posts";
-      let followerText = user.followerIds.length === 1 ? " follower": " followers";
 
       const userPostIndexItems = posts.map((post) => <UserPostIndexItem
       key={post.id}
@@ -76,14 +74,27 @@ class ProfileItem extends React.Component {
                 <section className="upInfoMid" >
                   <div className="upCount" >
                     <span className="upCountNum" >{posts.length}</span>
-                    <span className="upCountText" >{postText}</span>
+                    <span
+                      className="upCountText"
+                      >{posts.length === 1 ? " post": " posts"}
+                    </span>
                   </div>
                   <div className="upCount" >
-                    <span className="upCountNum" >{user.followerIds.length}</span>
-                    <span className="upCountText" >{followerText}</span>
+                    <span
+                      className="upCountNum"
+                      >{user.followerIds.length}
+                    </span>
+                    <span
+                      className="upCountText"
+                      >{user.followerIds.length === 1 ?
+                        " follower": " followers"}
+                    </span>
                   </div>
                   <div className="upCount" >
-                    <span className="upCountNum" >{user.followeeIds.length}</span>
+                    <span
+                      className="upCountNum"
+                      >{user.followeeIds.length}
+                    </span>
                     <span className="upCountText" > following</span>
                   </div>
                 </section>
@@ -101,8 +112,6 @@ class ProfileItem extends React.Component {
             </section>
 
           </div>
-
-
       </div>
       );
     } else {

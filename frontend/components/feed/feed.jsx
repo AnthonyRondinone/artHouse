@@ -20,7 +20,8 @@ class Feed extends React.Component {
 
 
   render() {
-    const { posts,
+    const {
+      posts,
       currentUser,
       addNewLike,
       unLike,
@@ -30,27 +31,27 @@ class Feed extends React.Component {
     } = this.props;
 
     const feedIndexItems = posts.map((post) => <FeedIndexItem
-    id={post.id}
-    key={post.id}
-    artistId={post.artistId}
-    avatarThumb={post.avatarThumb}
-    username={post.username}
-    imageOrig={post.imageOrig}
-    createdAt={post.createdAt}
-    likerIds={post.likerIds}
-    liked={post.liked}
-    commentIds={post.commentIds}
-    caption={post.caption}
-    posts={posts}
-    addNewLike={addNewLike}
-    currentUserId={currentUser.id}
-    unLike={unLike}
-    bidIds={post.bidIds}
-    topBid={post.topBid}
-    deletePost={deletePost}
-    openDelete={openDelete}
-    closeDelete={closeDelete}
-    deleteDropdown={post.deleteDropdown}
+      id={post.id}
+      key={post.id}
+      artistId={post.artistId}
+      avatarThumb={post.avatarThumb}
+      username={post.username}
+      imageOrig={post.imageOrig}
+      createdAt={post.createdAt}
+      likerIds={post.likerIds}
+      liked={post.liked}
+      commentIds={post.commentIds}
+      caption={post.caption}
+      posts={posts}
+      addNewLike={addNewLike}
+      currentUserId={currentUser.id}
+      unLike={unLike}
+      bidIds={post.bidIds}
+      topBid={post.topBid}
+      deletePost={deletePost}
+      openDelete={openDelete}
+      closeDelete={closeDelete}
+      deleteDropdown={post.deleteDropdown}
     />);
 
     return (

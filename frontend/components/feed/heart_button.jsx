@@ -15,26 +15,27 @@ const HeartButton = (props) => {
     props.unLike(props.postId);
   }
 
-    let liked;
-    if (props.likerIds === undefined) {
-      liked = false;
-    } else {
-      liked = props.likerIds.includes(props.currentUserId);
-    }
+  let liked = props.likerIds === undefined ?
+    false :
+    props.likerIds.includes(props.currentUserId);
 
-    if(liked === true) {
-        return (
-          <button className="heart-button" onClick={handleUnLike.bind(this)}>
-            <i className="fa fa-heart" aria-hidden="true"></i>
-          </button>
-        );
-    } else {
+  if(liked === true) {
       return (
-        <button className="heart-button" onClick={handleLike.bind(this)}>
-          <i className="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+        <button
+          className="heart-button"
+          onClick={ handleUnLike.bind(this) }>
+          <i className="fa fa-heart" aria-hidden="true"></i>
         </button>
       );
-    }
-  };
+  } else {
+    return (
+      <button
+        className="heart-button"
+        onClick={ handleLike.bind(this) }>
+        <i className="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+      </button>
+    );
+  }
+};
 
 export default HeartButton;

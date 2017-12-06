@@ -19,13 +19,17 @@ class ProfileAvatar extends React.Component {
   }
 
   render() {
-    const { user, currentUser } = this.props;
+    const {
+      user,
+      currentUser
+    } = this.props;
 
     if (currentUser) {
       if (this.props.match.params.userId === String(currentUser.id)) {
         return (
           <div>
-            <Dropzone className="upAvatar-dropZone"
+            <Dropzone
+              className="upAvatar-dropZone"
               onDrop={this.handleDrop} >
               <img className="upAvatar" src={user.avatarOrig} />
             </Dropzone>

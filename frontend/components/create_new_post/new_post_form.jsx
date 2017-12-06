@@ -37,7 +37,6 @@ class NewPostForm extends React.Component {
   fileReader.onloadend = function() {
     this.setState({imageFile: file, imageURL: fileReader.result });
   }.bind(this);
-
     if (file) {
       fileReader.readAsDataURL(file);
       $('.drag-zone').remove();
@@ -46,23 +45,24 @@ class NewPostForm extends React.Component {
 
 
   render() {
-    let dropClass = "drop-zone";
-    if (this.state.imageURL) {
-      dropClass = 'remove';
-    }
+
     return (
       <div className="main-create" >
         <div className="inside-create" >
-
           <p className="create" >Create</p>
 
-          <form className="create-form" onSubmit={this.handleSubmit}>
+          <form className="create-form" onSubmit={ this.handleSubmit }>
 
             <div className="preview-contain" >
-              <img className="preview" src={ this.state.imageURL } />
+              <img
+                className="preview"
+                src={ this.state.imageURL }
+              />
             </div>
 
-            <Dropzone className={dropClass} onDrop={this.updateDraggedFile}>
+            <Dropzone
+              className={ this.state.imageURL ? 'remove' : "drop-zone" }
+              onDrop={ this.updateDraggedFile }>
               <p>Click to upload</p>
               <p>OR</p>
               <p>Drag and Drop Image</p>
@@ -73,12 +73,13 @@ class NewPostForm extends React.Component {
                 type='text'
                 placeholder="Add caption . . ."
                 onChange={this.updateCaption}
-                value={this.state.caption}/>
+                value={this.state.caption}
+              />
             </div>
+
             <div className="button-contain">
               <button className="share-button">Share post</button>
             </div>
-
           </form>
 
         </div>

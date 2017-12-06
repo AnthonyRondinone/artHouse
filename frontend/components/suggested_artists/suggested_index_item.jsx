@@ -5,7 +5,12 @@ import EditFollowButton from '../profile_page/edit_follow_button';
 const SuggestedIndexItem = props => {
 
 
-    const { user, currentUser, addNewFollow, unFollow } = props;
+    const {
+      user,
+      currentUser,
+      addNewFollow,
+      unFollow
+    } = props;
 
     return(
         <div className="su-container" >

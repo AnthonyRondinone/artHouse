@@ -34,26 +34,23 @@ class PlaceBidForm extends React.Component {
 
   render() {
 
-    let errors = this.props.errors.responseJSON ? this.props.errors.responseJSON.join(", ") : "";
-    let message = this.props.messages ? this.props.messages : "";
-
     let post = this.props.post[this.props.match.params.postId];
 
     if (post) {
       let zero = 0;
       let currBid = post.topBid ? parseFloat(post.topBid.bid).toFixed(2) : zero.toFixed(2);
       let minBid = post.topBid ? (parseFloat(post.topBid.bid) + 1.00).toFixed(2) : (zero + 1.00).toFixed(2);
-      let CurrUserHighBid = "";
 
-      let placeBidButton;
+      let CurrUserHighBid = "";
+      let submitNewBidButton;
       if (post.topBid !== null && post.topBid.user_id == this.props.currentUser.id){
         CurrUserHighBid = "You have the current high bid!";
-        placeBidButton = <button
+        submitNewBidButton = <button
                           className="submit-bid-button disablebid"
                           >Thank you
                          </button>;
       } else {
-        placeBidButton = <button
+        submitNewBidButton = <button
                            className="submit-bid-button"
                            onClick={this.handlePlaceBid}
                            >Place bid
@@ -73,7 +70,6 @@ class PlaceBidForm extends React.Component {
               <img className="upPostImg" src={post.imageOrig} />
             </Link>
 
-
             <div className="b-artist-info" >
               <div className="b-name-contain">
                 <div className="s-avatar-contain">
@@ -85,13 +81,11 @@ class PlaceBidForm extends React.Component {
                   className='s-artist-name'
                   to={`/users/${post.artistId}`}>{post.username}
                 </Link>
-
               </div>
 
               <div className="curr-user-high-bid">
                 <span className="curr-user-high-bid">{ CurrUserHighBid }</span>
               </div>
-
 
               <div className="bid-info">
                 <div className="current-bid-contain">
@@ -103,13 +97,26 @@ class PlaceBidForm extends React.Component {
                     type="text"
                     onChange={this.handleBidChange}
                     value={this.state.bid}
-                    placeholder="Enter bid"/>
-                  {placeBidButton}
+                    placeholder="Enter bid"
+                  />
+                { submitNewBidButton }
                 </div>
                 <div className="under-input">
-                  <span className="current-bid-text">Enter US $ {minBid} or more</span>
-                  <div className="bid-error">{ errors }</div>
-                  <div className="bid-message">{ message }</div>
+                  <span
+                    className="current-bid-text"
+                    >Enter US $ {minBid} or more
+                  </span>
+
+                  <div
+                    className="bid-error"
+                    >{ this.props.errors.responseJSON ?
+                        this.props.errors.responseJSON.join(", ") :
+                        "" }
+                  </div>
+                  <div
+                    className="bid-message"
+                    >{ this.props.messages ? this.props.messages : "" }
+                  </div>
                 </div>
               </div>
 

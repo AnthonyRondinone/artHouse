@@ -47,7 +47,6 @@ class EditForm extends React.Component {
 
       return (
         <div className="ue-cover">
-
           <div className="ue-main" >
             <div className="ue-form-contain" >
 
