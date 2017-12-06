@@ -3,34 +3,38 @@ import { Link } from 'react-router-dom';
 
 const CommentIndexItem = (props) => {
 
+  const {
+    authorId,
+    artistId,
+    author,
+    body,
+    commentId,
+    currentUserId
+  } = props;
+
 
   function handleDeleteComment(e) {
     e.preventDefault();
-    props.deleteComment(props.commentId);
+    props.deleteComment(commentId);
   }
 
-  let handleDeleteCommentBound = handleDeleteComment.bind(this);
-
   let DeleteCommentButton;
-  if (
-    props.authorId === props.currentUserId ||
-    props.artistId === props.currentUserId
-  ) {
+  if ( authorId === currentUserId || artistId === currentUserId) {
     DeleteCommentButton = <button
-                            onClick={handleDeleteCommentBound}
-                            className="delete-comment" >x
+                            onClick={ handleDeleteComment.bind(this) }
+                            className="delete-comment"
+                            >x
                           </button>;
-  } else {
-    DeleteCommentButton = <div></div>;
   }
 
   return (
     <div className="comment-contain">
-      <Link className="author-name"
-        to={`/users/${props.authorId}`}>{props.author}
+      <Link
+        className="author-name"
+        to={`/users/${authorId}`}>{author}
       </Link>
-      <span>{props.body}</span>
-      {DeleteCommentButton}
+      <span>{ body }</span>
+      { DeleteCommentButton }
     </div>
   );
 };

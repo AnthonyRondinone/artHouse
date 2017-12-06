@@ -156,7 +156,9 @@ class ImageDetailItem extends React.Component {
 
                     <div className="s-likes" >
                       <span>{post.likerIds.length}</span>
-                      <span>{post.likerIds.length === 1 ? " like" : " likes"}</span>
+                      <span>{post.likerIds.length === 1 ?
+                          " like" : " likes"}
+                      </span>
                     </div>
 
                     <div className="feed-bid-info">

@@ -20,7 +20,8 @@ class NewPostForm extends React.Component {
     let formData = new FormData();
     formData.append("post[caption]", this.state.caption);
     formData.append("post[image]", this.state.imageFile);
-    this.props.createNewPost(formData).then(() => this.props.history.push('/'));
+    this.props.createNewPost(formData)
+      .then(() => this.props.history.push('/'));
   }
 
   updateCaption (e) {
@@ -28,8 +29,6 @@ class NewPostForm extends React.Component {
       caption: e.currentTarget.value
     });
   }
-
-
 
   updateDraggedFile (e) {
   let file = e[0];

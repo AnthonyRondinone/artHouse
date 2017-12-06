@@ -4,7 +4,12 @@ import CommentIndexItem from './comment_index_item';
 
 const CommentIndex = (props) => {
 
-  const {comments, currentUser} = props;
+  const {
+    comments,
+    currentUser,
+    artistId,
+    deleteComment
+  } = props;
 
   let postCommentIndexItems = comments.map((comment) => <CommentIndexItem
     commentId={comment.id}
@@ -12,9 +17,9 @@ const CommentIndex = (props) => {
     body={comment.body}
     author={comment.author}
     authorId={comment.authorId}
-    deleteComment={props.deleteComment}
+    deleteComment={deleteComment}
     currentUserId={currentUser.id}
-    artistId={props.artistId}
+    artistId={artistId}
     />);
 
   return (

@@ -38,8 +38,12 @@ class PlaceBidForm extends React.Component {
 
     if (post) {
       let zero = 0;
-      let currBid = post.topBid ? parseFloat(post.topBid.bid).toFixed(2) : zero.toFixed(2);
-      let minBid = post.topBid ? (parseFloat(post.topBid.bid) + 1.00).toFixed(2) : (zero + 1.00).toFixed(2);
+      let currBid = post.topBid ?
+        parseFloat(post.topBid.bid).toFixed(2) :
+        zero.toFixed(2);
+      let minBid = post.topBid ?
+        (parseFloat(post.topBid.bid) + 1.00).toFixed(2) :
+        (zero + 1.00).toFixed(2);
 
       let CurrUserHighBid = "";
       let submitNewBidButton;

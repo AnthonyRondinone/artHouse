@@ -17,30 +17,26 @@ const DeletePostDropdownItem = (props) => {
     props.deletePost(postId);
   }
 
-  let handleDeletePostClickBound = handleDeletePostClick.bind(this);
-
   function handleCancelDeletePostClick() {
     closeDelete(postId);
   }
-
-  let handleCancelDeletePostClickBound = handleCancelDeletePostClick.bind(this);
 
   if (deleteDropdown === 'open') {
     return (
       <div className="delete-main">
         <div
           className="delete-modal"
-          onClick={handleCancelDeletePostClickBound} >
+          onClick={ handleCancelDeletePostClick.bind(this) } >
         </div>
         <div className="delete-dropdown" >
           <div
             className="delete-dropdown-button dropdown-delete"
-            onClick={handleDeletePostClickBound}>
+            onClick={ handleDeletePostClick.bind(this) }>
             <div>Delete Post</div>
           </div>
           <div
             className="delete-dropdown-button"
-            onClick={handleCancelDeletePostClickBound}>
+            onClick={ handleCancelDeletePostClick.bind(this) }>
             <div>Cancel</div>
           </div>
         </div>

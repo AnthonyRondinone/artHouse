@@ -7,7 +7,6 @@ import FeedIndexItem from './feed_index_item';
 class Feed extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   componentDidMount() {
@@ -17,7 +16,6 @@ class Feed extends React.Component {
       this.props.importFeedPosts();
     }
   }
-
 
   render() {
     const {
