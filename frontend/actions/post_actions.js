@@ -13,7 +13,6 @@ export const receiveNewPost = (post) => {
   };
 };
 
-
 export const receivePostErrors = (errors) => {
   return {
     type: RECEIVE_POST_ERRORS,

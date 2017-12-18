@@ -27,7 +27,7 @@ class PlaceBidForm extends React.Component {
     e.preventDefault();
     this.props.clearBidMessage();
     const newBid = Object.assign({}, this.state);
-    this.props.addBid({bid: newBid}).then(this.props.clearBidErrors)
+    this.props.addBid(newBid).then(this.props.clearBidErrors)
       .then(this.props.receiveBidMessage);
     this.setState({bid: ""});
   }

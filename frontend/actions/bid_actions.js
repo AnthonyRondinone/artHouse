@@ -50,6 +50,7 @@ export const addBid = (bid) => (dispatch) => {
   );
 };
 
+
 export const receiveUserBids = (bids) => {
   return {
     type: RECEIVE_USER_BIDS,

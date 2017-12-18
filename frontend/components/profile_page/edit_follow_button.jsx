@@ -15,10 +15,10 @@ class EditFollowButton extends React.Component {
 
   handleFollow(e) {
     e.preventDefault();
-    this.props.addNewFollow({follow: {
+    this.props.addNewFollow({
       follower_id: this.props.currentUser.id,
       followee_id: this.props.user.id
-    }});
+    });
   }
 
   render() {

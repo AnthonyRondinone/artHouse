@@ -9,7 +9,7 @@ export const commentsReducer = (state = {}, action ) => {
     case RECEIVE_DELETE_COMMENT:
       newState = merge({}, state);
       newState[action.comment.id] = null;
-      delete newState[action.comment.id]
+      delete newState[action.comment.id];
       return newState;
     case RECEIVE_FEED_POSTS:
     if(action.posts.comments === undefined) {

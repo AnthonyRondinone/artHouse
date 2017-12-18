@@ -7,14 +7,12 @@ import { deleteComment } from '../../actions/comment_actions';
 
 
 const mapStateToProps = ( state, ownProps ) => {
-  if (state.entities.comments) {
+  // if (state.entities.comments) {
     return {
       comments: selectPostComments(state, ownProps),
       currentUser: state.session.currentUser
     };
-  } else {
-    return {};
-  }
+  // }
 };
 
 const mapDispatchToProps = (dispatch) => {

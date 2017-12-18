@@ -3,14 +3,12 @@ export const RECEIVE_LIKE = 'RECEIVE_LIKE';
 export const DELETE_LIKE = 'DELETE_LIKE';
 
 
-export const recieveLike = (like) => {
+const recieveLike = (like) => {
   return {
     type: RECEIVE_LIKE,
     like
   };
 };
-
-
 
 export const addNewLike = (like) => (dispatch) => {
   return APIUtil.addLike(like)
@@ -20,7 +18,7 @@ export const addNewLike = (like) => (dispatch) => {
 };
 
 
-export const deleteLike = (like) => {
+const deleteLike = (like) => {
   return {
     type: DELETE_LIKE,
     like

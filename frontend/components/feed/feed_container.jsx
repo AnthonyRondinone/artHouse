@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
-import React from 'react';
-import Feed from './feed';
 import { withRouter } from 'react-router-dom';
+import Feed from './feed';
 import { selectFeedPosts } from '../../reducers/selectors';
 import { importFeedPosts, deletePost, openDelete, closeDelete } from '../../actions/post_actions';
 import { addNewLike, unLike } from '../../actions/like_actions';

@@ -1,8 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import FeedIndexItem from './feed_index_item';
-
 
 class Feed extends React.Component {
   constructor(props) {
@@ -40,7 +37,6 @@ class Feed extends React.Component {
       liked={post.liked}
       commentIds={post.commentIds}
       caption={post.caption}
-      posts={posts}
       addNewLike={addNewLike}
       currentUserId={currentUser.id}
       unLike={unLike}
@@ -59,8 +55,6 @@ class Feed extends React.Component {
         </div>
       </div>
     );
-
-
   }
 }
 

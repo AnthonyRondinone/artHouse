@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { addNewLike, unLike } from '../../actions/like_actions';
 import { importPostDetail, deletePost, openDelete, closeDelete } from '../../actions/post_actions';

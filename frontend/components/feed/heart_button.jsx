@@ -7,7 +7,7 @@ const HeartButton = (props) => {
 
   function handleLike(e) {
     e.preventDefault();
-    props.addNewLike({like: {post_id: props.postId}});
+    props.addNewLike({post_id: props.postId});
   }
 
   function handleUnLike(e) {
@@ -23,7 +23,7 @@ const HeartButton = (props) => {
       return (
         <button
           className="heart-button"
-          onClick={ handleUnLike.bind(this) }>
+          onClick={ handleUnLike }>
           <i className="fa fa-heart" aria-hidden="true"></i>
         </button>
       );
@@ -31,7 +31,7 @@ const HeartButton = (props) => {
     return (
       <button
         className="heart-button"
-        onClick={ handleLike.bind(this) }>
+        onClick={ handleLike }>
         <i className="fa fa-heart-o fa-2x" aria-hidden="true"></i>
       </button>
     );

@@ -21,7 +21,7 @@ const CommentIndexItem = (props) => {
   let DeleteCommentButton;
   if ( authorId === currentUserId || artistId === currentUserId) {
     DeleteCommentButton = <button
-                            onClick={ handleDeleteComment.bind(this) }
+                            onClick={ handleDeleteComment }
                             className="delete-comment"
                             >x
                           </button>;
