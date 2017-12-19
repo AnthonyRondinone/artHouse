@@ -137,7 +137,6 @@ class PlaceBidForm extends React.Component {
     }
   }
 
-
 }
 
 export default PlaceBidForm;

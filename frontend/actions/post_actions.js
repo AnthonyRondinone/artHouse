@@ -34,7 +34,7 @@ export const receiveFeedPosts = (posts) => {
   };
 };
 
-export const importFeedPosts = (payload) => (dispatch) => {
+export const importFeedPosts = () => (dispatch) => {
   return APIUtil.fetchAllFolloweePosts()
   .then(
     (payload) => dispatch(receiveFeedPosts(payload))

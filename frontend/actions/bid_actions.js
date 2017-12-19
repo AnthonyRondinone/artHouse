@@ -58,7 +58,7 @@ export const receiveUserBids = (bids) => {
   };
 };
 
-export const importUserBids = (bids) => (dispatch) => {
+export const importUserBids = () => (dispatch) => {
   return APIUtil.fetchUserBids()
   .then(
     (bids) => dispatch(receiveUserBids(bids))

@@ -27,7 +27,7 @@ export const receiveSuggestedUsers = (payload) => {
   }
 }
 
-export const suggestedUser = (users) => (dispatch) => {
+export const suggestedUser = () => (dispatch) => {
   return APIUtil.fetchSuggestedUsers()
   .then(
     (payload) => dispatch(receiveSuggestedUsers(payload))
