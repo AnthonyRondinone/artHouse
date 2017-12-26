@@ -28,16 +28,16 @@ class EditFollowButton extends React.Component {
     } = this.props;
 
     if (currentUser) {
-      if (this.props.match.params.userId === String(currentUser.id)) {
+      if (this.props.match.params.userId == currentUser.id) {
         return (
           <Link to={`/edit/${currentUser.id}`} >
             <button className="editFollowing" >Edit Profile</button>
           </Link>
         );
-      } else if ((this.props.match.params.userId !== String(currentUser.id)) ||
-                  currentUser === null) {
+      } else if (this.props.match.params.userId != currentUser.id) {
           let followState = user.followerIds.includes(currentUser.id) ?
               "Following" : "Follow";
+          let followBack  = user.followeeIds.includes(currentUser.id);
 
           switch(followState) {
             case "Following":
@@ -53,7 +53,7 @@ class EditFollowButton extends React.Component {
               <button
                 className="editFollow"
                 onClick={this.handleFollow}
-                >{followState}
+                >{followBack ? "Follow Back" : "Follow"}
               </button>
             );
           }
