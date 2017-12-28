@@ -53,11 +53,20 @@ export const selectSuggestedUsers = (state) => {
   return suggestedUsersArray;
 };
 
-
-
 export const selectUserBids = state => {
   let userBidsArray = values(state.entities.bids);
-  userBidsArray.sort(function(a, b){
+
+  const losingBids = userBidsArray.reduce((filteredArr, bid) => {
+    if (state.session.currentUser.id !== bid.topBid.user_id) filteredArr.push(bid);
+    return filteredArr;
+  }, []);
+
+  const winningBids = userBidsArray.reduce((filteredArr, bid) => {
+    if (state.session.currentUser.id === bid.topBid.user_id) filteredArr.push(bid);
+    return filteredArr;
+  }, []);
+
+  losingBids.sort((a, b) => {
       var keyA = new Date(a.createdAt),
           keyB = new Date(b.createdAt);
       if(keyA < keyB) return -1;
@@ -65,6 +74,17 @@ export const selectUserBids = state => {
       return 0;
   });
 
-  return userBidsArray.reverse();
+  winningBids.sort((a, b) => {
+      var keyA = new Date(a.createdAt),
+          keyB = new Date(b.createdAt);
+      if(keyA < keyB) return -1;
+      if(keyA > keyB) return 1;
+      return 0;
+  });
+
+  let sortedLosingBids = losingBids.reverse();
+  let sortedWinningBids = winningBids.reverse();
+
+  return sortedLosingBids.concat(sortedWinningBids);
 
 };
