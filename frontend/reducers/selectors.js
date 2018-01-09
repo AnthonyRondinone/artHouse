@@ -56,35 +56,22 @@ export const selectSuggestedUsers = (state) => {
 export const selectUserBids = state => {
   let userBidsArray = values(state.entities.bids);
 
-  const losingBids = userBidsArray.reduce((filteredArr, bid) => {
-    if (state.session.currentUser.id !== bid.topBid.user_id) filteredArr.push(bid);
-    return filteredArr;
-  }, []);
-
-  const winningBids = userBidsArray.reduce((filteredArr, bid) => {
-    if (state.session.currentUser.id === bid.topBid.user_id) filteredArr.push(bid);
-    return filteredArr;
-  }, []);
-
-  losingBids.sort((a, b) => {
+  userBidsArray.sort((a, b) => {
       var keyA = new Date(a.createdAt),
           keyB = new Date(b.createdAt);
-      if(keyA < keyB) return -1;
-      if(keyA > keyB) return 1;
+      if(keyA < keyB) return 1;
+      if(keyA > keyB) return -1;
       return 0;
   });
 
-  winningBids.sort((a, b) => {
-      var keyA = new Date(a.createdAt),
-          keyB = new Date(b.createdAt);
-      if(keyA < keyB) return -1;
-      if(keyA > keyB) return 1;
-      return 0;
+  const losingBids = [];
+  const winningBids = [];
+
+  userBidsArray.forEach((bid) => {
+    if (state.session.currentUser.id !== bid.topBid.user_id) losingBids.push(bid);
+    else winningBids.push(bid);
   });
 
-  let sortedLosingBids = losingBids.reverse();
-  let sortedWinningBids = winningBids.reverse();
-
-  return sortedLosingBids.concat(sortedWinningBids);
+  return losingBids.concat(winningBids);
 
 };

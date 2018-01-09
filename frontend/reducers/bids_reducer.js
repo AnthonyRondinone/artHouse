@@ -6,7 +6,7 @@ export const bidsReducer = ( state = {}, action ) => {
   let newState;
   switch(action.type) {
     case RECEIVE_USER_BIDS:
-      newState = action.bids;
+      newState = action.payload;
       return newState;
     default:
       return state;

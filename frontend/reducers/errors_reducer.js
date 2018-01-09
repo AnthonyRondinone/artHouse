@@ -7,7 +7,7 @@ export const ErrorReducer = ( state = [], action ) => {
   let newState;
   switch(action.type) {
     case RECEIVE_BID_ERRORS:
-      return action.errors;
+      return action.payload;
     case CLEAR_BID_ERRORS:
       return [];
     default:
