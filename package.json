@@ -44,5 +44,8 @@
   "bugs": {
     "url": "https://github.com/AnthonyRondinone/artHouse/issues"
   },
-  "homepage": "https://github.com/AnthonyRondinone/artHouse#readme"
+  "homepage": "https://github.com/AnthonyRondinone/artHouse#readme",
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0"
+  }
 }

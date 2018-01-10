@@ -24,11 +24,8 @@ export const postsReducer = ( state = {}, action ) => {
       newState[action.payload.post_id].topBid = action.payload;
       return newState;
     case RECEIVE_FEED_POSTS:
-      if(action.posts.posts === undefined) {
-        return {};
-      } else {
-        return action.posts.posts;
-      }
+      if(action.posts.posts === undefined) return {};
+      else return action.posts.posts;
     case RECEIVE_COMMENT:
       newState = merge({}, state);
       newState[action.comment.postId].commentIds.push(action.comment.id);
